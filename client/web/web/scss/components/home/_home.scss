@@ -1,0 +1,266 @@
+section{
+  //@include row();
+
+  article{
+    @include outer-container(1684px);
+    @include media($pantalla-grande) {
+      @include outer-container(1012px);
+    }
+    margin-left: auto;
+    margin-right: auto;
+
+    .tarjeta{
+      @include span-columns(3);
+      height: 297px;
+      min-width: 505px;
+      @include omega(3n);
+      margin-bottom: 2px;
+      background-size:contain;
+      @include media($movil) {
+        //@include omega-reset(4n);
+        color: red;
+        @include omega-reset(2n);
+        height: 500px;
+        @include fill-parent();
+        background-size:cover;
+        background-repeat: no-repeat;
+        margin-bottom: 30px;
+      }
+      @include media($pantalla-grande) {
+        //@include omega-reset(4n);
+        color: blue;
+        @include omega-reset(3n);
+        @include omega(3n);
+        height: 178px;
+        min-width: 335.097px;
+        max-width: 335.097px;
+        background-repeat: no-repeat;
+      }
+    }
+
+    //#datos
+    //noinspection CssUnknownTarget
+    .banco_de_datos{
+      background-image: url("images/home/tarjetas/Banner-01-BancoDatos-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .banco_de_datos:hover{
+      background-image: url("images/home/tarjetas/Banner-01-BancoDatos-ON.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .temas{
+      background-image: url("images/home/tarjetas/Banner-02-Temas-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .temas:hover{
+      background-image: url("images/home/tarjetas/Banner-02-Temas-ON.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .organizaciones{
+      background-image: url("images/home/tarjetas/Banner-03-Publicadores-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .organizaciones:hover{
+      background-image: url("images/home/tarjetas/Banner-03-Publicadores-ON.jpg");
+    }
+    //#servicios
+    //noinspection CssUnknownTarget
+    .open_social_data{
+      background-image: url("images/home/tarjetas/Banner-04-OpenSocialData-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .open_social_data:hover{
+      background-image: url("images/home/tarjetas/Banner-04-OpenSocialData-ON.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .aragopedia{
+      background-image: url("images/home/tarjetas/Banner-05-Aragopedia-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .aragopedia:hover{
+      background-image: url("images/home/tarjetas/Banner-05-Aragopedia-ON.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .presupuestos{
+      background-image: url("images/home/tarjetas/Banner-06-Presupuestos-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .presupuestos:hover{
+      background-image: url("images/home/tarjetas/Banner-06-Presupuestos-ON.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .cras{
+      background-image: url("images/home/tarjetas/Banner-07-CRAs-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .cras:hover{
+      background-image: url("images/home/tarjetas/Banner-07-CRAs-ON.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .colabora{
+      background-image: url("images/home/tarjetas/Banner-08-Colabora-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .colabora:hover{
+      background-image: url("images/home/tarjetas/Banner-08-Colabora-ON.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .aplicaciones{
+      background-image: url("images/home/tarjetas/Banner-09-Aplicaciones-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .aplicaciones:hover{
+      background-image: url("images/home/tarjetas/Banner-09-Aplicaciones-ON.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .info{
+      background-image: url("images/home/tarjetas/Banner-10-Informacion-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .info:hover{
+      background-image: url("images/home/tarjetas/Banner-10-Informacion-ON.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .eventos{
+      background-image: url("images/home/tarjetas/Banner-11-Eventos-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .eventos:hover{
+      background-image: url("images/home/tarjetas/Banner-11-Eventos-ON.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .campus{
+      background-image: url("images/home/tarjetas/Banner-12-Campus-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .campus:hover{
+      background-image: url("images/home/tarjetas/Banner-12-Campus-ON.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .desarrolladores{
+      background-image: url("images/home/tarjetas/Banner-13-Desarrolladores-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .desarrolladores:hover{
+      background-image: url("images/home/tarjetas/Banner-13-Desarrolladores-ON.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .apis{
+      background-image: url("images/home/tarjetas/Banner-14-APIs-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .apis:hover{
+      background-image: url("images/home/tarjetas/Banner-14-APIs-ON.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .sparql{
+      background-image: url("images/home/tarjetas/Banner-15-SPARQL-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .sparql:hover{
+      background-image: url("images/home/tarjetas/Banner-15-SPARQL-ON.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .github{
+      background-image: url("images/home/tarjetas/Banner-16-GITHUB-OFF.jpg");
+    }
+    //noinspection CssUnknownTarget
+    .github:hover{
+      background-image: url("images/home/tarjetas/Banner-16-GITHUB-ON.jpg");
+    }
+
+    .tarjetaExtendida{
+      @include span-columns(5);
+      @include shift(2);
+      @include media($movil) {
+        @include shift(1);
+        @include span-columns(3);
+
+      }
+    }
+
+    .descripcion{
+      @include span-columns(5);
+      @include shift(2);
+      @include media($pantalla-grande) {
+        @include shift(1);
+        @include span-columns(7);
+      }
+      @include media($movil) {
+        @include shift(0);
+        @include span-columns(3);
+        margin-left: 100px;
+      }
+      h1{
+        @include titulos-principales();
+        font-size: 100px;
+      }
+      p{
+        @include titulos-resultados();
+      }
+
+    }
+
+    .titulo{
+      @include titulos-principales();
+    }
+
+  }
+  .buscadormini{
+
+  }
+
+  .separacion{
+    height: 150px;
+    @include media($movil){
+      height: 20px;
+    }
+  }
+}
+
+
+#datos{
+  @include gradient-home-datos();
+  @include media($movil) {
+    background:$Datos-color;
+    background-image : none;
+    h1{
+      color: black;
+    }
+  }
+
+}
+
+#servicios{
+  @include gradient-home-servicios();
+  @include media($movil) {
+    background:$Servicios-color;
+    background-image : none;
+    h1{
+      color: black;
+    }
+  }
+}
+
+#informacion{
+  @include gradient-home-informacion();
+  @include media($movil) {
+    background:$Informacion-color;
+    background-image : none;
+    h1{
+      color: black;
+    }
+  }
+}
+
+#herramientas{
+  @include gradient-home-herramientas();
+  @include media($movil) {
+    background:$Herramientas-color;
+    background-image : none;
+    h1{
+      margin-top: 30px;
+      color: black;
+    }
+  }
+}

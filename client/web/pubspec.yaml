@@ -1,0 +1,30 @@
+name: aod3
+description: Aragon Open Data 3.0 basado en AngularDart2
+version: 0.0.1
+environment:
+  sdk: '>=1.19.0 <2.0.0'
+dependencies:
+  angular2: 2.1.0
+  dart_sass_transformer: any
+  intl: 0.14.0
+  intl_translation: any
+  angular2_components: any
+dev_dependencies:
+  browser: ^0.10.0
+  dart_to_js_script_rewriter: ^1.0.1
+
+transformers:
+- angular2:
+    platform_directives:
+    - 'package:angular2/common.dart#COMMON_DIRECTIVES'
+    platform_pipes:
+    - 'package:angular2/common.dart#COMMON_PIPES'
+    entry_points: web/main.dart
+- $dart2js:
+    commandLineOptions: [--show-package-warnings]
+- dart_to_js_script_rewriter
+- dart_sass_transformer:
+   executable: /home/eder/BourbonSassTest/sassc/bin/sassc      # Sass executable to use
+   line-numbers: false            # Include line numbers in output
+   style: compressed                # Style of generated CSS
+   copy-sources: false            # Copy original .scss/.sass files to out

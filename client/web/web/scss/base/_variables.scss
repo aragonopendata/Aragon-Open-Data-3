@@ -1,0 +1,65 @@
+// Breakpoints
+$medium-screen: 600px;
+$large-screen: 900px;
+//$pantalla-grande: 1520px;
+
+// Typography
+$base-font-family: $font-stack-system;
+$heading-font-family: $base-font-family;
+$nunito: 'Nunito', $base-font-family;
+$roboto: 'Roboto', $base-font-family;
+
+// Font Sizes
+$base-font-size: 1em;
+$heading1-font-size: em(48);
+$article-font-size: em(18);
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+$heading-line-height: 1;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$blue: #1565c0;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+$row-background: #F2EEDA;
+$red: #E3857D;
+$background-dark: #332F21;
+
+//Home zonas
+$AOD-v3-color: #76a1b8;
+$Datos-color: #ff6643;
+$Servicios-color: #e1e132;
+$Informacion-color: #45af91;
+$Herramientas-color: #41acd6;
+
+// Font Colors
+$base-font-color: #594C4F;
+$action-color: $red;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;
+
+//Custom sizes
+$teaser-size: 624px 228px;

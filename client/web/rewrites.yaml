@@ -1,0 +1,6 @@
+# rewrites.yaml
+ignore:
+- ^(\S+\.(json|html|js|dart|css|png))$
+rewrites:
+- rewrite: (.*)
+  to: index.html

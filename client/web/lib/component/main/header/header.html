@@ -1,0 +1,74 @@
+<div id="aragonHeader">
+    <div id="cabeceraRelacionados">
+        <ul>
+            <li class="clear visible-xs tamCero"></li>
+            <li><a href="http://transparencia.aragon.es/" title="Transparencia" target="_blank">TRANSPARENCIA</a></li>
+            <li><a href="http://aragonparticipa.aragon.es" title="Participaci&oacute;n ciudadana" target="_blank">PARTICIPACI&Oacute;N CIUDADANA</a></li>
+            <li class="active"><a href="http://opendata.aragon.es" title="Open data">OPEN DATA</a>
+                <p class="clear visible-xs"></p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="aragonNav">
+    <!--<input type="checkbox" id="op" [checked]="opChecked">-->
+    <a [ngClass]="{menuButton: opChecked}" class="menu" (click)="overlayOpen()"></a>
+    <div id="logo"></div>
+    <div *ngIf="opChecked" class="overlay overlay-hugeinc">
+        <nav>
+            <ul class="menus">
+                <li class="menuPrimero">
+                    <input type="radio" name="menu" id="datosCheckbox">
+                    <label for="datosCheckbox" class="linkPrimero">{{header_datos}}</label>
+                    <ul class="submenus">
+                        <br>
+                        <li><a [routerLink]="['Blueprint']" (click)="overlayClose()">{{header_datos_bancodatos}}</a></li>
+                        <li><a [routerLink]="['Blueprint']" (click)="overlayClose()">{{header_datos_temas}}</a></li>
+                        <li><a [routerLink]="['Blueprint']" (click)="overlayClose()">{{header_datos_publicadores}}</a></li>
+                    </ul>
+                </li>
+                <li class="menuPrimero">
+                    <input type="radio" name="menu" id="serviciosCheckbox">
+                    <label for="serviciosCheckbox" class="linkPrimero">{{header_servicios}}</label>
+                    <ul class="submenus">
+                        <br>
+                        <li><a href="#">{{header_servicios_socialdata}}</a></li>
+                        <li><a href="#">{{header_servicios_aragopedia}}</a></li>
+                        <li><a href="#">{{header_servicios_presupuestos}}</a></li>
+                        <li><a href="#">{{header_servicios_cras}}</a></li>
+                    </ul>
+                </li>
+                <li class="menuPrimero">
+                    <input type="radio" name="menu" id="informacionCheckbox">
+                    <label for="informacionCheckbox" class="linkPrimero">{{header_informacion}}</label>
+                    <ul class="submenus">
+                        <br>
+                        <!--<li><a [routerLink]="['Info', {id: 'colabora'}]">{{header_informacion_colabora}}</a></li>
+                        <li><a [routerLink]="['Info', {id: 'aplicaciones'}]">{{header_informacion_aplicaciones}}</a></li>
+                        <li><a [routerLink]="['Info', {id: 'informacion'}]">{{header_informacion_informacion}}</a></li>
+                        <li><a [routerLink]="['Info', {id: 'eventos'}]">{{header_informacion_eventos}}</a></li>-->
+                    </ul>
+                </li>
+                <li class="menuPrimero">
+                    <input type="radio" name="menu" id="herramientasCheckbox">
+                    <label for="herramientasCheckbox" class="linkPrimero">{{header_herramientas}}</label>
+                    <ul class="submenus">
+                        <br>
+                        <li><a href="#">{{header_herramientas_campus}}</a></li>
+                        <li><a href="#">{{header_herramientas_desarrolladores}}</a></li>
+                        <li><a href="#">{{header_herramientas_apis}}</a></li>
+                        <li><a href="#">{{header_herramientas_sparql}}</a></li>
+                        <li><a href="#">{{header_herramientas_github}}</a></li>
+                    </ul>
+                </li>
+                <li class="menuPrimeroUltimo">
+                    <form>
+                        <input type="search" name="search" placeholder="Busca Datos...">
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div id="separacionMenu"></div>

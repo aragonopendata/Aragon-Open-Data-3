@@ -1,0 +1,13 @@
+footer {
+  @include outer-container(1684px);
+  @include media($pantalla-grande) {
+    @include outer-container(1012px);
+  }
+  margin-left: auto;
+  margin-right: auto;
+
+  .footer-item {
+    @include span-columns(3);
+    @include omega(3n);
+  }
+}
