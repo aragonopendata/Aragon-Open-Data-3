@@ -1,5 +1,17 @@
 <section id="buscadorGeneral">
-    <article class="buscador"></article>
+    <article class="tarjetaExtendida">
+    <div class="descripcion">
+            <h1>Bienvenidos</h1>
+            <form id="form_home" on-submit='goCkan($event)'>
+            <input list="browsers" (keyup)="onKey($event)" autocomplete="off" id="buscador_home" name="buscador_home" placeholder="ARAGÓN OPENDATA BUSCA DATOS" type="search">
+             <button id="button_home" type="submit"><i aria-hidden="true" class="fa fa-search"></i></button>
+             </form>
+             <datalist id="browsers">
+                <option *ngFor="let item of autocompletar" value="{{item}}">
+              </datalist>
+            <br>
+        </div>
+    </article>
 </section>
 <section id="datos">
     <article class="tarjetaExtendida">
@@ -13,13 +25,22 @@
     </article>
     <article class="tarjetas">
         <div class="tarjeta banco_de_datos">
-            <p>BANCO DE DATOS</p>
+            <div class="tarjeta_oculta">
+                <p class="tit">BANCO DE DATOS</p>
+                <p class="des">En Aragón Open Data ofrecemos servicios con los datos que tenemos, asi facilitamos que todo el mundo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla </p>
+            </div>
         </div>
         <div class="tarjeta temas">
-            <p>Temas</p>
+           <div class="tarjeta_oculta">
+                <p class="tit">Temas</p>
+                <p class="des">En Aragón Open Data ofrecemos servicios con los datos que tenemos, asi facilitamos que todo el mundo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla </p>
+            </div>
         </div>
         <div class="tarjeta organizaciones">
-            <p>Organizaciones</p>
+            <div class="tarjeta_oculta">
+                <p class="tit">Organizaciones</p>
+                <p class="des">En Aragón Open Data ofrecemos servicios con los datos que tenemos, asi facilitamos que todo el mundo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla </p>
+            </div>
         </div>
     </article>
     <div class="separacion" ></div>
@@ -33,16 +54,24 @@
     </article>
     <article class="tarjetas">
         <div class="tarjeta open_social_data">
-            <p>Open Social Data</p>
+            <div class="tarjeta_oculta">
+                <p class="tit">Open Social Data</p>
+            </div>
         </div>
         <div class="tarjeta aragopedia">
-            <p>Aragopedia</p>
+            <div class="tarjeta_oculta">
+                <p class="tit">Aragopedia</p>
+            </div>
         </div>
         <div class="tarjeta presupuestos">
-            <p>Presupuestos</p>
+            <div class="tarjeta_oculta">
+                <p class="tit">Presupuestos</p>
+            </div>
         </div>
         <div class="tarjeta cras">
-            <p>CRAS</p>
+            <div class="tarjeta_oculta">
+                <p class="tit">CRAS</p>
+            </div>
         </div>
     </article>
     <div class="separacion" ></div>
@@ -56,16 +85,24 @@
     </article>
     <article class="tarjetas">
         <div class="tarjeta colabora">
-            <p>Colabora</p>
+            <div class="tarjeta_oculta">
+                <p class="tit">Colabora</p>
+            </div>
         </div>
         <div class="tarjeta aplicaciones">
-            <p>Aplicaciones</p>
+            <div class="tarjeta_oculta">
+                <p class="tit">Aplicaciones</p>
+            </div>
         </div>
         <div class="tarjeta info">
-            <p>Informacion</p>
+            <div class="tarjeta_oculta">
+                <p class="tit">Informacion</p>
+            </div>
         </div>
         <div class="tarjeta eventos">
-            <p>Informacion</p>
+            <div class="tarjeta_oculta">
+                <p class="tit">Informacion</p>
+            </div>
         </div>
     </article>
     <div class="separacion" ></div>
@@ -79,19 +116,29 @@
     </article>
     <article class="tarjetas">
         <div class="tarjeta campus">
-            <p>Campus</p>
+            <div class="tarjeta_oculta">
+                <p class="tit">Campus</p>
+            </div>
         </div>
         <div class="tarjeta desarrolladores">
-            <p>Desarrolladores</p>
+            <div class="tarjeta_oculta">
+                <p class="tit">Desarrolladores</p>
+            </div>
         </div>
         <div class="tarjeta apis">
-            <p>APIs</p>
+            <div class="tarjeta_oculta">
+                <p class="tit">APIs</p>
+            </div>
         </div>
         <div class="tarjeta sparql">
-            <p>SPARQL</p>
+            <div class="tarjeta_oculta">
+                <p class="tit">SPARQL</p>
+            </div>
         </div>
         <div class="tarjeta github">
-            <p>GITHUB</p>
+            <div class="tarjeta_oculta">
+                <p class="tit">GITHUB</p>
+            </div>
         </div>
     </article>
     <div class="separacion" ></div>
