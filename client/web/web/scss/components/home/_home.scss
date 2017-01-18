@@ -371,3 +371,23 @@ section{
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
    color:    #76a1b8;
 }
+
+
+#lista_home li{
+    background-color:white;
+    width:737px;
+    padding-left:5px;
+     border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+#lista_home li:hover{
+    background-color:1px solid rgba(128, 128, 128, 0.15);
+}
+#lista_home a{
+    color:#76a1b8;
+}
+
+#lista_home a:hover{
+    color:black;
+
+}
