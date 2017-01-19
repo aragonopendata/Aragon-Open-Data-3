@@ -25,12 +25,12 @@ import 'package:aod3/component/info/info_component.dart'
     name: 'Blueprint',
     component: BlueprintComponent,
   ),
-  /*const AsyncRoute(
+  const AsyncRoute(
       path: '/info/:id',
       loader: info,
-      name: 'Info'),*/
+      name: 'Info'),
 ])
 class AppComponent {
   String title = 'AOD 3.0';
 }
-//Future<dynamic> info() => info_component.loadLibrary().then((_)=>info_component.InfoComponent);
+Future<dynamic> info() => info_component.loadLibrary().then((_)=>info_component.InfoComponent);
