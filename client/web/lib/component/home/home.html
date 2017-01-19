@@ -12,7 +12,7 @@
             </datalist>-->
             <!-- Usando lista -->
             <ul type="square" id="lista_home">
-                <li *ngFor="let item of autocompletar" value="{{valor}}"><a href="http://opendata.aragon.es/catalogo/{{item['name']}}">{{item['title']}}</a></li>
+                <li *ngFor="let item of datasets" value="{{valor}}"><a href="http://opendata.aragon.es/catalogo/{{item['name']}}">{{item['title']}}</a></li>
             </ul>
               <!---<select name="browser" size="10">
                     <option *ngFor="let item of autocompletar" value="{{valor}}">{{item['title']}}</option>

@@ -1,36 +1,35 @@
+import 'dart:async';
 import 'package:angular2/core.dart';
 //import 'package:angular2/router.dart';
 //import 'package:json_object/json_object.dart';
 import 'dart:html';
 import 'dart:convert';
+import 'package:aod3/service/search_service.dart';
 
 @Component(
-  selector: 'home',
-  templateUrl: 'home.html',
-)
+    selector: 'home',
+    templateUrl: 'home.html',
+    providers: const [SearchService])
 class HomeComponent {
+  final SearchService _SearchService;
+  List datasets;
+  String valor;
+
+  HomeComponent(this._SearchService);
+
+  Future<Null> getHeroes(String input) async {
+    datasets = await _SearchService.getDataset(input);
+  }
+
   void goCkan(Event e) {
     e.preventDefault();
     InputElement bText = querySelector('[name="buscador_home"]');
-    //print('bText: ${bText.value}');
     window.location.assign(
         'http://opendata.aragon.es/catalogo/catalogo.html?q=${bText.value}');
   }
 
-  List autocompletar;
-  String valor;
-
   onKey(dynamic event) {
-    String url =
-        "http://opendata.aragon.es/catalogo/api/2/util/dataset/autocomplete?incomplete=%${event.target.value}%";
+    getHeroes(event.target.value);
     valor = event.target.value;
-    HttpRequest.request(url).then((HttpRequest result) {
-      Map decoded = JSON.decode(result.response);
-      if (valor != "") {
-        autocompletar = decoded['ResultSet']['Result'];
-      } else {
-        autocompletar = null;
-      }
-    })..catchError((error) => print("ERROR: couldnt get a response from the server: $error"));
   }
 }
