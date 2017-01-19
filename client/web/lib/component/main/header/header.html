@@ -44,7 +44,7 @@
                     <ul class="submenus">
                         <br>
                         <li><a [routerLink]="['Info', {id: 'colabora'}]">{{header_informacion_colabora}}</a></li>
-                        <li><a [routerLink]="['Info', {id: 'aplicaciones'}]">{{header_informacion_aplicaciones}}</a></li>
+                        <li><a [routerLink]="['Aplicaciones']">{{header_informacion_aplicaciones}}</a></li>
                         <li><a [routerLink]="['Info', {id: 'informacion'}]">{{header_informacion_informacion}}</a></li>
                         <li><a [routerLink]="['Info', {id: 'eventos'}]">{{header_informacion_eventos}}</a></li>
                     </ul>
@@ -62,10 +62,15 @@
                     </ul>
                 </li>
                 <li class="menuPrimeroUltimo">
-                    <form>
-                        <input type="search" name="search" placeholder="Busca Datos...">
-                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    <form id="form_header" on-submit='goCkan($event)'>
+                        <input (keyup)="onKey($event)" autocomplete="off" id="buscador_header" name="buscador_home" placeholder="Busca Datos..." type="search">
+                        <button type="submit"><i aria-hidden="true" class="fa fa-search"></i></button>
                     </form>
+                </li>
+                <li *ngIf="datasets!=null" class="menuPrimero" type="square" id="lista_header">
+                    <ul>
+                    <li *ngFor="let item of datasets" value="{{valor}}"><a href="http://opendata.aragon.es/catalogo/{{item['name']}}">{{item['title']}}</a></li>
+                    </ul>
                 </li>
             </ul>
         </nav>

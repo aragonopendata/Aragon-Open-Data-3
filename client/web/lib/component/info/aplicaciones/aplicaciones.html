@@ -1,0 +1,17 @@
+<h1>Aplicacioness</h1>
+<h2>Estas son las aplicaciones que reutilizan nuestros datos</h2>
+
+<ul>
+    <li *ngFor="let aplicacion of aplicaciones">
+        <a href="{{aplicacion.url}}"><img src="{{aplicacion.imagen}}"/></a>
+        <p>
+            <a href="{{aplicacion.url}}">{{aplicacion.titulo}}</a>
+        </p>
+        <p>
+            {{aplicacion.descripcion}}
+        </p>
+        <a href="aplicacion.facebookShare"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoFacebook.png"/></a>
+        <a href="aplicacion.twitterShare"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoTwitter.png"/></a>
+        <a href="aplicacion.googleShare"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoGooglePlus.png"/></a>
+    </li>
+</ul>

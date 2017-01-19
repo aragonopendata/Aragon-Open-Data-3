@@ -6,8 +6,10 @@ import 'header/header_component.dart';
 import 'footer/footer_component.dart';
 import 'package:aod3/component/home/home_component.dart';
 import 'package:aod3/component/blueprint/blueprint_component.dart';
-import 'package:aod3/component/info/info_component.dart'
-    deferred as info_component;
+import 'package:aod3/component/info/info_component.dart'    deferred as info_component;
+import 'package:aod3/component/info/aplicaciones/aplicaciones_component.dart' deferred as aplicaciones_component;
+
+
 
 @Component(selector: 'my-app', templateUrl: 'app.html', directives: const [
   HeaderComponent,
@@ -29,8 +31,13 @@ import 'package:aod3/component/info/info_component.dart'
       path: '/info/:id',
       loader: info,
       name: 'Info'),
+  const AsyncRoute(
+      path: '/info/aplicaciones',
+      loader: aplicaciones,
+      name: 'Aplicaciones'),
 ])
 class AppComponent {
   String title = 'AOD 3.0';
 }
 Future<dynamic> info() => info_component.loadLibrary().then((_)=>info_component.InfoComponent);
+Future<dynamic> aplicaciones() => aplicaciones_component.loadLibrary().then((_)=>aplicaciones_component.AplicacionesComponent);
