@@ -1,17 +1,27 @@
-<h1>Aplicacioness</h1>
-<h2>Estas son las aplicaciones que reutilizan nuestros datos</h2>
+<section>
+    <article class="contenido">
+        <h1>Aplicaciones</h1>
+        <h2>Estas son las aplicaciones que reutilizan nuestros datos</h2>
 
-<ul>
-    <li *ngFor="let aplicacion of aplicaciones">
-        <a href="{{aplicacion.url}}"><img src="{{aplicacion.imagen}}"/></a>
-        <p>
-            <a href="{{aplicacion.url}}">{{aplicacion.titulo}}</a>
-        </p>
-        <p>
-            {{aplicacion.descripcion}}
-        </p>
-        <a href="aplicacion.facebookShare"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoFacebook.png"/></a>
-        <a href="aplicacion.twitterShare"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoTwitter.png"/></a>
-        <a href="aplicacion.googleShare"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoGooglePlus.png"/></a>
-    </li>
-</ul>
+        <ul>
+            <li *ngFor="let aplicacion of aplicaciones">
+                <div class="app">
+                    <div class="app_img">
+                        <a href="{{aplicacion.url}}"><img src="{{aplicacion.imagen}}"/></a>
+                        </div>
+                        <div class="app_info">
+                        <p>
+                            <a href="{{aplicacion.url}}">{{aplicacion.titulo}}</a>
+                        </p>
+                        <p>
+                            {{aplicacion.descripcion}}
+                        </p>
+                        <a href="aplicacion.facebookShare"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoFacebook.png"/></a>
+                        <a href="aplicacion.twitterShare"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoTwitter.png"/></a>
+                        <a href="aplicacion.googleShare"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoGooglePlus.png"/></a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </article>
+</section>
