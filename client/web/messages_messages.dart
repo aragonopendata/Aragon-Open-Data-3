@@ -15,7 +15,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => {
-    "prueba basica 1" : MessageLookupByLibrary.simpleMessage("Grund prueba 1"),
-    "prueba basica 2" : MessageLookupByLibrary.simpleMessage("Basic Test 2")
-  };
+        "prueba basica 1":
+            MessageLookupByLibrary.simpleMessage("Grund prueba 1"),
+        "prueba basica 2": MessageLookupByLibrary.simpleMessage("Basic Test 2")
+      };
 }
