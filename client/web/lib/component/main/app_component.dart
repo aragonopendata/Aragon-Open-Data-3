@@ -6,7 +6,8 @@ import 'header/header_component.dart';
 import 'footer/footer_component.dart';
 import 'package:aod3/component/home/home_component.dart';
 import 'package:aod3/component/blueprint/blueprint_component.dart';
-import 'package:aod3/component/info/info_component.dart'    deferred as info_component;
+import 'package:aod3/component/info/info_component.dart'
+  deferred as info_component;
 import 'package:aod3/component/info/aplicaciones/aplicaciones_component.dart' deferred as aplicaciones_component;
 
 

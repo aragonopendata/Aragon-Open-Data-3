@@ -1,1 +1,4 @@
-<p>{{id}}</p>
+<div [ngSwitch]="id">
+    <iframe *ngSwitchWhen="'colabora'" frameBorder="0" width="{{width}}" height="{{height}}" src="https://aragon.uservoice.com/forums/192552-datos-que-me-gustar%C3%ADa-reutilizar"></iframe>
+    <p *ngSwitchDefault>{{id}}</p>
+</div>
