@@ -1,0 +1,26 @@
+.contenido{
+  @include span-columns(5);
+  @include shift(2);
+  @include media($movil) {
+    @include shift(1);
+    @include span-columns(3);
+  }
+	h1{   
+		color: #76a1b8;
+		font-size: 60px;
+		padding-top:20px;
+		padding-bottom:20px;
+	}
+	/*quizás mover a otro css*/
+	.app_img{
+		float: left;
+	}
+	.app_info{
+		padding-left: 130px;
+	}
+	.app{
+		padding-top: 30px;
+    	padding-bottom: 30px;
+    	border-bottom: 2px solid rgba(94, 162, 186, 0.28);
+    }
+}
