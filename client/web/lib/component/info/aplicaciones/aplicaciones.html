@@ -16,12 +16,34 @@
                         <p>
                             {{aplicacion.descripcion}}
                         </p>
-                        <a href="aplicacion.facebookShare"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoFacebook.png"/></a>
-                        <a href="aplicacion.twitterShare"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoTwitter.png"/></a>
-                        <a href="aplicacion.googleShare"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoGooglePlus.png"/></a>
+                        <a materialTooltip="Compartir en Facebook" (click)="redirect($event,aplicacion.facebookShare)" ><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoFacebook.png"/></a>
+                        <a materialTooltip="Compartir en Twitter" (click)="redirect($event,aplicacion.twitterShare)"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoTwitter.png"/></a>
+                        <a materialTooltip="Compartir en Google+" (click)="redirect($event,aplicacion.googleShare)"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoGooglePlus.png"/></a>
                     </div>
                 </div>
             </li>
         </ul>
     </article>
+    <modal [visible]="showMaxHeightDialog">
+        <material-dialog>
+
+            <h3 header>¿Deseas salir de Aragon Open Data?</h3>
+
+            <p>
+                Este link de sacara fuera de Aragon Open Data
+                ¿Estas de acuerdo?
+            </p>
+
+            <div footer>
+
+                <material-button (trigger)="redirectToNewPage()" class="white">
+                    Aceptar
+                </material-button>
+                <material-button autoFocus (trigger)="showMaxHeightDialog = false" class="white">
+                    Cancelar
+                </material-button>
+            </div>
+
+        </material-dialog>
+    </modal>
 </section>
