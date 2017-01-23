@@ -1,0 +1,19 @@
+<section>
+    <article class="contenido">
+        <h1>Información</h1>
+        <h2>PÁGINA SUELTA</h2>
+            <!--<ul *ngFor="let webContent of webContents">
+            	<li>
+            		<div id="{{webContent.id}}">{{webContent.title}}</div>
+            		<div id="{{webContent.id}}_exp" class="expansible">{{webContent.content}}</div>
+            	</li>
+            </ul>-->
+    
+  	<article class="accordion">
+		<section id="{{webContent.id}}" *ngFor="let webContent of webContents">
+			<h2><a href="/info/informacion#{{webContent.id}}">{{webContent.title}}</a></h2>
+			<p>{{webContent.content}}</p>
+		</section>
+	</article>
+	</article>
+</section>
