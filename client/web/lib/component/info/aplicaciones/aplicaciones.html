@@ -13,13 +13,10 @@
                         <p>
                             <a href="{{aplicacion.url}}">{{aplicacion.titulo}}</a>
                         </p>
-                        <p [safeInnerHtml]="aplicacion.descripcion">
-                            {{aplicacion.descripcion}}<br>
-                            {{utl}}
-                        </p>
-                        <a materialTooltip="Compartir en Facebook" (click)="redirect($event,aplicacion.facebookShare)" ><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoFacebook.png"/></a>
-                        <a materialTooltip="Compartir en Twitter" (click)="redirect($event,aplicacion.twitterShare)"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoTwitter.png"/></a>
-                        <a materialTooltip="Compartir en Google+" (click)="redirect($event,aplicacion.googleShare)"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoGooglePlus.png"/></a>
+                            <p [safeInnerHtml]="aplicacion.descripcion"></p>
+                        <img materialTooltip="Compartir en Facebook" (click)="redirect($event,aplicacion.facebookShare)" class="link" src="http://opendata.aragon.es/public/i/aplicaciones/iconoFacebook.png"/>
+                        <img materialTooltip="Compartir en Twitter" (click)="redirect($event,aplicacion.twitterShare)" class="link" src="http://opendata.aragon.es/public/i/aplicaciones/iconoTwitter.png"/>
+                        <img materialTooltip="Compartir en Google+" (click)="redirect($event,aplicacion.googleShare)" class="link" src="http://opendata.aragon.es/public/i/aplicaciones/iconoGooglePlus.png"/>
                     </div>
                 </div>
             </li>
