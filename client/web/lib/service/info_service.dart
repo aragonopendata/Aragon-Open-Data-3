@@ -1,6 +1,6 @@
 import 'package:angular2/core.dart';
 import 'package:aod3/object/aplicacion.dart';
-
+import 'package:aod3/object/webContent.dart';
 @Injectable()
 class InfoService {
   List<Aplicacion> get aplicaciones => [
@@ -81,4 +81,25 @@ class InfoService {
             'http://opendata.aragon.es/public/i/aplicaciones/papelea.png'
         )
       ];
+    
+    List<WebContent> get webContents => [
+        new WebContent(
+            'informacion_content_1',
+            'informacion',
+            'INFO 1',
+            'Open Data es una iniciativa a nivel global que persigue que los datos y la información,especialmente la que poseen las administraciones públicas, estén disponibles para el conjunto de los ciudadanos. La publicación de la información se realizaademás de forma abierta y reutilizable, de forma que tanto ciudadanos como empresas puedan utilizarla para su consulta, para enriquecerla'
+            ),
+         new WebContent(
+            'informacion_content_2',
+            'informacion',
+            'INFO 2',
+            '<h1>INFORMACION2)</h1>'
+            ),
+         new WebContent(
+            'informacion_content_3',
+            'informacion',
+            'INFO 3',
+            'La reutilización de la información es un objetivo fundamental de las políticas de Open Data. La información del sector público constituye una materia prima importante para diversos productos y servicios de contenidos digitales. Por sus funciones, la administración pública posee datos de numerosos sectores productivos y temáticas, así se recopilan informaciones educativas, económicas, medio ambientales, turísticas, etc. que poseen un indudable interés más allá de su propio uso administrativo. Por ello, la apertura de los datos del sector público aporta valor a la información por los sucesivos usos que se le puede dar. Estas razones suponen que la información es un nuevo motor de desarrollo económico y social y su reutilización es un paso más en la implantación de la sociedad de la información y del conocimiento.             Además, la igualdad en el acceso a la información y la posibilidad de la reutilización hacen que esta se constituya como el elemento que impide el falseamiento de la competencia. Por eso, la mera posibilidad de acceder a la reutilización consigue mejorar la eficiencia en los mercados de información, lo que permite a los consumidores gozar de servicios más justos.            La reutilización de los datos, además de como una oportunidad económica para las empresas que explotan la información, se convierte también en palanca para otras mejoras sociales. Se podría hablar así, por ejemplo, del periodismo de datos, que estructura sus historias alrededor de los datos; de la posibilidad de desarrollar nuevas herramientas para acceder al conocimiento, que democratizan la información entre todos los ciudadanos; o de las nuevas técnicas de visualización de datos, que permiten hacer más clara y comprensible la información que se ofrece.            Se puede encontrar documentación adicional sobre reutilización de la información del sector público en algunos informes y estudios ya publicados como "Reutilización de información pública y privada en España: Avance de situación para agentes públicos y privados. Una oportunidad para los negocios y el empleo." o "Estudio de caracterización del sector infomediario 2012" '
+            ),
+    ];
 }
