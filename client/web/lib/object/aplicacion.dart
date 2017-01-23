@@ -1,6 +1,9 @@
+import 'package:angular2/security.dart';
+import 'package:angular2/src/security/dom_sanitization_service.dart';
+
 class Aplicacion{
   String _titulo;
-  String _descripcion;
+  var _descripcion;
   String _url;
   String _imagen;
 
@@ -18,9 +21,10 @@ class Aplicacion{
     _url = value;
   }
 
-  String get descripcion => _descripcion;
 
-  set descripcion(String value) {
+  get descripcion => _descripcion;
+
+  set descripcion(value) {
     _descripcion = value;
   }
 

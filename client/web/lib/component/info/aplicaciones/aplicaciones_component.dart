@@ -1,35 +1,44 @@
 import 'dart:html';
 import 'package:angular2/core.dart';
+import 'package:angular2/security.dart';
+import 'package:aod3/object/aplicacion.dart';
 import 'package:aod3/service/info_service.dart';
 import 'package:angular2_components/angular2_components.dart';
 
 @Component(
     selector: 'aplicaciones',
     templateUrl: 'aplicaciones.html',
-    directives: const [materialDirectives, defaultPopupSizeProvider],
-    providers: const [materialProviders,InfoService]
+    directives: const [materialDirectives, defaultPopupSizeProvider,SafeInnerHtmlDirective],
+    providers: const [materialProviders,InfoService,DomSanitizationService]
 )
 
 class AplicacionesComponent implements OnInit{
   final InfoService _infoService;
-  AplicacionesComponent(this._infoService);
+  final DomSanitizationService _domSanitizarionService;
+  AplicacionesComponent(this._infoService,this._domSanitizarionService);
   bool showMaxHeightDialog = false;
   String redirectUrl;
+  SafeHtml utl;
 
-  List aplicaciones;
+  List<Aplicacion> aplicaciones;
   @override
-  ngOnInit() {
+  void ngOnInit() {
     aplicaciones = _infoService.aplicaciones;
+    aplicaciones.forEach((Aplicacion aplicacion){
+      aplicacion.descripcion = _domSanitizarionService.bypassSecurityTrustHtml(aplicacion.descripcion);
+    });
   }
 
-  redirect(MouseEvent event,String url){
+
+  void redirect(MouseEvent event,String url){
     showMaxHeightDialog = true;
     redirectUrl = url;
   }
 
-  redirectToNewPage(){
+  void redirectToNewPage(){
     window.window.location.href = redirectUrl;
   }
+
 }
 
 @Injectable()

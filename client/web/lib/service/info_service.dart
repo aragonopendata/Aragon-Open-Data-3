@@ -46,32 +46,32 @@ class InfoService {
             'http://opendata.aragon.es/public/i/aplicaciones/eBolets100x100.png'
         ),new Aplicacion(
             'Buscador-visualizador territorial de información',
-            'Equipo DEVTA: Tania Escudero Fernández y Alejandro Fernández Carrera. Recorre los recursos espaciales de Aragón Open Data a través de un buscador territorial que unifica la información de los municipios de Aragón',
+            'Equipo <a href="https://github.com/aragonopendata/DEVTA">DEVTA</a>: Tania Escudero Fernández y Alejandro Fernández Carrera. Recorre los recursos espaciales de Aragón Open Data a través de un buscador territorial que unifica la información de los municipios de Aragón',
             'http://vps147.cesvima.upm.es/jacathon_2014/index.html',
             'http://opendata.aragon.es/public/i/jacathon/Picto02_Buscador_Territorial_Jacathon.jpg'
         ),new Aplicacion(
             'Población escolar en Aragón',
-            'Equipo DN Lab: Alberto Labarga Gutiérrez, Leila Chivite Matthews, Damaris Albert Trinidad y Antonio García Domínguez. Proyecto de periodismo de datos para el Diario de Navarra. Con los datos de Aragón Open Data se recorren los cambios en el sistema educativo de Aragón de los últimos años.',
+            'Equipo <a href="https://github.com/aragonopendata/DNlab">DN Lab</a>: Alberto Labarga Gutiérrez, Leila Chivite Matthews, Damaris Albert Trinidad y Antonio García Domínguez. Proyecto de periodismo de datos para el Diario de Navarra. Con los datos de Aragón Open Data se recorren los cambios en el sistema educativo de Aragón de los últimos años.',
             'http://laboratorio.diariodenavarra.es/jacathon/',
             'http://opendata.aragon.es/public/i/jacathon/Picto03_Poblacion_Escolar_Jacathon.jpg'
         ),new Aplicacion(
             'Aragón Open Trails',
-            'Equipo Huracán: Carlos Matallín Civera, Gonzalo Izquierdo Gracia, Luís Bosque y Sergio Rubio Gracia. Descubre los senderos de Aragón con esta aplicación. Encuentra además los senderos más cercanos a tu ubicación y recomendaciones cercanas a los senderos.',
+            'Equipo <a href="https://github.com/aragonopendata/Huracan">Huracán</a>: Carlos Matallín Civera, Gonzalo Izquierdo Gracia, Luís Bosque y Sergio Rubio Gracia. Descubre los senderos de Aragón con esta aplicación. Encuentra además los senderos más cercanos a tu ubicación y recomendaciones cercanas a los senderos.',
             'http://aot.rbel.co/',
             'http://opendata.aragon.es/public/i/jacathon/Picto04_AragonOpenTrails_Jacathon.jpg'
         ),new Aplicacion(
             'CRAs Aragón',
-            'Equipo JodoCoders: Javier Rubio Rubio, Dani Latorre Velilla, Jesús Barón Rodríguez y Rafael Ramos Guallar. Los Colegios Rurales Agrupados son los centros donde se educan muchos niños de Aragón, descubre los movimientos que estos niños tienes que hacer para acudir a clase.',
+            'Equipo <a href="https://github.com/aragonopendata/JodoCoders">JodoCoders</a>: Javier Rubio Rubio, Dani Latorre Velilla, Jesús Barón Rodríguez y Rafael Ramos Guallar. Los Colegios Rurales Agrupados son los centros donde se educan muchos niños de Aragón, descubre los movimientos que estos niños tienes que hacer para acudir a clase.',
             'http://crasaragon.com/',
             'http://opendata.aragon.es/public/i/jacathon/Picto05_CRAs_Aragon_Jacathon.jpg'
         ),new Aplicacion(
             '¿Conoces Aragón?',
-            'Equipo NO-TEAM: Ismael Reyes Bugarín, Patricia Perochena Echave y Luís Cruz Pérez. ¿Realmente crees que conoces Aragón? Con este juego para Android podrás saber si eres el que mejor conoce la Región de Aragón.',
+            'Equipo <a href="https://github.com/aragonopendata/NOTEAM">NO-TEAM</a>: Ismael Reyes Bugarín, Patricia Perochena Echave y Luís Cruz Pérez. ¿Realmente crees que conoces Aragón? Con este juego para Android podrás saber si eres el que mejor conoce la Región de Aragón.',
             'https://play.google.com/store/apps/details?id=noteam.conocesaragon',
             'http://opendata.aragon.es/public/i/jacathon/Picto08_ConocesAragon_Jacathon.jpg'
         ),new Aplicacion(
             'Visual AragoPedia',
-            'Equipo PoolParty: Rafa García Ortega, Beatriz Martínez Martínez y Fernando Blat Peris. Descubre de forma visual e interactiva los datos que están dentro de AragoPedia',
+            'Equipo <a href="https://github.com/aragonopendata/Poolparty">PoolParty</a>: Rafa García Ortega, Beatriz Martínez Martínez y Fernando Blat Peris. Descubre de forma visual e interactiva los datos que están dentro de AragoPedia',
             'http://visual-aragopedia.visualizados.com/',
             'http://opendata.aragon.es/public/i/jacathon/Picto10_Aragopedia_Jacathon.jpg'
         ),new Aplicacion(

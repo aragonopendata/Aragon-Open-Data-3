@@ -13,8 +13,9 @@
                         <p>
                             <a href="{{aplicacion.url}}">{{aplicacion.titulo}}</a>
                         </p>
-                        <p>
-                            {{aplicacion.descripcion}}
+                        <p [safeInnerHtml]="aplicacion.descripcion">
+                            {{aplicacion.descripcion}}<br>
+                            {{utl}}
                         </p>
                         <a materialTooltip="Compartir en Facebook" (click)="redirect($event,aplicacion.facebookShare)" ><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoFacebook.png"/></a>
                         <a materialTooltip="Compartir en Twitter" (click)="redirect($event,aplicacion.twitterShare)"><img src="http://opendata.aragon.es/public/i/aplicaciones/iconoTwitter.png"/></a>
