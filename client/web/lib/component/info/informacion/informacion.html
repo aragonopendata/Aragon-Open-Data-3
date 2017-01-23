@@ -12,7 +12,7 @@
   	<article class="accordion">
 		<section id="{{webContent.id}}" *ngFor="let webContent of webContents">
 			<h2><a href="/info/informacion#{{webContent.id}}">{{webContent.title}}</a></h2>
-			<p>{{webContent.content}}</p>
+              <p [safeInnerHtml]="webContent.content">{{webContent.content}}</p>
 		</section>
 	</article>
 	</article>

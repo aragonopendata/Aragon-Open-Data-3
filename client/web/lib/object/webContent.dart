@@ -2,7 +2,7 @@ class WebContent{
 	String _id;
 	String _page;
 	String _title;
-	String _content;
+	var _content;
 
 	WebContent(this._id,this._page,this._title,this._content);
 
@@ -24,9 +24,9 @@ class WebContent{
     	_title = value;
   	}
 	
-	String get content => _content;
+	get content => _content;
 
-  	set content(String value) {
+  	set content(value) {
     	_content = value;
   	}
 
