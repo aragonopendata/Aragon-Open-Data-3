@@ -23,7 +23,7 @@ class InformacionComponent implements OnInit{
   @override
   ngOnInit() {
     webContents = _infoService.webContents;
-    webContents.forEach((webContents wc){
+    webContents.forEach((wc){
       wc.content = _domSanitizarionService.bypassSecurityTrustHtml(wc.content);
       print(wc.content);
     });

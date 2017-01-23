@@ -6,12 +6,10 @@ import 'header/header_component.dart';
 import 'footer/footer_component.dart';
 import 'package:aod3/component/home/home_component.dart';
 import 'package:aod3/component/blueprint/blueprint_component.dart';
+import 'package:aod3/component/info/campus/campus_component.dart';
 import 'package:aod3/component/info/info_component.dart' deferred as info_component;
 import 'package:aod3/component/info/aplicaciones/aplicaciones_component.dart' deferred as aplicaciones_component;
 import 'package:aod3/component/info/informacion/informacion_component.dart' deferred as informacion_component;
-
-
-
 
 @Component(selector: 'my-app', templateUrl: 'app.html', directives: const [
   HeaderComponent,
@@ -28,6 +26,11 @@ import 'package:aod3/component/info/informacion/informacion_component.dart' defe
     path: '/blueprint',
     name: 'Blueprint',
     component: BlueprintComponent,
+  ),
+  const Route(
+    path: '/campus',
+    name: 'Campus',
+    component: CampusComponent,
   ),
   const AsyncRoute(
       path: '/info/:id',
