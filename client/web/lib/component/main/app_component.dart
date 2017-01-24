@@ -34,16 +34,12 @@ import 'package:aod3/component/info/informacion/informacion_component.dart' defe
   ),
   const AsyncRoute(
       path: '/info/:id',
-      loader: info,
+      loader: informacion,
       name: 'Info'),
   const AsyncRoute(
       path: '/info/aplicaciones',
       loader: aplicaciones,
-      name: 'Aplicaciones'),
-  const AsyncRoute(
-      path: '/info/informacion',
-      loader: informacion,
-      name: 'Informacion')
+      name: 'Aplicaciones')
 ])
 class AppComponent {
   String title = 'AOD 3.0';
