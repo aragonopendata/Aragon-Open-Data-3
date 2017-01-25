@@ -35,7 +35,9 @@ class InformacionComponent implements OnInit{
       webContents = _infoService.desarrolladores;
     } else if (id == 'apis') {
       webContents = _infoService.apis;
-    } else {
+    } else if (id == 'eventos') {
+      webContents = _infoService.eventos;
+    }else {
       webContents = null;
     }
     
