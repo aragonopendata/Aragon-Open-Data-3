@@ -55,12 +55,9 @@ class InformacionComponent implements OnInit{
   }
 
   void swithCss(Event e,String g){
-    print('it works');
     String parrafo = '#'+g+'_p';
     String icono = '#'+g+'_i';
     if(querySelector(parrafo).attributes['class'] == 'oculto'){
-      print('it worksMORE');
-      //querySelector(g).classes.add("visible");
       querySelector(parrafo).attributes['class'] = 'visible';
       querySelector(icono).attributes['class'] = 'fa-minus-circle';
     }

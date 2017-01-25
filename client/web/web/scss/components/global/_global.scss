@@ -32,9 +32,27 @@ article.accordion
 	display: block;
 	width: 100%;
 	margin: 0 auto;
+	word-wrap: break-word;
+	p{
+		font-size: 1em;
+	}
+	/*a:hover{color: #5EA2BA;}*/
+	a:hover{
+		color: #000;
+	}
+	pre {
+		font-family: monospace, monospace;
+    	background-color: #F5F5F5;
+    	border: 1px solid rgba(0, 0, 0, 0.15);
+    	border-radius: 4px;
+    	display: block;
+    	white-space: pre-wrap;
+    	padding: 10px;
+	}
 }
 
-article.accordion section
+
+article.accordion section.a_section
 {
 	display: block;
 	width: 100%;
@@ -48,7 +66,7 @@ article.accordion section
 
 article.accordion section h2
 {
-	font-size: 1em;
+	font-size: 1.5em;
 	font-weight: bold;
 	width: 100%;
 	line-height: 2em;
@@ -96,9 +114,27 @@ article.accordion section i{
 }
 article.accordion section p.oculto{
 	display:none;
+	  opacity: 0;
+  visibility: hidden;
+  animation: fadeout 1s;
 }
 
 
 article.accordion section p.visible{
-	display:block;
+	/*display:block;*/
+	visibility: visible;
+  opacity: 1;
+  animation: fade 1s;
+
 }
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+

@@ -43,10 +43,10 @@
                     <label for="informacionCheckbox" class="linkPrimero">{{header_informacion}}</label>
                     <ul class="submenus">
                         <br>
-                        <li><a [routerLink]="['Info', {id: 'colabora'}]">{{header_informacion_colabora}}</a></li>
-                        <li><a [routerLink]="['Aplicaciones']">{{header_informacion_aplicaciones}}</a></li>
-                        <li><a [routerLink]="['Info', {id: 'informacion'}]">{{header_informacion_informacion}}</a></li>
-                        <li><a [routerLink]="['Info', {id: 'eventos'}]">{{header_informacion_eventos}}</a></li>
+                        <li><a [routerLink]="['Colabora']" (click)="overlayClose()">{{header_informacion_colabora}}</a></li>
+                        <li><a [routerLink]="['Aplicaciones']" (click)="overlayClose()">{{header_informacion_aplicaciones}}</a></li>
+                        <li><a [routerLink]="['Info', {id: 'informacion'}]" (click)="overlayClose()">{{header_informacion_informacion}}</a></li>
+                        <li><a [routerLink]="['Info', {id: 'eventos'}]" (click)="overlayClose()">{{header_informacion_eventos}}</a></li>
                     </ul>
                 </li>
                 <li class="menuPrimero">
@@ -54,11 +54,11 @@
                     <label for="herramientasCheckbox" class="linkPrimero">{{header_herramientas}}</label>
                     <ul class="submenus">
                         <br>
-                        <li><a [routerLink]="['Campus']">{{header_herramientas_campus}}</a></li>
-                        <li><a href="#">{{header_herramientas_desarrolladores}}</a></li>
-                        <li><a href="#">{{header_herramientas_apis}}</a></li>
-                        <li><a href="#">{{header_herramientas_sparql}}</a></li>
-                        <li><a href="#">{{header_herramientas_github}}</a></li>
+                        <li><a [routerLink]="['Campus']" (click)="overlayClose()">{{header_herramientas_campus}}</a></li>
+                        <li><a [routerLink]="['Herramientas', {id: 'desarrolladores'}]" (click)="overlayClose()">{{header_herramientas_desarrolladores}}</a></li>
+                        <li><a [routerLink]="['Herramientas', {id: 'apis'}]" (click)="overlayClose()">{{header_herramientas_apis}}</a></li>
+                        <li><a [routerLink]="['Herramientas', {id: 'sparql'}]" (click)="overlayClose()">{{header_herramientas_sparql}}</a></li>
+                        <li><a href="https://github.com/aragonopendata/Aragon-Open-Data-3" target="_blank">{{header_herramientas_github}}</a></li>
                     </ul>
                 </li>
                 <li class="menuPrimeroUltimo">

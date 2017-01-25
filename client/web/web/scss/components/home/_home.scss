@@ -64,6 +64,7 @@ section{
     .tarjeta:hover .tarjeta_oculta{
         @include transition(all 1s);
         opacity:0.9;
+        cursor: pointer;
     }
     .tarjeta_oculta p.tit{
         font-size:25px !important;

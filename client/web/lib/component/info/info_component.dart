@@ -10,13 +10,14 @@ import 'dart:html' show window;
     providers: const [ROUTER_PROVIDERS])
 class InfoComponent implements OnInit {
   String id;
-  final RouteParams _routeParams;
   final Location _location;
   int width = window.innerWidth;
   int height = window.innerHeight;
 
   InfoComponent(this._routeParams, this._location);
+  final RouteParams _routeParams;
 
+  @override
   ngOnInit() {
     var _id = _routeParams.get('id');
     id = _id.toString();
