@@ -1,3 +1,39 @@
-<ul>
-    <li *ngFor="let item of campusList">Campus Item</li>
-</ul>
+<div class="campus">
+    <div class="campus_lista_busqueda">
+        <button (click)="prueba()">HOLA</button>
+        <ul>
+            <!--Tipo-->
+            <li>
+                <select [(ngModel)]="tipoValue">
+                    <option *ngFor="let i of tiposList" value="{{i['id']}}">{{i["nombre"]}}</option>
+                </select>
+            </li>
+            <!--Etiqueta-->
+            <li></li>
+            <!--Ponente-->
+            <li></li>
+            <!--Evento-->
+            <li></li>
+            <!--Formato-->
+            <li></li>
+        </ul>
+    </div>
+    <ul>
+        <li *ngFor="let item of campusList" class="campus_tarjeta">
+            <div class="card">
+                <div class="image-wrapper">
+                    <img class="campus_tarjeta_imagen" src="http://opendata.aragon.es/portal/campus/{{item['thumbnail']}}" width="400px" height="400px">
+                </div>
+                <div class="campus_tarjeta_front">
+                    <div class="campus_tarjeta_titulo">{{item['titulo']}}</div>
+                </div>
+                <!--<div class="campus_tarjeta_back">
+                    <p>Descripcion: {{item['descripcion']}}</p>
+                    <p>Evento: {{item['evento']['nombre']}}</p>
+                    <p>Lugar: {{item['evento']['lugar']}}</p>
+                    <p>Fecha: {{item['evento']['fecha']}}</p>
+                </div>-->
+            </div>
+        </li>
+    </ul>
+</div>
