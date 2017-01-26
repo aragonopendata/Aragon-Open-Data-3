@@ -47,10 +47,6 @@ import 'package:aod3/component/info/informacion/informacion_component.dart' defe
       path: '/info/aplicaciones',
       loader: aplicaciones,
       name: 'Aplicaciones'),
-  const AsyncRoute(
-      path: '/herramientas/campus',
-      loader: campus,
-      name: 'Campus')
 ])
 class AppComponent {
   String title = 'AOD 3.0';
@@ -59,4 +55,3 @@ Future<dynamic> info() => info_component.loadLibrary().then((_)=>info_component.
 Future<dynamic> aplicaciones() => aplicaciones_component.loadLibrary().then((_)=>aplicaciones_component.AplicacionesComponent);
 Future<dynamic> informacion() => informacion_component.loadLibrary().then((_)=>informacion_component.InformacionComponent);
 Future<dynamic> herramientas() => informacion_component.loadLibrary().then((_)=>informacion_component.InformacionComponent);
-Future<dynamic> campus() => campus_component.loadLibrary().then((_)=>campus_component.CampusComponent);
