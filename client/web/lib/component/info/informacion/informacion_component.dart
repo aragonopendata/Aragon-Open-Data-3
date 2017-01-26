@@ -16,13 +16,15 @@ import 'package:angular2_components/angular2_components.dart';
 class InformacionComponent implements OnInit{
   final InfoService _infoService;
   final DomSanitizationService _domSanitizarionService;
-  InformacionComponent(this._infoService,this._domSanitizarionService,this._routeParams);
+  
   bool showMaxHeightDialog = false;
   String redirectUrl;
   String id;
   final RouteParams _routeParams;
   List webContents;
-
+  final Location _location;
+  String urlString;
+  InformacionComponent(this._infoService,this._domSanitizarionService,this._routeParams,this._location);
   @override
   ngOnInit() {
     var _id = _routeParams.get('id');
@@ -40,7 +42,9 @@ class InformacionComponent implements OnInit{
     }else {
       webContents = null;
     }
-    
+    //document.title('TESTTITLE');
+    urlString=_location.path();
+
     webContents.forEach((wc){
       wc.content = _domSanitizarionService.bypassSecurityTrustHtml(wc.content);
     });
