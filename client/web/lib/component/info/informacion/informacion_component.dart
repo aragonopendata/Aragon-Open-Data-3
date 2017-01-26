@@ -1,4 +1,5 @@
 import 'dart:html';
+import 'package:angular2/platform/common.dart';
 import 'package:angular2/core.dart';
 import 'package:angular2/security.dart';
 import 'package:aod3/object/webContent.dart';
@@ -24,6 +25,8 @@ class InformacionComponent implements OnInit{
   List webContents;
   final Location _location;
   String urlString;
+  String titleString;
+  String subTitleString;
   InformacionComponent(this._infoService,this._domSanitizarionService,this._routeParams,this._location);
   @override
   ngOnInit() {
@@ -42,9 +45,16 @@ class InformacionComponent implements OnInit{
     }else {
       webContents = null;
     }
+
     //document.title('TESTTITLE');
     urlString=_location.path();
-
+    if(urlString.contains('info')){
+      titleString = 'INFO OPEN DATA';
+      subTitleString = 'Todo lo necesario para entender Aragón Open Data';}
+    else if (urlString.contains('herramientas')){
+      titleString = 'HERRAMIENTAS';
+      subTitleString = 'herramientas';
+    }
     webContents.forEach((wc){
       wc.content = _domSanitizarionService.bypassSecurityTrustHtml(wc.content);
     });
