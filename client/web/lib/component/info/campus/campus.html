@@ -1,39 +1,71 @@
 <div class="campus">
+    <h1>CAMPUS OPEN DATA</h1>
+    <p>En Campus Open Data queremos que tengas a mano toda la información que hemos ido generando a lo largo del tiempo. Nuestra intención es que la información sirva para que te puedas formar y que los materiales sean tutoriales para entender qué son los datos abiertos y cómo los datos abiertos sirven para fomentar la economía digital y mejorar la transparencia del Gobierno. Tenemos materiales de todo tipo: vídeos, presentaciones, infografías y hasta un curso completo de iniciación a Open Data. Te invitamos a que pruebes lo que más te interese</p>
+    <button onclick="location.href='http://opendata.aragon.es/portal/campus/static/html/index.html'">Curso de iniciacion a los datos abiertos</button>
+    <h2>¡ENCUENTRA EL CONTENIDO QUE MÁS TE APASIONE!</h2>
     <div class="campus_lista_busqueda">
-        <button (click)="prueba()">HOLA</button>
         <ul>
-            <!--Tipo-->
             <li>
                 <select [(ngModel)]="tipoValue">
+                    <option selected="selected" value="null">Tipo</option>
                     <option *ngFor="let i of tiposList" value="{{i['id']}}">{{i["nombre"]}}</option>
                 </select>
             </li>
-            <!--Etiqueta-->
-            <li></li>
-            <!--Ponente-->
-            <li></li>
-            <!--Evento-->
-            <li></li>
-            <!--Formato-->
-            <li></li>
+            <li>
+                <select [(ngModel)]="etiquetaValue">
+                    <option selected="selected" value="null">Etiqueta</option>
+                    <option *ngFor="let i of etiquetasList" value="{{i['id']}}">{{i["nombre"]}}</option>
+                </select>
+            </li>
+            <li>
+                <select [(ngModel)]="ponenteValue">
+                    <option selected="selected" value="null">Ponente</option>
+                    <option *ngFor="let i of ponentesList" value="{{i['aparece']}}">{{i['aparece']}}</option>
+                </select>
+            </li>
+            <li>
+                <select [(ngModel)]="eventoValue">
+                    <option selected="selected" value="null">Evento</option>
+                    <option *ngFor="let i of eventosList" value="{{i['id']}}">{{i["nombre"]}}</option>
+                </select>
+            </li>
+            <li>
+                <select [(ngModel)]="formatoValue">
+                <option selected="selected" value="null">Formato</option>
+                <option *ngFor="let i of formatosList" value="{{i['id']}}">{{i["nombre"]}}</option>
+                </select>
+            </li>
         </ul>
     </div>
-    <ul>
-        <li *ngFor="let item of campusList" class="campus_tarjeta">
+    <div></div>
+    <div *ngIf="campusList.isEmpty">
+        <div class="loader">
+            <svg class="load" x="0px" y="0px" viewBox="0 0 150 150">
+                <circle class="loading-inner" cx="75" cy="75" r="60"></circle>
+            </svg>
+        </div>
+    </div>
+    <ul *ngIf="!campusList.isEmpty" >
+        <li *ngFor="let item of campusList" class="campus_tarjeta my-animation" >
             <div class="card">
                 <div class="image-wrapper">
                     <img class="campus_tarjeta_imagen" src="http://opendata.aragon.es/portal/campus/{{item['thumbnail']}}" width="400px" height="400px">
+                    <div class="campus_tarjeta_back">
+                        <div class="campus_tarjeta_back_top">
+                            {{item['descripcion']}}
+                        </div>
+                        <div class="campus_tarjeta_back_bottom">
+                            {{item['evento']['nombre']}}<br>
+                            <b>Lugar:</b> {{item['evento']['lugar']}}<br>
+                            <b>Fecha:</b> {{item['evento']['fecha']}}
+                        </div>
+                    </div>
                 </div>
                 <div class="campus_tarjeta_front">
                     <div class="campus_tarjeta_titulo">{{item['titulo']}}</div>
                 </div>
-                <!--<div class="campus_tarjeta_back">
-                    <p>Descripcion: {{item['descripcion']}}</p>
-                    <p>Evento: {{item['evento']['nombre']}}</p>
-                    <p>Lugar: {{item['evento']['lugar']}}</p>
-                    <p>Fecha: {{item['evento']['fecha']}}</p>
-                </div>-->
             </div>
         </li>
+
     </ul>
 </div>
