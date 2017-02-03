@@ -5,16 +5,15 @@ import 'package:angular2/router.dart';
 import 'dart:html' show window;
 
 @Component(
-    selector: 'info',
-    templateUrl: 'info.html',
+    selector: 'colabora',
+    templateUrl: 'colabora.html',
     providers: const [ROUTER_PROVIDERS])
-class InfoComponent implements OnInit {
+class ColaboraComponent implements OnInit {
   String id;
-  final Location _location;
   int width = window.innerWidth;
   int height = window.innerHeight;
 
-  InfoComponent(this._routeParams, this._location);
+  ColaboraComponent(this._routeParams);
   final RouteParams _routeParams;
 
   @override
