@@ -4,19 +4,22 @@ import 'package:angular2/router.dart';
 
 import 'header/header_component.dart';
 import 'footer/footer_component.dart';
+import 'package:angular2/security.dart';
+import 'package:angular2_components/angular2_components.dart';
 import 'package:aod3/component/home/home_component.dart';
 import 'package:aod3/component/blueprint/blueprint_component.dart';
 import 'package:aod3/component/info/campus/campus_component.dart';
-import 'package:aod3/component/info/info_component.dart' deferred as info_component;
+import 'package:aod3/component/info/colabora_component.dart' deferred as colabora_component;
 import 'package:aod3/component/info/aplicaciones/aplicaciones_component.dart' deferred as aplicaciones_component;
 import 'package:aod3/component/info/informacion/informacion_component.dart' deferred as informacion_component;
+import 'package:aod3/service/search_service.dart';
 @Component(selector: 'my-app', templateUrl: 'app.html', directives: const [
   HeaderComponent,
   HomeComponent,
   FooterComponent,
   ROUTER_DIRECTIVES
 ], providers: const [
-  ROUTER_PROVIDERS
+  ROUTER_PROVIDERS, SearchService,DomSanitizationService,materialProviders
 ])
 @RouteConfig(const [
   const Route(
@@ -31,9 +34,9 @@ import 'package:aod3/component/info/informacion/informacion_component.dart' defe
     name: 'Campus',
     component: CampusComponent,
   ),
-    const AsyncRoute(
+  const AsyncRoute(
       path: '/info/colabora',
-      loader: info,
+      loader: colabora,
       name: 'Colabora'),
   const AsyncRoute(
       path: '/info/:id',
@@ -41,7 +44,7 @@ import 'package:aod3/component/info/informacion/informacion_component.dart' defe
       name: 'Info'),
   const AsyncRoute(
       path: '/herramientas/:id',
-      loader: herramientas,
+      loader: informacion,
       name: 'Herramientas'),
   const AsyncRoute(
       path: '/info/aplicaciones',
@@ -51,7 +54,6 @@ import 'package:aod3/component/info/informacion/informacion_component.dart' defe
 class AppComponent {
   String title = 'AOD 3.0';
 }
-Future<dynamic> info() => info_component.loadLibrary().then((_)=>info_component.InfoComponent);
+Future<dynamic> colabora() => colabora_component.loadLibrary().then((_)=>colabora_component.ColaboraComponent);
 Future<dynamic> aplicaciones() => aplicaciones_component.loadLibrary().then((_)=>aplicaciones_component.AplicacionesComponent);
 Future<dynamic> informacion() => informacion_component.loadLibrary().then((_)=>informacion_component.InformacionComponent);
-Future<dynamic> herramientas() => informacion_component.loadLibrary().then((_)=>informacion_component.InformacionComponent);

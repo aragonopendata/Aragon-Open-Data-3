@@ -9,13 +9,14 @@ import 'package:intl/intl.dart';
     selector: 'header',
     templateUrl: 'header.html',
     directives: const [ROUTER_DIRECTIVES],
-    providers: const [SearchService])
+    providers: const [])
 class HeaderComponent {
   bool opChecked = false;
   final SearchService _SearchService;
   List datasets;
   String valor;
 
+  String get Blueprin => 'blueprint';
   //Header datos
   String get header_datos => 'Datos';
   String get header_datos_bancodatos => 'Banco de datos';
