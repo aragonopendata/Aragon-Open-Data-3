@@ -1,23 +1,34 @@
 import 'dart:async';
 import 'package:angular2/core.dart';
-//import 'package:angular2/router.dart';
-//import 'package:json_object/json_object.dart';
 import 'dart:html';
-import 'dart:convert';
+import 'package:angular2/router.dart';
+import 'package:aod3/object/home_element.dart';
 import 'package:aod3/service/search_service.dart';
+import 'package:aod3/service/home_service.dart';
+import 'package:aod3/component/home/tarjeta_home_component.dart';
 
 @Component(
     selector: 'home',
     templateUrl: 'home.html',
-    providers: const [SearchService])
-class HomeComponent {
+    directives: const [ROUTER_DIRECTIVES, TarjetaHomeComponent],
+    providers: const [HomeService])
+class HomeComponent implements OnInit{
   final SearchService _SearchService;
+  final HomeService _HomeService;
+  List<HomeElement> homeElements;
   List datasets;
   String valor;
+  final Router _router;
 
-  HomeComponent(this._SearchService);
+  HomeComponent(this._router,this._SearchService,this._HomeService);
 
-  Future<Null> getHeroes(String input) async {
+  @override
+  void ngOnInit() {
+    homeElements = _HomeService.getList();
+  }
+
+
+  Future<Null> getDatasets(String input) async {
     datasets = await _SearchService.getDataset(input);
   }
 
@@ -28,8 +39,9 @@ class HomeComponent {
         'http://opendata.aragon.es/catalogo/catalogo.html?q=${bText.value}');
   }
 
-  onKey(dynamic event) {
-    getHeroes(event.target.value);
+  void onKey(dynamic event) {
+    getDatasets(event.target.value);
     valor = event.target.value;
   }
+
 }

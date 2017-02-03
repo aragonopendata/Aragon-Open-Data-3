@@ -1,7 +1,9 @@
 <section id="buscadorGeneral">
-    <article class="tarjetaExtendida">
-    <div class="descripcion">
+    <article>
+        <div class="descripcion-busqueda">
             <h1>Bienvenidos</h1>
+        </div>
+        <div class="buscador">
             <form id="form_home" on-submit='goCkan($event)'>
             <input (keyup)="onKey($event)" autocomplete="off" id="buscador_home" name="buscador_home" placeholder="ARAGÓN OPENDATA BUSCA DATOS" type="text">
              <button id="button_home" type="submit"><i aria-hidden="true" class="fa fa-search"></i></button>
@@ -13,134 +15,35 @@
         </div>
     </article>
 </section>
-<section id="datos">
-    <article class="tarjetaExtendida">
+
+<section *ngFor="let element of homeElements" id="{{element.titulo.toLowerCase()}}">
+    <div class="separacion-mini" ></div>
+    <article>
         <div class="descripcion">
-            <h1>Datos</h1>
-            <p>En Aragón Open Data odrecemos servicios con los datos que tenmos, asi facilitamos que todo el mubndo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla</p>
+            <h1>{{element.titulo}}</h1>
+            <p>{{element.descripcion}}</p>
             <br>
         </div>
     </article>
-    <article class="buscadormini">
-    </article>
     <article class="tarjetas">
-        <div class="tarjeta banco_de_datos">
-            <div class="tarjeta_oculta">
-                <p class="tit">BANCO DE DATOS</p>
-                <p class="des">En Aragón Open Data ofrecemos servicios con los datos que tenemos, asi facilitamos que todo el mundo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla </p>
+        <!--<div *ngFor="let tarjeta of element.tarjetas" class="tarjeta" (mouseover)='over()' (mouseout)='out()'>
+            <div class="image-wrapper2">
+                <div class="content">
+                    <div class="tarjeta_no_oculta">
+                        <img [ngClass]="{tarjeta_no_hover: hover}" src="images/home/tarjetas/{{tarjeta.imagen}}-OFF.jpg">
+                        <img *ngIf="!firstHover" [ngClass]="{tarjeta_hover: hover, tarjeta_no_hover: !hover}" src="images/home/tarjetas/{{tarjeta.imagen}}-ON.jpg">
+                        <img *ngIf="firstHover" style="opacity:0" src="images/home/tarjetas/{{tarjeta.imagen}}-ON.jpg">
+                    </div>
+                    <div class="tarjeta_oculta">
+                        <p class="tit">{{tarjeta.titulo}}</p>
+                        <p class="des">{{tarjeta.descripcion}}</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="tarjeta temas">
-           <div class="tarjeta_oculta">
-                <p class="tit">Temas</p>
-                <p class="des">En Aragón Open Data ofrecemos servicios con los datos que tenemos, asi facilitamos que todo el mundo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla </p>
-            </div>
-        </div>
-        <div class="tarjeta organizaciones">
-            <div class="tarjeta_oculta">
-                <p class="tit">Organizaciones</p>
-                <p class="des">En Aragón Open Data ofrecemos servicios con los datos que tenemos, asi facilitamos que todo el mundo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla </p>
-            </div>
-        </div>
+        </div>-->
+        <tarjeta_home *ngFor="let tarjeta of element.tarjetas" [elemento]="tarjeta"></tarjeta_home>
     </article>
     <div class="separacion" ></div>
 </section>
-<section id="servicios">
-    <article class="tarjetaExtendida">
-        <div class="descripcion">
-            <h1>Servicios</h1>
-            <p>En Aragón Open Data ofrecemos servicios con los datos que tenemos, asi facilitamos que todo el mundo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla </p>
-        </div>
-    </article>
-    <article class="tarjetas">
-        <div class="tarjeta open_social_data">
-            <div class="tarjeta_oculta">
-                <p class="tit">Open Social Data</p>
-            </div>
-        </div>
-        <div class="tarjeta aragopedia">
-            <div class="tarjeta_oculta">
-                <p class="tit">Aragopedia</p>
-            </div>
-        </div>
-        <div class="tarjeta presupuestos">
-            <div class="tarjeta_oculta">
-                <p class="tit">Presupuestos</p>
-            </div>
-        </div>
-        <div class="tarjeta cras">
-            <div class="tarjeta_oculta">
-                <p class="tit">CRAS</p>
-            </div>
-        </div>
-    </article>
-    <div class="separacion" ></div>
-</section>
-<section id="informacion">
-    <article class="tarjetaExtendida">
-        <div class="descripcion">
-            <h1>Información</h1>
-            <p>En Aragón Open Data ofrecemos servicios con lo sdatos que tenemos, asi facilitamos que todo el mundo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla</p>
-        </div>
-    </article>
-    <article class="tarjetas">
-        <div class="tarjeta colabora">
-            <div class="tarjeta_oculta">
-                <p class="tit">Colabora</p>
-            </div>
-        </div>
-        <div class="tarjeta aplicaciones">
-            <div class="tarjeta_oculta">
-                <p class="tit">Aplicaciones</p>
-            </div>
-        </div>
-        <div class="tarjeta info">
-            <div class="tarjeta_oculta">
-                <p class="tit">Informacion</p>
-            </div>
-        </div>
-        <div class="tarjeta eventos">
-            <div class="tarjeta_oculta">
-                <p class="tit">Informacion</p>
-            </div>
-        </div>
-    </article>
-    <div class="separacion" ></div>
-</section>
-<section id="herramientas">
-    <article class="tarjetaExtendida">
-        <div class="descripcion">
-            <h1>Herramientas</h1>
-            <p>En Aragón Open Data ofrecemos servicios con los datos que tenemos, asi facilitamos que todo el mundo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla</p>
-        </div>
-    </article>
-    <article class="tarjetas">
-        <div class="tarjeta campus">
-            <div class="tarjeta_oculta">
-                <p class="tit">Campus</p>
-            </div>
-        </div>
-        <div class="tarjeta desarrolladores">
-            <div class="tarjeta_oculta">
-                <p class="tit">Desarrolladores</p>
-            </div>
-        </div>
-        <div class="tarjeta apis">
-            <div class="tarjeta_oculta">
-                <p class="tit">APIs</p>
-            </div>
-        </div>
-        <div class="tarjeta sparql">
-            <div class="tarjeta_oculta">
-                <p class="tit">SPARQL</p>
-            </div>
-        </div>
-        <div class="tarjeta github">
-            <div class="tarjeta_oculta">
-                <p class="tit">GITHUB</p>
-            </div>
-        </div>
-    </article>
-    <div class="separacion" ></div>
-</section>
+
 <section id="preFooter"></section>
