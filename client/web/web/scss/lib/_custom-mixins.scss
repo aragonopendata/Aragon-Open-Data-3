@@ -59,7 +59,45 @@
 
 @mixin omega-reset($nth) {
   &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
-  &:nth-child(#{$nth}+1) { clear: none }
+  &:nth-child(#{$nth+1}) { clear: none }
+}
+
+@mixin animation--fadedown($delay) {
+  @include animation(fadeIn 0.3s ease-in-out);
+  @include animation-iteration-count(1);
+  @include animation-fill-mode(forwards);
+  @include animation-delay(#{$delay}s);
+}
+
+@mixin animation--fadein($duration) {
+  @include animation(fade #{$duration}s ease-in-out);
+  @include animation-iteration-count(1);
+  //@include animation-fill-mode(forwards);
+  @include animation-delay();
+}
+
+@mixin animation--fadeout($duration) {
+  @include animation(fadeout #{$duration}s ease-in-out);
+  @include animation-iteration-count(1);
+  //@include animation-fill-mode(forwards);
+  @include animation-delay();
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 @mixin gradient-home-datos(){

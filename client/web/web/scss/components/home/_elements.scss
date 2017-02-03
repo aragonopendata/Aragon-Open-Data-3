@@ -1,0 +1,81 @@
+home{
+article{
+  @include outer-container(90%);
+  @include media($pantalla-grande) {
+    @include outer-container(90%);
+  }
+}
+
+.descripcion{
+  @include span-columns(5);
+  @include shift(2);
+  @include media($pantalla-grande) {
+    @include shift(1);
+    @include span-columns(7);
+  }
+  @include media($movil) {
+    @include shift(0);
+    @include span-columns(3);
+    margin-left: 100px;
+  }
+  h1{
+    @include titulos-principales();
+    font-size: 100px;
+  }
+  p{
+    @include titulos-resultados();
+  }
+
+}
+
+.titulo{
+  @include titulos-principales();
+}
+
+#datos{
+  @include gradient-home-datos();
+  @include media($movil) {
+    background:$Datos-color;
+    background-image : none;
+    h1{
+      color: black;
+    }
+  }
+
+}
+
+#servicios{
+  @include gradient-home-servicios();
+  @include media($movil) {
+    background:$Servicios-color;
+    background-image : none;
+    h1{
+      color: black;
+    }
+  }
+}
+
+#información{
+  @include gradient-home-informacion();
+  @include media($movil) {
+    background:$Informacion-color;
+    background-image : none;
+    h1{
+      color: black;
+    }
+  }
+}
+
+#herramientas{
+  @include gradient-home-herramientas();
+  @include media($movil) {
+    background:$Herramientas-color;
+    background-image : none;
+    h1{
+      margin-top: 30px;
+      color: black;
+    }
+  }
+}
+}
+

@@ -1,0 +1,61 @@
+body{
+  background: #f1f1f1;
+
+  h1{
+    @include titulos-principales();
+    font-size: 75px;
+  }
+  h2{
+    @include titulos-principales();
+  }
+  p{
+    @include titulos-resultados();
+    a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      border-bottom: 1px solid $AOD-v3-color;
+      transition: 0.3s;
+    }
+    a:hover:after {
+      width: 100%;
+    }
+  }
+  a{
+    text-decoration: none;
+    position: relative;
+    color: $AOD-v3-color;
+  }
+  a:hover{
+    color: black;
+  }
+
+}
+
+.separacion{
+  height: 100px;
+  @include media($movil){
+    height: 20px;
+  }
+}
+
+.separacion-mini{
+  height: 30px;
+  @include media($movil){
+    height: 5px;
+  }
+}
+
+.image-wrapper{
+  width: 100%;
+  display: block;
+  position: relative;
+}
+.image-wrapper:after {
+  padding-top: 75%;
+  /* 16:9 ratio */
+  display: block;
+  content: '';
+}

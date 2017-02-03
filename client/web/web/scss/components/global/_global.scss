@@ -1,3 +1,6 @@
+@import "loading";
+@import "styles";
+
 .contenido{
   @include span-columns(7);
   @include shift(1);
@@ -99,11 +102,12 @@ article.accordion section:target h2
 article.accordion section,
 article.accordion section h2
 {
-	-webkit-transition: all 1s ease;
+	/*-webkit-transition: all 1s ease;
 	-moz-transition: all 1s ease;
 	-ms-transition: all 1s ease;
 	-o-transition: all 1s ease;
-	transition: all 1s ease;
+	transition: all 1s ease;*/
+	@include transition(all 1s ease);
 }
 
 .link{
@@ -116,26 +120,17 @@ article.accordion section p.oculto{
 	display:none;
 	  opacity: 0;
   visibility: hidden;
-  animation: fadeout 1s;
+	@include animation(fadeout 1s);
+  //animation: fadeout 1s;
 }
 
 
 article.accordion section p.visible{
-	/*display:block;*/
+
 	visibility: visible;
   opacity: 1;
   animation: fade 1s;
 
-}
-
-@keyframes fade {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
 }
 
 .seccionAplicacionesIconos li {

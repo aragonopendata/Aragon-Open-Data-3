@@ -1,0 +1,55 @@
+tarjeta_home{
+  @include span-columns(3);
+  @include omega(3n);
+  margin-bottom: 7px;
+}
+.image-wrapper2{
+  @include aspect-ratio(556,297);
+
+  img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.tarjeta_oculta{
+  position: absolute;
+  height:100%;
+  width:100%;
+  text-align:center;
+  padding-top: 2em;
+  opacity:0;
+}
+.tarjeta_no_oculta{
+  position: absolute;
+  height:100%;
+  width:100%;
+}
+
+.tarjeta:hover .tarjeta_oculta{
+  @include transition(all 1s);
+  opacity:0.9;
+  cursor: pointer;
+}
+
+.tarjeta_hover{
+  @include animation--fadein(1);
+  opacity: 1;
+}
+
+.tarjeta_no_hover{
+  @include animation--fadeout(1);
+  opacity: 0;
+}
+
+.tarjeta_oculta p.tit{
+  font-size:25px !important;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  color:black;
+}
+.tarjeta_oculta p.des{
+  font-size:12px !important;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  color:black;
+}

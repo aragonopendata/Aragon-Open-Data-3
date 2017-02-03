@@ -1,7 +1,8 @@
 @import "../lib/neat/neat-helpers";
 
-$visual-grid: true;
+
 // Neat Overrides
+$visual-grid: false;
 $column: 185.33px;
 $gutter: 10px;
 $grid-columns: 9;
@@ -14,7 +15,16 @@ $large-screen: em(860);
 //$mobile: new-breakpoint(max-width 480px, 6);
 $pantalla-grande: new-breakpoint(max-width 1685px min-width 1013px, 9);
 $movil: new-breakpoint(max-width 1012px, 4);
-$campus-grande: new-breakpoint(min-width 1400px, 9);
-$campus-media: new-breakpoint(max-width 1400px min-width 1000px, 9);
-$campus-pequeña1: new-breakpoint(max-width 1000px min-width 750px, 4);
+
+// 10 COLUMNAS
+$campus-grande-10: new-breakpoint(min-width 1401px, 10);
+$campus-media-10: new-breakpoint(max-width 1400px min-width 1001px, 10);
+//  9 COLUMNAS
+$campus-grande: new-breakpoint(min-width 1401px, 9);
+$campus-media: new-breakpoint(max-width 1400px min-width 1001px, 9);
+//  4 COLUMNAS
+$campus-pequeña1: new-breakpoint(max-width 1000px min-width 751px, 4);
 $campus-pequeña2: new-breakpoint(max-width 750px, 4);
+
+
+

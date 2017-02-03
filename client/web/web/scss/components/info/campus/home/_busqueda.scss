@@ -1,0 +1,66 @@
+.campus{
+  @include media($campus-grande-10) {
+    .campus_lista_busqueda{
+      li{
+        @include span-columns(2);
+        select{
+          width: 100% ;
+        }
+      }
+    }
+  }
+  @include media($campus-media-10) {
+    .campus_lista_busqueda{
+      li{
+        @include span-columns(2);
+        select{
+          width: 100% ;
+        }
+      }
+    }
+  }
+  @include media($campus-pequeña1) {
+    .campus_lista_busqueda{
+      li{
+        @include span-columns(2);
+        //@include omega-reset(3);
+        @include omega(2n);
+        select{
+          width: 100% ;
+        }
+      }
+    }
+  }
+  @include media($campus-pequeña2) {
+    .campus_lista_busqueda{
+      li{
+        @include row();
+        @include omega-reset(1);
+        @include omega(1n);
+        select{
+          width: 100% ;
+        }
+      }
+    }
+  }
+
+  .campus_lista_busqueda{
+    li{
+      select{
+        padding-left: 10px;
+        margin-top: 10px;
+        height: 30px ;
+        color: white;
+        background: $AOD-v3-color;
+      }
+      option{
+        background-color: white;
+        color: darkgrey;
+      }
+      option:hover{
+        background-color: lightslategrey;
+      }
+    }
+  }
+
+}

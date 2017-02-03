@@ -80,6 +80,13 @@
   background: $background-dark;
   @include titulos-secundarios-negrita();
 
+  a{
+   color: grey;
+  }
+  a:hover{
+    color: white;
+  }
+
 }
 
 .overlay nav {

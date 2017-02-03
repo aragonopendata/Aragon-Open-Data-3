@@ -1,0 +1,41 @@
+.loading-bro {
+  margin: 50px auto;
+  width: 150px;
+  > h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    font-weight: 300;
+    color: #8E8E8E;
+  }
+}
+
+.load {
+  width: 150px;
+  @include animation(loading 3s linear infinite);
+  .loading-inner {
+    stroke: {
+      dashoffset: 0;
+      dasharray: 300;
+      width: 10;
+      miterlimit: 10;
+      linecap: round;
+
+    }
+    //animation: loading-circle 2s linear infinite;
+    @include animation(loading-circle 2s linear infinite);
+    stroke: $AOD-v3-color;
+    fill: transparent;
+  }
+}
+
+.loader{
+  @include row();
+  width: 50%;
+  margin: 0 auto;
+  > .load{
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+}
