@@ -11,7 +11,7 @@
                         </div>
                         <div class="app_info">
                         <p>
-                            <a href="{{aplicacion.url}}">{{aplicacion.titulo}}</a>
+                            <a href="{{aplicacion.url}}"><b>{{aplicacion.titulo}}</b></a>
                         </p>
                             <p [safeInnerHtml]="aplicacion.descripcion"></p>
                         <img materialTooltip="Compartir en Facebook" (click)="redirect($event,aplicacion.facebookShare)" class="link" src="http://opendata.aragon.es/public/i/aplicaciones/iconoFacebook.png"/>

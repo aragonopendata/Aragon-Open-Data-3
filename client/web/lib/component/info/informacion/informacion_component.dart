@@ -1,8 +1,8 @@
 import 'dart:html';
-import 'package:angular2/platform/common.dart';
+import 'package:angular2/platform/common.dart' as common_dart;
 import 'package:angular2/core.dart';
 import 'package:angular2/security.dart';
-import 'package:aod3/object/webContent.dart';
+import 'package:aod3/object/web_content.dart';
 import 'package:aod3/service/info_service.dart';
 import 'package:angular2/router.dart';
 import 'package:angular2_components/angular2_components.dart';
@@ -11,7 +11,7 @@ import 'package:angular2_components/angular2_components.dart';
     selector: 'informacion',
     templateUrl: 'informacion.html',
     directives: const [materialDirectives, defaultPopupSizeProvider,SafeInnerHtmlDirective],
-    providers: const [materialProviders,InfoService,DomSanitizationService,ROUTER_PROVIDERS]
+    providers: const [InfoService]
 )
 
 class InformacionComponent implements OnInit{
@@ -23,7 +23,7 @@ class InformacionComponent implements OnInit{
   String id;
   final RouteParams _routeParams;
   List webContents;
-  final Location _location;
+  final common_dart.Location _location;
   String urlString;
   String titleString;
   String subTitleString;
