@@ -134,8 +134,7 @@ article.accordion section p.visible{
 }
 
 .seccionAplicacionesIconos li {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding:15px;
     float: left;
     display: inline-block;
 }
@@ -144,4 +143,28 @@ article.accordion section p.visible{
     clear: both;
     border-bottom: solid 1px #76a1b8;
     display: inline-block;
+}
+
+.seccionAplicacionesIconos li .cont {
+width: 800px;
+}
+
+
+.jacathon{
+	.logos{max-width: 787px;width: 100%;height: auto;}
+	.dosLogosInline{display: inline-block;width: 47%;padding: 1%;vertical-align: middle;}
+	.tresLogosInlinePeque{display: inline-block;width: 25%;padding: 1%;vertical-align: middle;}
+	.tresLogosInlineGrande{display: inline-block;width: 41%;padding: 1%;vertical-align: middle;float: right;}
+	/*css post-jacathon cuidado con los zombies*/
+	.ganadores{max-width: 787px;max-width: 100%;height: auto;}
+	.fotoGanadores{max-width: 100%;height: auto; text-align: center;}
+	.ganadoresInline{display: inline-table;width: 50%;padding:20px;}
+	.premio{text-align: left;font-weight: bold;}
+	.equipoFormacion{text-align: justify;}
+	.equipoFormacion ul{list-style-type: disc; margin-left: 10%;}
+	.logoPropuesta{display: inline-block;max-height:117px;width: 20%;}
+	.propuesta{margin-bottom: 1%;margin-top: 1%;text-align: left;padding-top: 2%;/*padding-left: 15%;*/display: inline-block;width: 70%;}
+	.tituloPropuesta a:link,.tituloPropuesta a:visited  {font-size:115%;font-weight: bold;}.equipoPropuesta{font-size: 80%;}
+	.descripcionPropuesta{font-size: 70%;}
+	.fotoFamilia{text-align:center;}
 }
