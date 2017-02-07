@@ -1,6 +1,0 @@
-svport: '8756'
-
-dbuser: 'user_campusopendata'
-dbpass: 'holahola'
-dburl: 'localhost'
-dbname: 'campusopendatadb'

@@ -12,7 +12,7 @@ import 'package:aod3/object/home_card.dart';
     templateUrl: 'tarjeta_home.html',
     directives: const [ROUTER_DIRECTIVES],
     providers: const [])
-class TarjetaHomeComponent{
+class TarjetaHomeComponent {
   @Input()
   HomeCard elemento;
   final Router _router;
@@ -22,22 +22,20 @@ class TarjetaHomeComponent{
 
   TarjetaHomeComponent(this._router);
 
-  over(){
+  over() {
     hover = true;
-    if(firstHover) firstHover=false;
+    if (firstHover) firstHover = false;
   }
 
-  out(){
-    hover= false;
+  out() {
+    hover = false;
   }
 
-  redirect(){
-    if(elemento.router){
+  redirect() {
+    if (elemento.router) {
       _router.navigateByUrl(elemento.url);
-    }else{
+    } else {
       window.location.href = elemento.url;
     }
-
   }
-
 }

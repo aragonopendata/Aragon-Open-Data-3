@@ -1,12 +1,12 @@
-class HomeCard{
+class HomeCard {
   String _imagen;
   String _titulo;
   String _descripcion;
   String _url;
   bool _router;
 
-  HomeCard(this._imagen, this._titulo, this._descripcion, this._url,
-      this._router);
+  HomeCard(
+      this._imagen, this._titulo, this._descripcion, this._url, this._router);
 
   bool get router => _router;
 
@@ -39,8 +39,7 @@ class HomeCard{
   }
 
   @override
-  toString(){
+  toString() {
     return 'HomeCard --> Titulo:$titulo Descripcion:$descripcion';
   }
-
 }

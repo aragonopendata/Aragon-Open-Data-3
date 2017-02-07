@@ -1,5 +1,6 @@
 import 'home_card.dart';
-class HomeElement{
+
+class HomeElement {
   String _titulo;
   String _descripcion;
   List<HomeCard> _tarjetas;

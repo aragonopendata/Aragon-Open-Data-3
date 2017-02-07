@@ -6,7 +6,7 @@ import 'package:aod3/service/campus_service.dart';
     templateUrl: 'campus.html',
     directives: const [],
     providers: const [CampusService])
-class CampusComponent implements OnInit{
+class CampusComponent implements OnInit, OnDestroy {
   final CampusService _campusService;
   List<Map> campusList = new List<Map>();
   List<Map> tiposList;
@@ -14,79 +14,85 @@ class CampusComponent implements OnInit{
   List<Map> etiquetasList;
   List<Map> eventosList;
   List<Map> formatosList;
-  int _tipoValue;
-  String _ponenteValue;
-  int _etiquetaValue;
-  int _eventoValue;
-  int _formatoValue;
+  List<int> pagesList;
 
   CampusComponent(this._campusService);
 
   void reprintCampusList() {
-    _campusService.getAllCampus(tipo: _tipoValue, aparece: _ponenteValue,
-        tema: _etiquetaValue, evento: _eventoValue, formato: _formatoValue).then((lista){
+    _campusService.initializeCampus().then((lista) {
       campusList = lista;
+      pagesList = _campusService.pagesList;
     });
   }
 
   @override
   ngOnInit() {
-    _campusService.getAllCampus().then((lista){
-      campusList=lista;
+    _campusService.initializeCampus().then((lista) {
+      campusList = lista;
+      pagesList = _campusService.pagesList;
     });
-    _campusService.getTipos().then((lista){
+    _campusService.getTipos().then((lista) {
       tiposList = lista;
     });
-    _campusService.getEventos().then((lista){
+    _campusService.getEventos().then((lista) {
       eventosList = lista;
     });
-    _campusService.getEtiquetas().then((lista){
+    _campusService.getEtiquetas().then((lista) {
       etiquetasList = lista;
     });
-    _campusService.getFormatos().then((lista){
+    _campusService.getFormatos().then((lista) {
       formatosList = lista;
     });
-    _campusService.getPonentes().then((lista){
+    _campusService.getPonentes().then((lista) {
       ponentesList = lista;
     });
   }
 
-  int get tipoValue => _tipoValue;
+  @override
+  ngOnDestroy() {}
+
+  void moveTo(int id) {
+    _campusService.changePage(id).then((lista) {
+      campusList = lista;
+    });
+  }
+
+  int get tipoValue => _campusService.tipoValue;
 
   set tipoValue(int value) {
-    _tipoValue = value;
+    _campusService.tipoValue = value;
     reprintCampusList();
   }
 
-  String get ponenteValue => _ponenteValue;
+  String get ponenteValue => _campusService.ponenteValue;
 
   set ponenteValue(String value) {
-    if (value == 'null'){
-      _ponenteValue = null;
+    if (value == 'null') {
+      _campusService.ponenteValue = null;
     } else {
-      _ponenteValue = value;
+      _campusService.ponenteValue = value;
     }
     reprintCampusList();
   }
 
-  int get formatoValue => _formatoValue;
+  int get formatoValue => _campusService.formatoValue;
 
   set formatoValue(int value) {
-    _formatoValue = value;
+    _campusService.formatoValue = value;
     reprintCampusList();
   }
 
-  int get eventoValue => _eventoValue;
+  int get eventoValue => _campusService.eventoValue;
 
   set eventoValue(int value) {
-    _eventoValue = value;
+    _campusService.eventoValue = value;
     reprintCampusList();
   }
 
-  int get etiquetaValue => _etiquetaValue;
+  int get etiquetaValue => _campusService.etiquetaValue;
 
   set etiquetaValue(int value) {
-    _etiquetaValue = value;
+    _campusService.etiquetaValue = value;
     reprintCampusList();
   }
 }

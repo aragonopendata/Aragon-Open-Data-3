@@ -10,14 +10,18 @@ import 'package:angular2_components/angular2_components.dart';
 @Component(
     selector: 'informacion',
     templateUrl: 'informacion.html',
-    directives: const [materialDirectives, defaultPopupSizeProvider,SafeInnerHtmlDirective],
-    providers: const [InfoService]
-)
-
-class InformacionComponent implements OnInit{
+    directives: const [
+      materialDirectives,
+      defaultPopupSizeProvider,
+      SafeInnerHtmlDirective
+    ],
+    providers: const [
+      InfoService
+    ])
+class InformacionComponent implements OnInit {
   final InfoService _infoService;
   final DomSanitizationService _domSanitizarionService;
-  
+
   bool showMaxHeightDialog = false;
   String redirectUrl;
   String id;
@@ -27,12 +31,13 @@ class InformacionComponent implements OnInit{
   String urlString;
   String titleString;
   String subTitleString;
-  InformacionComponent(this._infoService,this._domSanitizarionService,this._routeParams,this._location);
+  InformacionComponent(this._infoService, this._domSanitizarionService,
+      this._routeParams, this._location);
   @override
   ngOnInit() {
     var _id = _routeParams.get('id');
     id = _id.toString();
-    if (id=='informacion') {
+    if (id == 'informacion') {
       webContents = _infoService.iformaciones;
     } else if (id == 'sparql') {
       webContents = _infoService.sparql;
@@ -42,42 +47,40 @@ class InformacionComponent implements OnInit{
       webContents = _infoService.apis;
     } else if (id == 'eventos') {
       webContents = _infoService.eventos;
-    }else {
+    } else {
       webContents = null;
     }
 
     //document.title('TESTTITLE');
-    urlString=_location.path();
-    if(urlString.contains('info')){
+    urlString = _location.path();
+    if (urlString.contains('info')) {
       titleString = 'INFO OPEN DATA';
-      subTitleString = 'Todo lo necesario para entender Aragón Open Data';}
-    else if (urlString.contains('herramientas')){
+      subTitleString = 'Todo lo necesario para entender Aragón Open Data';
+    } else if (urlString.contains('herramientas')) {
       titleString = 'HERRAMIENTAS';
       subTitleString = 'herramientas';
     }
-    webContents.forEach((wc){
+    webContents.forEach((wc) {
       wc.content = _domSanitizarionService.bypassSecurityTrustHtml(wc.content);
     });
-
   }
 
-  redirect(MouseEvent event,String url){
+  redirect(MouseEvent event, String url) {
     showMaxHeightDialog = true;
     redirectUrl = url;
   }
 
-  redirectToNewPage(){
+  redirectToNewPage() {
     window.window.location.href = redirectUrl;
   }
 
-  void swithCss(Event e,String g){
-    String parrafo = '#'+g+'_p';
-    String icono = '#'+g+'_i';
-    if(querySelector(parrafo).attributes['class'] == 'oculto'){
+  void swithCss(Event e, String g) {
+    String parrafo = '#' + g + '_p';
+    String icono = '#' + g + '_i';
+    if (querySelector(parrafo).attributes['class'] == 'oculto') {
       querySelector(parrafo).attributes['class'] = 'visible';
       querySelector(icono).attributes['class'] = 'fa-minus-circle';
-    }
-    else{
+    } else {
       querySelector(parrafo).attributes['class'] = 'oculto';
       querySelector(icono).attributes['class'] = 'fa-plus-circle';
     }

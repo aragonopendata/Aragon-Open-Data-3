@@ -1,7 +1,7 @@
 <div class="campus">
     <h1>CAMPUS OPEN DATA</h1>
     <p>En Campus Open Data queremos que tengas a mano toda la información que hemos ido generando a lo largo del tiempo. Nuestra intención es que la información sirva para que te puedas formar y que los materiales sean tutoriales para entender qué son los datos abiertos y cómo los datos abiertos sirven para fomentar la economía digital y mejorar la transparencia del Gobierno. Tenemos materiales de todo tipo: vídeos, presentaciones, infografías y hasta un curso completo de iniciación a Open Data. Te invitamos a que pruebes lo que más te interese</p>
-    <button onclick="location.href='http://opendata.aragon.es/portal/campus/static/html/index.html'">Curso de iniciacion a los datos abiertos</button>
+    <button class="boton-curso" onclick="location.href='http://opendata.aragon.es/portal/campus/static/html/index.html'">Curso de iniciacion a los datos abiertos</button>
     <h2>¡ENCUENTRA EL CONTENIDO QUE MÁS TE APASIONE!</h2>
     <div class="campus_lista_busqueda">
         <ul>
@@ -68,4 +68,8 @@
         </li>
 
     </ul>
+
+    <div class="pagination">
+        <button *ngFor="let index of pagesList" (click)="moveTo(index)">{{index}}</button>
+    </div>
 </div>

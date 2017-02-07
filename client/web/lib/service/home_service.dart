@@ -20,7 +20,7 @@ class HomeService {
                 'Banner-02-Temas',
                 'Temas',
                 'En Aragón Open Data ofrecemos servicios con los datos que tenemos, asi facilitamos que todo el mundo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla',
-                'http://opendata.aragon.es/catalogo/catalogo.html',
+                'http://opendata.aragon.es/catalogo/tema',
                 false),
             new HomeCard(
                 'Banner-03-Publicadores',
@@ -122,7 +122,6 @@ class HomeService {
                 'https://github.com/aragonopendata',
                 false),
           ]),
-
     ];
   }
 }

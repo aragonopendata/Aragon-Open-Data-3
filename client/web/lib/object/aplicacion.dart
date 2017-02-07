@@ -1,7 +1,7 @@
 import 'package:angular2/security.dart';
 import 'package:angular2/src/security/dom_sanitization_service.dart';
 
-class Aplicacion{
+class Aplicacion {
   String _titulo;
   var _descripcion;
   String _url;
@@ -21,7 +21,6 @@ class Aplicacion{
     _url = value;
   }
 
-
   get descripcion => _descripcion;
 
   set descripcion(value) {
@@ -34,11 +33,11 @@ class Aplicacion{
     _titulo = value;
   }
 
-  String get facebookShare => "https://www.facebook.com/sharer/sharer.php?u=$url";
+  String get facebookShare =>
+      "https://www.facebook.com/sharer/sharer.php?u=$url";
 
-  String get twitterShare => "https://twitter.com/intent/tweet?text=$titulo&url=$url";
+  String get twitterShare =>
+      "https://twitter.com/intent/tweet?text=$titulo&url=$url";
 
   String get googleShare => "https://plus.google.com/share?url=$url";
-
-
 }

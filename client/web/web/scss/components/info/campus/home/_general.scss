@@ -115,7 +115,7 @@
     }
   }
 
-  button{
+  .boton-curso{
     @include titulos-secundarios();
     color: white;
     background-color: $AOD-v3-color;
@@ -126,7 +126,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
   }
-  button:hover{
+  .boton-curso:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
   }
 }
@@ -143,4 +143,34 @@
     }
   }
 }
+
+.pagination {
+  @include row();
+  margin-top:10px;
+  align-content: center;
+  display: inline-block;
+}
+
+.pagination button {
+  color: white;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: none;
+  background-color: $AOD-v3-color;
+  margin: 0 4px;
+}
+
+.pagination button:hover{
+  background: red;
+}
+
+.pagination button.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
 

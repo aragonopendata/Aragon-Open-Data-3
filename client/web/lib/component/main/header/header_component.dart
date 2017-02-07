@@ -44,7 +44,6 @@ class HeaderComponent {
 
   HeaderComponent(this._SearchService);
 
-
   ///Cierra el overlay del menu
   void overlayClose() {
     opChecked = false;
@@ -61,8 +60,8 @@ class HeaderComponent {
     }
   }
 
-  Future<Null> getDatasets(String input) async {
-    datasets = await _SearchService.getDataset(input);
+  Future<Null> getDatasets(String input, {int limit: 8}) async {
+    datasets = await _SearchService.getDataset(input, limit: limit);
   }
 
   void goCkan(Event e) {
@@ -73,7 +72,7 @@ class HeaderComponent {
   }
 
   onKey(dynamic event) {
-    getDatasets(event.target.value);
+    getDatasets(event.target.value, limit: 4);
     valor = event.target.value;
   }
 }

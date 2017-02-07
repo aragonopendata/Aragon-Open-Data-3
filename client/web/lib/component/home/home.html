@@ -26,21 +26,6 @@
         </div>
     </article>
     <article class="tarjetas">
-        <!--<div *ngFor="let tarjeta of element.tarjetas" class="tarjeta" (mouseover)='over()' (mouseout)='out()'>
-            <div class="image-wrapper2">
-                <div class="content">
-                    <div class="tarjeta_no_oculta">
-                        <img [ngClass]="{tarjeta_no_hover: hover}" src="images/home/tarjetas/{{tarjeta.imagen}}-OFF.jpg">
-                        <img *ngIf="!firstHover" [ngClass]="{tarjeta_hover: hover, tarjeta_no_hover: !hover}" src="images/home/tarjetas/{{tarjeta.imagen}}-ON.jpg">
-                        <img *ngIf="firstHover" style="opacity:0" src="images/home/tarjetas/{{tarjeta.imagen}}-ON.jpg">
-                    </div>
-                    <div class="tarjeta_oculta">
-                        <p class="tit">{{tarjeta.titulo}}</p>
-                        <p class="des">{{tarjeta.descripcion}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>-->
         <tarjeta_home *ngFor="let tarjeta of element.tarjetas" [elemento]="tarjeta"></tarjeta_home>
     </article>
     <div class="separacion" ></div>

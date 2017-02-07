@@ -12,7 +12,7 @@ import 'package:aod3/component/home/tarjeta_home_component.dart';
     templateUrl: 'home.html',
     directives: const [ROUTER_DIRECTIVES, TarjetaHomeComponent],
     providers: const [HomeService])
-class HomeComponent implements OnInit{
+class HomeComponent implements OnInit {
   final SearchService _SearchService;
   final HomeService _HomeService;
   List<HomeElement> homeElements;
@@ -20,16 +20,15 @@ class HomeComponent implements OnInit{
   String valor;
   final Router _router;
 
-  HomeComponent(this._router,this._SearchService,this._HomeService);
+  HomeComponent(this._router, this._SearchService, this._HomeService);
 
   @override
   void ngOnInit() {
     homeElements = _HomeService.getList();
   }
 
-
-  Future<Null> getDatasets(String input) async {
-    datasets = await _SearchService.getDataset(input);
+  Future<Null> getDatasets(String input, {int limit: 8}) async {
+    datasets = await _SearchService.getDataset(input, limit: limit);
   }
 
   void goCkan(Event e) {
@@ -43,5 +42,4 @@ class HomeComponent implements OnInit{
     getDatasets(event.target.value);
     valor = event.target.value;
   }
-
 }
