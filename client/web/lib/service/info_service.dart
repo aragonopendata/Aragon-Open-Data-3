@@ -466,8 +466,8 @@ class InfoService {
                 '<a href="http://opendata.aragon.es/GA_OD_Core">http://opendata.aragon.es/GA_OD_Core</a></p><br>' +
                 '<p>Con la tecnología del framework <a href="”swagger.io”">swagger</a>, se muestra la documentación de manera descriptiva y estructurada. <a href="http://opendata.aragon.es/GA_OD_Core/ui">http://opendata.aragon.es/GA_OD_Core/ui</a></p><br><p>Desde ahí podremos consultar todas las funcionalidades que posee, las cuales describimos a continuación</p><br>' +
                 '<h3 class="titulosSecundariosNegritas i_i">TIPOS DE LLAMADA</h3><section><br><h4 class="titularesPeques">Vistas Disponibles</h4>' +
-                '<p>Devuelve un Array con todas las vistas disponibles registradas en formato JSON identado.</p><p>Podemos acceder desde la siguiente URL</p>' +
-                '<p href="http://opendata.aragon.es/GA_OD_Core/views">http://opendata.aragon.es/GA_OD_Core/views</p></section>' +
+                '<p>Devuelve un Array con todas las vistas disponibles registradas en formato JSON identado.</p><p>Podemos acceder desde la siguiente URL:</p>' +
+                '<pre class="centrado">http://opendata.aragon.es/GA_OD_Core/views</pre></section>' +
                 '<section><br><h4 class="titularesPeques">Columnas de Vista</h4><div class="textosNormales"><p>Devuelve un  Array con información sobre las columnas y sus tipos de datos en formato JSON identado.</p>' +
                 '<br><p>Requiere que le pasemos como parámetros: </p>' +
                 '<ul><li><strong>id_vista: </strong>(Requerido) Id de la vista que queremos consultar.</li></ul><br>' +
@@ -493,7 +493,18 @@ class InfoService {
                 '<li><strong>_pageSize: </strong>(Opcional) Número de resultados en cada página.</li>' +
                 '<li><strong>_page: </strong>(Opcional) Número de página.</li></ul><br><p>Podemos acceder desde la siguiente URL:</p><br>' +
                 '<pre class="centrado">http://opendata.aragon.es/GA_OD_Core/download?view_id={view_id}&amp;select_sql={select_sql}&amp;filter_sql={filter_sql}&amp;formato={formato}&amp;_pageSize={_pageSize}&amp;_page={_page}</pre><br><p>ejemplo:</p>' +
-                '<p><a href="http://opendata.aragon.es/GA_OD_Core/download?view_id=104&amp;select_sql=municipio%2Cnombremunicipio&amp;filter_sql=nombremunicipio%3D%22Albelda%22&amp;formato=JSON&amp;_pageSize=100&amp;_page=1">http://opendata.aragon.es/GA_OD_Core/download?view_id=104&amp;select_sql=municipio%2Cnombremunicipio&amp;filter_sql=nombremunicipio%3D%22Albelda%22&amp;formato=JSON&amp;_pageSize=100&amp;_page=1</a></p></section>')
+                '<p><a href="http://opendata.aragon.es/GA_OD_Core/download?view_id=104&amp;select_sql=municipio%2Cnombremunicipio&amp;filter_sql=nombremunicipio%3D%22Albelda%22&amp;formato=JSON&amp;_pageSize=100&amp;_page=1">http://opendata.aragon.es/GA_OD_Core/download?view_id=104&amp;select_sql=municipio%2Cnombremunicipio&amp;filter_sql=nombremunicipio%3D%22Albelda%22&amp;formato=JSON&amp;_pageSize=100&amp;_page=1</a></p></section>'
+                ),
+        new WebContent(
+            'apis_content_6',
+            'apis',
+            'API AragoDBpedia 2.0',
+            '<div><br><h3 class="titulosSecundariosNegritas i_i">CREDENCIALES</h3><br>'+
+            '<div id="credenciales"><section><h4 class="titularesPeques">Necesidad de credenciales</h4><div class="textosNormales"><p>'+
+            'Para obtener resultados de esta API, es necesario proporcionar a las llamadas un parámetro con una credencial (<i>api_key</i>). Esta <i>api_key</i> se puede obtener de forma gratuita mediante el registro como usuario de la página <a href="https://opendataaragon.3scale.net/" title="3scale.net">3scale.net</a> </p> <br> <p> Por el momento, se ofrece la posibilidad de utilizar una <i>api_key</i> genérica y compartida, si bien en el futuro podría ser necesario el registro individualizado de todos los usuarios.</p><br><p>'+
+                'En el caso de que seas un desarrollador que vaya a hacer un uso intensivo de este servicio, rogamos contactes con nosotros a través de <a href="mailto:opendata@aragon.es" title="opendata@aragon.es">opendata@aragon.es</a> para proporcionarte una <i>api_key</i> individualizada para tus desarrollos.</p><br><p>Donde <i>api_key</i> puede tomar o bien el valor de tu clavecifrada de usuario, o bien la clave genérica que es:</p><pre class="centrado">e103dc13eb276ad734e680f5855f20c6</pre><br>'+
+            '<iframe style="border:1px solid rgba(118, 161, 184, 0.47);" width="100%" height="800px" frameborder="0" src="http://preopendata.aragon.es/bancodatos/doc/#"></iframe>'
+            )
       ];
 
   List<WebContent> get eventos => [
