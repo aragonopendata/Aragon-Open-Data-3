@@ -37,28 +37,32 @@ class InformacionComponent implements OnInit {
   ngOnInit() {
     var _id = _routeParams.get('id');
     id = _id.toString();
-    if (id == 'informacion') {
-      webContents = _infoService.iformaciones;
-    } else if (id == 'sparql') {
-      webContents = _infoService.sparql;
-    } else if (id == 'desarrolladores') {
-      webContents = _infoService.desarrolladores;
-    } else if (id == 'apis') {
-      webContents = _infoService.apis;
-    } else if (id == 'eventos') {
-      webContents = _infoService.eventos;
-    } else {
-      webContents = null;
-    }
 
-    //document.title('TESTTITLE');
     urlString = _location.path();
     if (urlString.contains('info')) {
       titleString = 'INFO OPEN DATA';
       subTitleString = 'Todo lo necesario para entender Aragón Open Data';
+      if (id == 'informacion') {
+        webContents = _infoService.iformaciones;
+      } else if (id == 'eventos') {
+        webContents = _infoService.eventos;
+      } else{
+        window.location.href = "http://opendata.aragon.es/404";
+      }
     } else if (urlString.contains('herramientas')) {
       titleString = 'HERRAMIENTAS';
       subTitleString = 'herramientas';
+      if (id == 'sparql') {
+        webContents = _infoService.sparql;
+      } else if (id == 'desarrolladores') {
+        webContents = _infoService.desarrolladores;
+      } else if (id == 'apis') {
+        webContents = _infoService.apis;
+      } else{
+        window.location.href = "http://opendata.aragon.es/404";
+      }
+    }else{
+      window.location.href = "http://opendata.aragon.es/404";
     }
     webContents.forEach((wc) {
       wc.content = _domSanitizarionService.bypassSecurityTrustHtml(wc.content);

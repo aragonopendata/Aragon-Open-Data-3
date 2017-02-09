@@ -41,7 +41,7 @@ class HeaderComponent {
   String get header_herramientas_apis => 'APIs';
   String get header_herramientas_sparql => 'SPARQL';
   String get header_herramientas_github => 'GITHUB';
-
+  //String get header_envio_aplicaciones => 'Envio Aplicaciones';
   HeaderComponent(this._SearchService);
 
   ///Cierra el overlay del menu

@@ -15,6 +15,7 @@ import 'package:aod3/component/info/aplicaciones/aplicaciones_component.dart'
     deferred as aplicaciones_component;
 import 'package:aod3/component/info/informacion/informacion_component.dart'
     deferred as informacion_component;
+import 'package:aod3/component/info/envio_aplicaciones/envio_aplicaciones_component.dart';
 import 'package:aod3/service/search_service.dart';
 
 @Component(selector: 'my-app', templateUrl: 'app.html', directives: const [
@@ -40,6 +41,11 @@ import 'package:aod3/service/search_service.dart';
     path: '/campus',
     name: 'Campus',
     component: CampusComponent,
+  ),
+  const Route(
+  path: 'info/envio-aplicaciones',
+  name: 'EnvioAplicaciones',
+  component: EnvioAplicacionesComponent,
   ),
   const AsyncRoute(path: '/info/colabora', loader: colabora, name: 'Colabora'),
   const AsyncRoute(path: '/info/:id', loader: informacion, name: 'Info'),

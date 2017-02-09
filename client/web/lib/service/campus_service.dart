@@ -6,8 +6,7 @@ import 'package:fluri/fluri.dart';
 
 @Injectable()
 class CampusService {
-  Uri urlBase = new Uri(
-      scheme: 'http', host: 'localhost', port: 8756, pathSegments: ['campus']);
+  Uri urlBase = new Uri(scheme: 'http', pathSegments: ['jaguar','campus']);
   static const String urlContenido = "contenido";
   static const String urlTipo = "tipo";
   static const String urlEvento = "evento";
