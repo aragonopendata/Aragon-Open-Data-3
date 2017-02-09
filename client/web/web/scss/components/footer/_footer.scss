@@ -54,7 +54,7 @@ footer {
     overflow: auto;
     padding-left: 9px;
   }
-  .txt{font-size:7px;
+  .txt{font-size:0.1em;
       text-transform: uppercase;    
       padding-left: 115px;
       padding-right: 45px;
@@ -77,6 +77,20 @@ footer {
   .gob{padding: 20px;text-transform:uppercase;}
   .breadcumbs{padding-top: 20px;
     padding-bottom: 20px;}
+
+    @include media($movil) {
+    footer{
+    @include outer-container;
+    }
+    .trescol{
+      /*@include span-columns(12);*/
+      width: 100%;
+      /*background-color:grey !important;*/
+      height: 100%;
+      padding-top: 15px;
+      border: none !important;
+    }
+    }
 }
 
 

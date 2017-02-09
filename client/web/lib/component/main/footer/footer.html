@@ -20,12 +20,14 @@
 		<h2>ARAGÓN OPENDATA</h2>
 		<div class="trescol_child">
 		<ul>
-		<li><a href="">DATOS</a></li>
-		<li><a href="">ARAGOPEDIA</a></li>
-		<li><a href="">SOCIAL DATA</a></li>
-		<li><a href="">COLABORA</a></li>
-		<li><a href="">APLICACIONES</a></li>
-		<li><a href="">INFO OPEN DATA</a></li>
+		<li><a href="/catalogo">DATOS</a></li>
+		<li><a href="/apps/aragopedia">ARAGOPEDIA</a></li>
+		<li><a href="/portal/social-data#/main">SOCIAL DATA</a></li>
+		<li><a [routerLink]="['Colabora']">COLABORA</a></li>
+		<li><a [routerLink]="['Aplicaciones']">APLICACIONES</a></li>
+		<li><a [routerLink]="['Info', {id: 'informacion'}]">INFO OPEN DATA</a></li>
+		<!--<li><a [routerLink]="['EnvioAplicaciones']">ENVIO-APLICACIONES</a></li>-->
+		
 		</ul>
 		</div>
 	</div>
@@ -38,6 +40,11 @@
 			<li><a href="http://virtuoso.openlinksw.com/" target="_blank"><img src="images/footer/cajaLogoVirtuoso.jpg" /></a></li>
 			<li><a href="https://www.wolfcms.org/" target="_blank"><img src="images/footer/cajaLogoWOLF.jpg" /></a></li>
 			<li><a href="http://epimorphics.github.io/elda//" target="_blank"><img src="images/footer/cajaLogoElda.jpg" /></a></li>
+			<li><a href="http://swagger.io/" target="_blank"><img src="images/footer/cajaLogoSwagger.jpg" /></a></li>
+			<li><a href="https://www.dartlang.org/" target="_blank"><img src="images/footer/cajaLogoDart.jpg" /></a></li>
+			<li><a href="https://webdev.dartlang.org/angular" target="_blank"><img src="images/footer/cajaLogoAngularDart.jpg" /></a></li>
+
+
 		</ul>
 		</div>
 	</div>
