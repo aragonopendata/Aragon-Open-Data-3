@@ -10,14 +10,22 @@
 }
 
 #logo{
-  background: url("images/home/nav-bar/AOD-Logo.png") no-repeat;
+  /*background: url("images/home/nav-bar/AOD-Logo.png") no-repeat;*/
   height: 80px;
   width: 489px;
   margin-top:10px;
   margin-left:10px;
   display: inline-block;
-  position: fixed;
+  /*position: fixed;*/
   z-index: 999;
+  @include media($campus-pequeña1) {
+      height: 70px;
+      width: 367px;
+    }
+   @include media($campus-pequeña2) {
+      height: 40px;
+      width: 245px;
+    }
 }
 
 .menu{

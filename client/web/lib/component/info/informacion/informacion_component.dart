@@ -83,10 +83,10 @@ class InformacionComponent implements OnInit {
     String icono = '#' + g + '_i';
     if (querySelector(parrafo).attributes['class'] == 'oculto') {
       querySelector(parrafo).attributes['class'] = 'visible';
-      querySelector(icono).attributes['class'] = 'fa-minus-circle';
+      querySelector(icono).attributes['class'] = 'fa fa-minus-circle';
     } else {
       querySelector(parrafo).attributes['class'] = 'oculto';
-      querySelector(icono).attributes['class'] = 'fa-plus-circle';
+      querySelector(icono).attributes['class'] = 'fa fa-plus-circle';
     }
     //e.classes.toggle('important');
   }

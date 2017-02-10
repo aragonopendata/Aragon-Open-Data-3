@@ -13,7 +13,7 @@
 <div id="aragonNav">
     <!--<input type="checkbox" id="op" [checked]="opChecked">-->
     <a [ngClass]="{menuButton: opChecked}" class="menu" (click)="overlayOpen()"></a>
-    <div id="logo"></div>
+    <a href="/"><img src="/images/home/nav-bar/AOD-Logo.png" id="logo"></a>
     <div *ngIf="opChecked" class="overlay overlay-hugeinc">
         <nav>
             <ul class="menus">

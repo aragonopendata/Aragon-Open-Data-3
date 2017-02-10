@@ -7,7 +7,7 @@ class InfoService {
     //String url = 'http://opendata.aragon.es';
     //String urlWeb = 'http://preopendata.aragon.es';
     //String urlWebFull = 'http://preopendata.aragon.es';
-    String urlWeb = 'http://localhost:8081';
+    String urlWeb = 'http://preopendata.aragon.es';
     //String urlWebFull = 'http://preopendata.aragon.es';
     //String urlWeb = 'http://localhost:8081';
     String urlWebFull = 'http://preopendata.aragon.es';

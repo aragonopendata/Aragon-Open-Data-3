@@ -20,7 +20,7 @@
     <article class="accordion">
         <section class="a_section" id="{{webContent.id}}" *ngFor="let webContent of webContents">
             <h2 id="{{webContent.id}}_h2" (click)="swithCss($event,webContent.id)">{{webContent.title}}
-            <i id="{{webContent.id}}_i"class="fa-plus-circle"></i></h2>
+            <i id="{{webContent.id}}_i"class="fa fa-plus-circle"></i></h2>
               <p id="{{webContent.id}}_p"[safeInnerHtml]="webContent.content" class="oculto">{{webContent.content}}</p>
         </section>
     </article>
