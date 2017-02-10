@@ -23,8 +23,8 @@ $campus-media-10: new-breakpoint(max-width 1400px min-width 1001px, 10);
 $campus-grande: new-breakpoint(min-width 1401px, 9);
 $campus-media: new-breakpoint(max-width 1400px min-width 1001px, 9);
 //  4 COLUMNAS
-$campus-pequeña1: new-breakpoint(max-width 1000px min-width 751px, 4);
-$campus-pequeña2: new-breakpoint(max-width 750px, 4);
+$campus-pequeña1: new-breakpoint(max-width 1000px min-width 480px, 4);
+$campus-pequeña2: new-breakpoint(max-width 480px, 4);
 
 
 

@@ -13,6 +13,12 @@
 		font-size: 60px;
 		padding-top:20px;
 		padding-bottom:20px;
+		@include media($campus-pequeña1) {
+	     	@include titulos-pequeña1();
+	    }
+	   	@include media($campus-pequeña2) {
+	    	@include titulos-pequeña2();
+	    }
 	}
 	/*quizás mover a otro css*/
 	.app_img{
@@ -26,9 +32,30 @@
     	padding-bottom: 30px;
     	border-bottom: 2px solid rgba(94, 162, 186, 0.28);
     }
+
+
+   
 }
 
+article.accordion, .contenido, .ganadores{
 
+     p{
+	    @include media($campus-pequeña1) {
+	     	@include normal-pequeña1();
+	    }
+	   	@include media($campus-pequeña2) {
+	    	@include normal-pequeña2();
+	    }
+	}
+	h2{
+	    @include media($campus-pequeña1) {
+	     	@include subtitulos-pequeña1();
+	    }
+	   	@include media($campus-pequeña2) {
+	    	@include subtitulos-pequeña2();
+	    }
+	}
+}
 
 article.accordion
 {
@@ -69,8 +96,10 @@ article.accordion section.a_section
 
 article.accordion section h2
 {
+	/*
 	font-size: 1.5em;
 	font-weight: bold;
+	*/
 	width: 100%;
 	line-height: 2em;
 	padding: 0;
@@ -169,3 +198,16 @@ width: 800px;
 	.fotoFamilia{text-align:center;}
 }
 section{overflow: auto;}
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

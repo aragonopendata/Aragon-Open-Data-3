@@ -57,6 +57,32 @@
   }
 }
 
+@mixin titulos-pequeña1() {
+  font-family: $roboto;
+  font-size: 30px;
+}
+@mixin titulos-pequeña2() {
+  font-family: $roboto;
+  font-size: 20px;
+}
+@mixin subtitulos-pequeña1() {
+  font-family: $roboto;
+  font-size: 18px;
+}
+@mixin subtitulos-pequeña2() {
+  font-family: $roboto;
+  font-size: 16px;
+}
+@mixin normal-pequeña1() {
+  font-family: $roboto;
+  font-size: 14px;
+}
+@mixin normal-pequeña2() {
+  font-family: $roboto;
+  font-size: 12px;
+}
+
+
 @mixin omega-reset($nth) {
   &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
   &:nth-child(#{$nth+1}) { clear: none }

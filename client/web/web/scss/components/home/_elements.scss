@@ -6,24 +6,41 @@ article{
   }
 }
 
-.descripcion{
+.descripcion, .descripcion-busqueda{
   @include span-columns(5);
   @include shift(2);
   @include media($pantalla-grande) {
     @include shift(1);
     @include span-columns(7);
   }
+  /*
   @include media($movil) {
     @include shift(0);
     @include span-columns(3);
     margin-left: 100px;
   }
+  */
+
+  @include media($campus-pequeña2) {
+    margin:0px;
+    width:100%;
+  }
   h1{
-    @include titulos-principales();
+    /*@include titulos-principales();*/
     font-size: 100px;
+    @include media($campus-pequeña1) {
+      font-size: 60px !important;
+    }
+   @include media($campus-pequeña2) {
+      font-size: 30px !important;
+    }
   }
   p{
     @include titulos-resultados();
+    @include media($campus-pequeña2) {
+      @include normal-pequeña1();
+      width:100%;
+    }
   }
 
 }
@@ -34,6 +51,7 @@ article{
 
 #datos{
   @include gradient-home-datos();
+  /*
   @include media($movil) {
     background:$Datos-color;
     background-image : none;
@@ -41,11 +59,12 @@ article{
       color: black;
     }
   }
-
+  */
 }
 
 #servicios{
   @include gradient-home-servicios();
+  /*
   @include media($movil) {
     background:$Servicios-color;
     background-image : none;
@@ -53,10 +72,12 @@ article{
       color: black;
     }
   }
+  */
 }
 
 #información{
   @include gradient-home-informacion();
+  /*
   @include media($movil) {
     background:$Informacion-color;
     background-image : none;
@@ -64,10 +85,12 @@ article{
       color: black;
     }
   }
+  */
 }
 
 #herramientas{
   @include gradient-home-herramientas();
+  /*
   @include media($movil) {
     background:$Herramientas-color;
     background-image : none;
@@ -76,6 +99,7 @@ article{
       color: black;
     }
   }
+  */
 }
 }
 

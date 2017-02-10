@@ -22,9 +22,9 @@
                     <label for="datosCheckbox" class="linkPrimero">{{header_datos}}</label>
                     <ul class="submenus">
                         <br>
-                        <li><a [routerLink]="['Blueprint']" (click)="overlayClose()">{{header_datos_bancodatos}}</a></li>
-                        <li><a [routerLink]="['Blueprint']" (click)="overlayClose()">{{header_datos_temas}}</a></li>
-                        <li><a [routerLink]="['Blueprint']" (click)="overlayClose()">{{header_datos_publicadores}}</a></li>
+                        <li><a href="/catalogo" (click)="overlayClose()">{{header_datos_bancodatos}}</a></li>
+                        <li><a href="/catalogo/tema" (click)="overlayClose()">{{header_datos_temas}}</a></li>
+                        <li><a href="catalogo/organizacion" (click)="overlayClose()">{{header_datos_publicadores}}</a></li>
                     </ul>
                 </li>
                 <li class="menuPrimero">
@@ -32,10 +32,10 @@
                     <label for="serviciosCheckbox" class="linkPrimero">{{header_servicios}}</label>
                     <ul class="submenus">
                         <br>
-                        <li><a href="#">{{header_servicios_socialdata}}</a></li>
-                        <li><a href="#">{{header_servicios_aragopedia}}</a></li>
-                        <li><a href="#">{{header_servicios_presupuestos}}</a></li>
-                        <li><a href="#">{{header_servicios_cras}}</a></li>
+                        <li><a href="/portal/social-data" (click)="overlayClose()">{{header_servicios_socialdata}}</a></li>
+                        <li><a href="/apps/aragopedia" (click)="overlayClose()">{{header_servicios_aragopedia}}</a></li>
+                        <li><a href="http://presupuesto.aragon.es/" (click)="overlayClose()">{{header_servicios_presupuestos}}</a></li>
+                        <li><a href="http://opendata.aragon.es/apps/cras" (click)="overlayClose()">{{header_servicios_cras}}</a></li>
                     </ul>
                 </li>
                 <li class="menuPrimero">
