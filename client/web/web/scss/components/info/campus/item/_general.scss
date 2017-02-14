@@ -1,0 +1,30 @@
+#campusItem{
+  @include outer-container(90%);
+  h3{
+    text-transform: uppercase;
+  }
+  h2{
+    font-size: 50px;
+  }
+  p{
+  }
+  .etiqueta{
+    background-color: $AOD-v3-color;
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    //font-weight: 700;
+    margin-left: 10px;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 1s;
+    &:hover{
+      background-color: darken($AOD-v3-color, 25%);
+    }
+  }
+}

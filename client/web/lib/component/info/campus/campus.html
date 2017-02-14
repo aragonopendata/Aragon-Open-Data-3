@@ -46,7 +46,7 @@
         </div>
     </div>
     <ul *ngIf="!campusList.isEmpty" >
-        <li *ngFor="let item of campusList" class="campus_tarjeta my-animation" >
+        <li *ngFor="let item of campusList" class="campus_tarjeta my-animation" (click)="openCampusItem(item)" >
             <div class="card">
                 <div class="image-wrapper">
                     <img class="campus_tarjeta_imagen" src="http://opendata.aragon.es/portal/campus/{{item['thumbnail']}}" width="400px" height="400px">
@@ -68,8 +68,7 @@
         </li>
 
     </ul>
-
-    <div class="pagination">
-        <button *ngFor="let index of pagesList" (click)="moveTo(index)">{{index}}</button>
-    </div>
+</div>
+<div *ngIf="!campusList.isEmpty" class="pagination">
+    <button *ngFor="let index of pagesList" (click)="moveTo(index)" [ngClass]="isActive(index)">{{index}}</button>
 </div>

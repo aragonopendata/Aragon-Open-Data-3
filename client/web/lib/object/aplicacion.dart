@@ -1,6 +1,3 @@
-import 'package:angular2/security.dart';
-import 'package:angular2/src/security/dom_sanitization_service.dart';
-
 class Aplicacion {
   String _titulo;
   var _descripcion;

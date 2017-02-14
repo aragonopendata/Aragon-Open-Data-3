@@ -8,6 +8,9 @@ body{
   h2{
     @include titulos-principales();
   }
+  h3{
+    @include titulos-principales();
+  }
   p{
     @include titulos-resultados();
     a:after {
@@ -24,6 +27,7 @@ body{
     }
   }
   a{
+    cursor: pointer;
     text-decoration: none;
     position: relative;
     color: $AOD-v3-color;

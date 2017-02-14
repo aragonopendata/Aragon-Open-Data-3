@@ -6,7 +6,8 @@ import 'package:fluri/fluri.dart';
 
 @Injectable()
 class CampusService {
-  Uri urlBase = new Uri(scheme: 'http', pathSegments: ['jaguar','campus']);
+  //Uri urlBase = new Uri(scheme: 'http', pathSegments: ['jaguar','campus']);
+  Uri urlBase = new Uri(scheme: 'http', host:'localhost', port: 8756, pathSegments: ['campus']);
   static const String urlContenido = "contenido";
   static const String urlTipo = "tipo";
   static const String urlEvento = "evento";
@@ -18,11 +19,14 @@ class CampusService {
   int totalElements;
   int posiblePages;
   int _tipoValue;
+  int currentPage = 1;
+  Map<String,dynamic> campusItem = new Map();
 
   int get tipoValue => _tipoValue;
 
   set tipoValue(int value) {
     _tipoValue = value;
+    currentPage = 1;
   }
 
   String _ponenteValue;
@@ -39,7 +43,7 @@ class CampusService {
 
     url.addPathSegment("contenido");
     url.setQueryParam("limit", limit.toString());
-    url.setQueryParam("offset", 0.toString());
+    url.setQueryParam("offset", offset.toString());
 
     if (_formatoValue != null)
       url.setQueryParam("formato", _formatoValue.toString());
@@ -106,7 +110,7 @@ class CampusService {
     return lista;
   }
 
-  Future<List<Map>> getTipos() async {
+  Future<List<Map<String,dynamic>>> getTipos() async {
     Fluri url = new Fluri.fromUri(urlBase);
     url.addPathSegment(urlTipo);
 
@@ -119,7 +123,7 @@ class CampusService {
       });
   }
 
-  Future<List<Map>> getEventos() async {
+  Future<List<Map<String,dynamic>>> getEventos() async {
     Fluri url = new Fluri.fromUri(urlBase);
     url.addPathSegment(urlEvento);
 
@@ -132,7 +136,7 @@ class CampusService {
       });
   }
 
-  Future<List<Map>> getEtiquetas() async {
+  Future<List<Map<String,dynamic>>> getEtiquetas() async {
     Fluri url = new Fluri.fromUri(urlBase);
     url.addPathSegment(urlEtiqueta);
 
@@ -145,7 +149,7 @@ class CampusService {
       });
   }
 
-  Future<List<Map>> getFormatos() async {
+  Future<List<Map<String,dynamic>>> getFormatos() async {
     Fluri url = new Fluri.fromUri(urlBase);
     url.addPathSegment(urlFormato);
 
@@ -158,7 +162,7 @@ class CampusService {
       });
   }
 
-  Future<List<Map>> getPonentes() async {
+  Future<List<Map<String,dynamic>>> getPonentes() async {
     Fluri url = new Fluri.fromUri(urlBase);
     url.addPathSegment(urlPonente);
 
@@ -176,20 +180,24 @@ class CampusService {
     int limit: 9,
   }) {
     return getAllCampus(
-      offset: offset,
+      offset: (currentPage-1)*9,
     ).then((result) {
+      if(totalElements == 0){
+        campusPaginated.clear();
+        return campusPaginated;
+      }else{
       campusPaginated = new List(posiblePages);
       campusPaginated[0] = result;
       pagesList = createPagesList();
       prepareNextPages(
-        0,
-        offset: offset,
+        currentPage-1,
+        //offset: offset,
       );
-      return campusPaginated[0];
+      return campusPaginated[0];}
     });
   }
 
-  Future prepareNextPages(int actual, {int offset: 0}) async {
+  Future<Null> prepareNextPages(int actual, {int offset: 0}) async {
     int morePages = posiblePages - actual;
     if (morePages >= 2) {
       if (campusPaginated[actual + 1] == null) {
@@ -224,10 +232,12 @@ class CampusService {
       ).then((lista) {
         campusPaginated[page - 1] = lista;
         prepareNextPages(page - 1);
+        currentPage = page;
         return lista;
       });
     } else {
       prepareNextPages(page - 1);
+      currentPage = page;
       return campusPaginated[page - 1];
     }
   }
@@ -236,23 +246,45 @@ class CampusService {
 
   set ponenteValue(String value) {
     _ponenteValue = value;
+    currentPage = 1;
   }
 
   int get etiquetaValue => _etiquetaValue;
 
   set etiquetaValue(int value) {
     _etiquetaValue = value;
+    currentPage = 1;
   }
 
   int get eventoValue => _eventoValue;
 
   set eventoValue(int value) {
     _eventoValue = value;
+    currentPage = 1;
   }
 
   int get formatoValue => _formatoValue;
 
   set formatoValue(int value) {
     _formatoValue = value;
+    currentPage = 1;
+  }
+
+  Future getItem(String id) async{
+    Fluri url = new Fluri.fromUri(urlBase);
+    url.addPathSegment('contenido');
+    url.addPathSegment(id);
+
+    HttpRequest.request(url.toString()).then((HttpRequest result) {
+      campusItem = JSON.decode(result.response);
+    });
+  }
+
+  void clearSearch() {
+    _tipoValue = null;
+    _etiquetaValue = null;
+    _eventoValue = null;
+    _formatoValue = null;
+    _ponenteValue = null;
   }
 }

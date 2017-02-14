@@ -1,32 +1,39 @@
 import 'package:angular2/core.dart';
+import 'package:angular2/router.dart';
 import 'package:aod3/service/campus_service.dart';
 
 @Component(
     selector: 'campus',
     templateUrl: 'campus.html',
-    directives: const [],
-    providers: const [CampusService])
-class CampusComponent implements OnInit, OnDestroy {
+)
+class CampusComponent implements OnInit {
   final CampusService _campusService;
-  List<Map> campusList = new List<Map>();
-  List<Map> tiposList;
-  List<Map> ponentesList;
-  List<Map> etiquetasList;
-  List<Map> eventosList;
-  List<Map> formatosList;
+  final Router _router;
+  List<Map<String,dynamic>> campusList = new List<Map<String,dynamic>>();
+  List<Map<String,dynamic>> tiposList;
+  List<Map<String,dynamic>> ponentesList;
+  List<Map<String,dynamic>> etiquetasList;
+  List<Map<String,dynamic>> eventosList;
+  List<Map<String,dynamic>> formatosList;
   List<int> pagesList;
 
-  CampusComponent(this._campusService);
 
+  CampusComponent(this._campusService,this._router);
+
+  String isActive(int index){
+    if(index == _campusService.currentPage){
+     return 'pagination_active';
+    };
+  }
   void reprintCampusList() {
-    _campusService.initializeCampus().then((lista) {
+    _campusService.initializeCampus().then((List<Map<String,dynamic>> lista) {
       campusList = lista;
       pagesList = _campusService.pagesList;
     });
   }
 
   @override
-  ngOnInit() {
+  void ngOnInit() {
     _campusService.initializeCampus().then((lista) {
       campusList = lista;
       pagesList = _campusService.pagesList;
@@ -48,13 +55,15 @@ class CampusComponent implements OnInit, OnDestroy {
     });
   }
 
-  @override
-  ngOnDestroy() {}
-
   void moveTo(int id) {
     _campusService.changePage(id).then((lista) {
       campusList = lista;
     });
+  }
+
+  void openCampusItem(Map<String,dynamic> item){
+    _campusService.campusItem = item;
+    _router.navigateByUrl('campus/${_campusService.campusItem['id']}');
   }
 
   int get tipoValue => _campusService.tipoValue;

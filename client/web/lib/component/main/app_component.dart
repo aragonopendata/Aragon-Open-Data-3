@@ -9,6 +9,7 @@ import 'package:angular2_components/angular2_components.dart';
 import 'package:aod3/component/home/home_component.dart';
 import 'package:aod3/component/blueprint/blueprint_component.dart';
 import 'package:aod3/component/info/campus/campus_component.dart';
+import 'package:aod3/component/info/campus/campus_item_component.dart';
 import 'package:aod3/component/info/colabora_component.dart'
     deferred as colabora_component;
 import 'package:aod3/component/info/aplicaciones/aplicaciones_component.dart'
@@ -16,6 +17,7 @@ import 'package:aod3/component/info/aplicaciones/aplicaciones_component.dart'
 import 'package:aod3/component/info/informacion/informacion_component.dart'
     deferred as informacion_component;
 import 'package:aod3/component/info/envio_aplicaciones/envio_aplicaciones_component.dart';
+import 'package:aod3/service/campus_service.dart';
 import 'package:aod3/service/search_service.dart';
 
 @Component(selector: 'my-app', templateUrl: 'app.html', directives: const [
@@ -26,6 +28,7 @@ import 'package:aod3/service/search_service.dart';
 ], providers: const [
   ROUTER_PROVIDERS,
   SearchService,
+  CampusService,
   DomSanitizationService,
   materialProviders
 ])
@@ -41,6 +44,11 @@ import 'package:aod3/service/search_service.dart';
     path: '/campus',
     name: 'Campus',
     component: CampusComponent,
+  ),
+  const Route(
+    path: '/campus/:id',
+    name: 'CampusItem',
+    component: CampusItemComponent,
   ),
   const Route(
   path: 'info/envio-aplicaciones',

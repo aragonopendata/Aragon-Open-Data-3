@@ -1,5 +1,5 @@
-import 'dart:html';
-import 'package:angular2/platform/common.dart' as common_dart;
+import 'dart:html' hide Location;
+import 'package:angular2/platform/common.dart';
 import 'package:angular2/core.dart';
 import 'package:angular2/security.dart';
 import 'package:aod3/object/web_content.dart';
@@ -27,7 +27,7 @@ class InformacionComponent implements OnInit {
   String id;
   final RouteParams _routeParams;
   List webContents;
-  final common_dart.Location _location;
+  final Location _location;
   String urlString;
   String titleString;
   String subTitleString;
