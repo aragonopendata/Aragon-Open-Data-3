@@ -19,47 +19,46 @@
             <ul class="menus">
                 <li class="menuPrimero">
                     <input type="radio" name="menu" id="datosCheckbox">
-                    <label for="datosCheckbox" class="linkPrimero">{{header_datos}}</label>
+                    <label for="datosCheckbox" class="linkPrimero" [innerHtml]="header_datos"></label>
                     <ul class="submenus">
                         <br>
-                        <li><a href="/catalogo" (click)="overlayClose()">{{header_datos_bancodatos}}</a></li>
-                        <li><a href="/catalogo/tema" (click)="overlayClose()">{{header_datos_temas}}</a></li>
-                        <li><a href="catalogo/organizacion" (click)="overlayClose()">{{header_datos_publicadores}}</a></li>
+                        <li><a href="/catalogo" (click)="overlayClose()" [innerHtml]="header_datos_bancodatos"></a></li>
+                        <li><a href="/catalogo/tema" (click)="overlayClose()" [innerHtml]="header_datos_temas"></a></li>
+                        <li><a href="catalogo/organizacion" (click)="overlayClose()" [innerHtml]="header_datos_publicadores"></a></li>
                     </ul>
                 </li>
                 <li class="menuPrimero">
                     <input type="radio" name="menu" id="serviciosCheckbox">
-                    <label for="serviciosCheckbox" class="linkPrimero">{{header_servicios}}</label>
+                    <label for="serviciosCheckbox" class="linkPrimero" [innerHtml]="header_servicios"></label>
                     <ul class="submenus">
                         <br>
-                        <li><a href="/portal/social-data" (click)="overlayClose()">{{header_servicios_socialdata}}</a></li>
-                        <li><a href="/apps/aragopedia" (click)="overlayClose()">{{header_servicios_aragopedia}}</a></li>
-                        <li><a href="http://presupuesto.aragon.es/" (click)="overlayClose()">{{header_servicios_presupuestos}}</a></li>
-                        <li><a href="http://opendata.aragon.es/apps/cras" (click)="overlayClose()">{{header_servicios_cras}}</a></li>
+                        <li><a href="/portal/social-data" (click)="overlayClose()" [innerHtml]="header_servicios_socialdata"></a></li>
+                        <li><a href="/apps/aragopedia" (click)="overlayClose()" [innerHtml]="header_servicios_aragopedia"></a></li>
+                        <li><a href="http://presupuesto.aragon.es/" (click)="overlayClose()" [innerHtml]="header_servicios_presupuestos"></a></li>
+                        <li><a href="http://opendata.aragon.es/apps/cras" (click)="overlayClose()" [innerHtml]="header_servicios_cras"></a></li>
                     </ul>
                 </li>
                 <li class="menuPrimero">
                     <input type="radio" name="menu" id="informacionCheckbox">
-                    <label for="informacionCheckbox" class="linkPrimero">{{header_informacion}}</label>
+                    <label for="informacionCheckbox" class="linkPrimero" [innerHtml]="header_informacion"></label>
                     <ul class="submenus">
                         <br>
-                        <li><a [routerLink]="['Colabora']" (click)="overlayClose()">{{header_informacion_colabora}}</a></li>
-                        <li><a [routerLink]="['Aplicaciones']" (click)="overlayClose()">{{header_informacion_aplicaciones}}</a></li>
-                        <li><a [routerLink]="['Info', {id: 'informacion'}]" (click)="overlayClose()">{{header_informacion_informacion}}</a></li>
-                        <li><a [routerLink]="['Info', {id: 'eventos'}]" (click)="overlayClose()">{{header_informacion_eventos}}</a></li>
-                         <!--<li><a [routerLink]="['EnvioAplicaciones'}]" (click)="overlayClose()">header_envio_aplicaciones</a></li>-->
+                        <li><a [routerLink]="['Colabora']" (click)="overlayClose()" [innerHtml]="header_informacion_colabora"></a></li>
+                        <li><a [routerLink]="['Aplicaciones']" (click)="overlayClose()" [innerHtml]="header_informacion_aplicaciones"></a></li>
+                        <li><a [routerLink]="['Info', {id: 'informacion'}]" (click)="overlayClose()" [innerHtml]="header_informacion_informacion"></a></li>
+                        <li><a [routerLink]="['Info', {id: 'eventos'}]" (click)="overlayClose()" [innerHtml]="header_informacion_eventos"></a></li>
                     </ul>
                 </li>
                 <li class="menuPrimero">
                     <input type="radio" name="menu" id="herramientasCheckbox">
-                    <label for="herramientasCheckbox" class="linkPrimero">{{header_herramientas}}</label>
+                    <label for="herramientasCheckbox" class="linkPrimero" [innerHtml]="header_herramientas"></label>
                     <ul class="submenus">
                         <br>
-                        <li><a [routerLink]="['Campus']" (click)="overlayClose()">{{header_herramientas_campus}}</a></li>
-                        <li><a [routerLink]="['Herramientas', {id: 'desarrolladores'}]" (click)="overlayClose()">{{header_herramientas_desarrolladores}}</a></li>
-                        <li><a [routerLink]="['Herramientas', {id: 'apis'}]" (click)="overlayClose()">{{header_herramientas_apis}}</a></li>
-                        <li><a [routerLink]="['Herramientas', {id: 'sparql'}]" (click)="overlayClose()">{{header_herramientas_sparql}}</a></li>
-                        <li><a href="https://github.com/aragonopendata/Aragon-Open-Data-3" target="_blank">{{header_herramientas_github}}</a></li>
+                        <li><a [routerLink]="['Campus']" (click)="overlayClose()" [innerHtml]="header_herramientas_campus"></a></li>
+                        <li><a [routerLink]="['Herramientas', {id: 'desarrolladores'}]" (click)="overlayClose()" [innerHtml]="header_herramientas_desarrolladores"></a></li>
+                        <li><a [routerLink]="['Herramientas', {id: 'apis'}]" (click)="overlayClose()" [innerHtml]="header_herramientas_apis"></a></li>
+                        <li><a [routerLink]="['Herramientas', {id: 'sparql'}]" (click)="overlayClose()" [innerHtml]="header_herramientas_sparql"></a></li>
+                        <li><a href="https://github.com/aragonopendata/Aragon-Open-Data-3" target="_blank" [innerHtml]="header_herramientas_github"></a></li>
                     </ul>
                 </li>
                 <li class="menuPrimeroUltimo">
@@ -70,7 +69,7 @@
                 </li>
                 <li *ngIf="datasets!=null" class="menuPrimero" type="square" id="lista_header">
                     <ul>
-                    <li *ngFor="let item of datasets" value="{{valor}}"><a href="http://opendata.aragon.es/catalogo/{{item['name']}}">{{item['title']}}</a></li>
+                    <li *ngFor="let item of datasets" value="{{valor}}"><a href="http://opendata.aragon.es/catalogo/{{item['name']}}" [innerHtml]="">{{item['title']}}</a></li>
                     </ul>
                 </li>
             </ul>

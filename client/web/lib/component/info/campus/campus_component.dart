@@ -15,12 +15,12 @@ class CampusComponent implements OnInit {
   List<Map<String,dynamic>> etiquetasList;
   List<Map<String,dynamic>> eventosList;
   List<Map<String,dynamic>> formatosList;
-  List<int> pagesList;
+  List<num> pagesList;
 
 
   CampusComponent(this._campusService,this._router);
 
-  String isActive(int index){
+  String isActive(num index){
     if(index == _campusService.currentPage){
      return 'pagination_active';
     }else{
@@ -57,7 +57,7 @@ class CampusComponent implements OnInit {
     });
   }
 
-  void moveTo(int id) {
+  void moveTo(num id) {
     _campusService.changePage(id).then((List<Map<String,dynamic>> lista) {
       campusList = lista;
     });
@@ -71,7 +71,7 @@ class CampusComponent implements OnInit {
   String get tipoValue => _campusService.tipoValue.toString();
 
   set tipoValue(String value) {
-    _campusService.tipoValue = int.parse(value);
+    _campusService.tipoValue = num.parse(value);
     reprintCampusList();
   }
 
@@ -89,21 +89,21 @@ class CampusComponent implements OnInit {
   String get formatoValue => _campusService.formatoValue.toString();
 
   set formatoValue(String value) {
-    _campusService.formatoValue = int.parse(value);
+    _campusService.formatoValue = num.parse(value);
     reprintCampusList();
   }
 
   String get eventoValue => _campusService.eventoValue.toString();
 
   set eventoValue(String value) {
-    _campusService.eventoValue = int.parse(value);
+    _campusService.eventoValue = num.parse(value);
     reprintCampusList();
   }
 
   String get etiquetaValue => _campusService.etiquetaValue.toString();
 
   set etiquetaValue(String value) {
-    _campusService.etiquetaValue = int.parse(value);
+    _campusService.etiquetaValue = num.parse(value);
     reprintCampusList();
   }
 }

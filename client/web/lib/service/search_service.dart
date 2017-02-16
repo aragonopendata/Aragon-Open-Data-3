@@ -5,7 +5,7 @@ import 'package:angular2/core.dart';
 
 @Injectable()
 class SearchService {
-  Future<List<Map<String,String>>> getDataset(String input, {int limit: 8}) async {
+  Future<List<Map<String,String>>> getDataset(String input, {num limit: 8}) async {
     String url =
         "http://opendata.aragon.es/catalogo/api/2/util/dataset/autocomplete?incomplete=%$input%&limit=$limit";
     return HttpRequest.request(url).then((HttpRequest result) {

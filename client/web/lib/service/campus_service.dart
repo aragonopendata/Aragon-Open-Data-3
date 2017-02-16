@@ -6,7 +6,7 @@ import 'package:fluri/fluri.dart';
 
 @Injectable()
 class CampusService {
-  Uri urlBase = new Uri(scheme: 'http', pathSegments: ['jaguar','campus']);
+  Uri urlBase = new Uri(scheme: 'http',pathSegments: <String>['jaguar','campus']);
   //Uri urlBase = new Uri(scheme: 'http', host:'localhost', port: 8756, pathSegments: <String>['campus']);
   static const String urlContenido = "contenido";
   static const String urlTipo = "tipo";
@@ -15,29 +15,29 @@ class CampusService {
   static const String urlFormato = "formato";
   static const String urlPonente = "ponente";
   List<List<Map<String,dynamic>>> campusPaginated;
-  static const int limit = 9;
-  int totalElements;
-  int posiblePages;
-  int _tipoValue = -1;
-  int currentPage = 1;
+  static const num limit = 9;
+  num totalElements;
+  num posiblePages;
+  num _tipoValue = -1;
+  num currentPage = 1;
   Map<String,dynamic> campusItem = new Map<String,dynamic>();
 
-  int get tipoValue => _tipoValue;
+  num get tipoValue => _tipoValue;
 
-  set tipoValue(int value) {
+  set tipoValue(num value) {
     _tipoValue = value;
     currentPage = 1;
   }
 
   String _ponenteValue;
-  int _etiquetaValue = -1;
-  int _eventoValue = -1;
-  int _formatoValue =-1;
-  List<int> pagesList;
+  num _etiquetaValue = -1;
+  num _eventoValue = -1;
+  num _formatoValue =-1;
+  List<num> pagesList;
 
   Future<List<Map<String,dynamic>>> getAllCampus({
-    int offset: 0,
-    int limit: 9,
+    num offset: 0,
+    num limit: 9,
   }) async {
     Fluri url = new Fluri.fromUri(urlBase);
 
@@ -66,8 +66,8 @@ class CampusService {
   }
 
   Future<List<Map<String,dynamic>>> getCampusPage({
-    int offset: 0,
-    int limit: 9,
+    num offset: 0,
+    num limit: 9,
   }) async {
     Fluri url = new Fluri.fromUri(urlBase);
 
@@ -101,10 +101,10 @@ class CampusService {
     });
   }
 
-  List<int> createPagesList() {
-    List<int> lista = new List<int>(posiblePages);
+  List<num> createPagesList() {
+    List<num> lista = new List<num>(posiblePages);
 
-    for (int i = 0; i < lista.length; i++) {
+    for (num i = 0; i < lista.length; i++) {
       lista[i] = i + 1;
     }
     return lista;
@@ -176,8 +176,8 @@ class CampusService {
   }
 
   Future<List<Map<String,dynamic>>> initializeCampus({
-    int offset: 0,
-    int limit: 9,
+    num offset: 0,
+    num limit: 9,
   }) async{
     return getAllCampus(
       offset: (currentPage-1)*9,
@@ -186,56 +186,56 @@ class CampusService {
         campusPaginated.clear();
         return campusPaginated[0];
       }else{
-      campusPaginated = new List<List<Map<String,dynamic>>>(posiblePages);
+      campusPaginated = new List<List<Map<String,dynamic>>>(posiblePages.toInt());
       campusPaginated[0] = result;
       pagesList = createPagesList();
       prepareNextPages(
-        currentPage-1,
+        currentPage,
       );
       return campusPaginated[0];}
     });
   }
 
-  Future<Null> prepareNextPages(int actual, {int offset: 0}) async {
-    int morePages = posiblePages - actual;
+  Future<Null> prepareNextPages(num actual, {num offset: 0}) async {
+    num morePages = posiblePages - actual;
     if (morePages >= 2) {
+      if (campusPaginated[actual] == null) {
+        getCampusPage(
+          offset: actual * limit,
+        ).then((List<Map<String,dynamic>> lista) {
+          campusPaginated[actual] = lista;
+        });
+      }
       if (campusPaginated[actual + 1] == null) {
         getCampusPage(
           offset: (actual + 1) * limit,
         ).then((List<Map<String,dynamic>> lista) {
           campusPaginated[actual + 1] = lista;
-        });
-      }
-      if (campusPaginated[actual + 2] == null) {
-        getCampusPage(
-          offset: (actual + 2) * limit,
-        ).then((List<Map<String,dynamic>> lista) {
-          campusPaginated[actual + 2] = lista;
         });
       }
     } else if (morePages == 1) {
-      if (campusPaginated[actual + 1] == null) {
+      if (campusPaginated[actual] == null) {
         getCampusPage(
           offset: (actual + 1) * limit,
         ).then((List<Map<String,dynamic>> lista) {
-          campusPaginated[actual + 1] = lista;
+          campusPaginated[actual] = lista;
         });
       }
     }
   }
 
-  Future<List<Map<String,dynamic>>> changePage(int page) async {
+  Future<List<Map<String,dynamic>>> changePage(num page) async {
     if (campusPaginated[page] == null) {
       return getCampusPage(
         offset: (page) * limit,
       ).then((List<Map<String,dynamic>> lista) {
         campusPaginated[page - 1] = lista;
-        prepareNextPages(page - 1);
+        prepareNextPages(page);
         currentPage = page;
         return lista;
       });
     } else {
-      prepareNextPages(page - 1);
+      prepareNextPages(page);
       currentPage = page;
       return campusPaginated[page - 1];
     }
@@ -248,23 +248,23 @@ class CampusService {
     currentPage = 1;
   }
 
-  int get etiquetaValue => _etiquetaValue;
+  num get etiquetaValue => _etiquetaValue;
 
-  set etiquetaValue(int value) {
+  set etiquetaValue(num value) {
     _etiquetaValue = value;
     currentPage = 1;
   }
 
-  int get eventoValue => _eventoValue;
+  num get eventoValue => _eventoValue;
 
-  set eventoValue(int value) {
+  set eventoValue(num value) {
     _eventoValue = value;
     currentPage = 1;
   }
 
-  int get formatoValue => _formatoValue;
+  num get formatoValue => _formatoValue;
 
-  set formatoValue(int value) {
+  set formatoValue(num value) {
     _formatoValue = value;
     currentPage = 1;
   }

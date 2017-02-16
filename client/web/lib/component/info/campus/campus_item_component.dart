@@ -33,7 +33,7 @@ class CampusItemComponent implements OnInit,OnDestroy {
     }
   }
 
-  void returnToCampusWith(String element, int etiqueta){
+  void returnToCampusWith(String element, num etiqueta){
     _campusService.clearSearch();
     switch(element){
       case 'aparece':

@@ -1,20 +1,19 @@
 <div id="campusItem">
     <div *ngIf="item.isNotEmpty">
         <h1>CAMPUS OPEN DATA</h1>
-        <h2>{{item['titulo']}}</h2>
-        <p>{{item['descripcion']}}</p>
-        <h3>Etiquetas y palabras clave</h3>
-        <p class="etiqueta" *ngFor="let etiqueta of item['temas']" (click)="returnToCampusWith('etiqueta', etiqueta['id'])">{{etiqueta['nombre']}}</p>
-        <h3>ponente</h3>
-        <p><a (click)="returnToCampusWith('aparece',null)">{{item['aparece']}}</a></p>
+        <h2 [innerHtml]="item['titulo']"></h2>
+        <p [innerHtml]="item['descripcion']"></p>
+        <h3>ETIQUETAS Y PALABRAS CLAVE</h3>
+        <p class="etiqueta" *ngFor="let etiqueta of item['temas']" (click)="returnToCampusWith('etiqueta', etiqueta['id'])" [innerHtml]="etiqueta['nombre']"></p>
+        <h3>PONENTE</h3>
+        <p><a (click)="returnToCampusWith('aparece',null)" [innerHtml]="item['aparece']"></a></p>
         <div [safeInnerHtml]="url"></div>
-        <h3>Evento</h3>
-        <p><a (click)="returnToCampusWith('evento',null)">{{item['evento']['nombre']}}</a></p>
-        <p>{{item['evento']['descripcion']}}</p>
-        <h3>fecha</h3>
-        <p>{{item['evento']['fecha']}}</p>
-        <h3>lugar</h3>
-        <p>{{item['evento']['lugar']}}</p>
-        <p>{{item['url']}}</p>
+        <h3>EVENTO</h3>
+        <p><a (click)="returnToCampusWith('evento',null)" [innerHtml]="item['evento']['nombre']"></a></p>
+        <p [innerHtml]="item['evento']['descripcion']"></p>
+        <h3>FECHA</h3>
+        <p [innerHtml]="item['evento']['fecha']"></p>
+        <h3>LUGAR</h3>
+        <p [innerHtml]="item['evento']['lugar']"></p>
     </div>
 </div>

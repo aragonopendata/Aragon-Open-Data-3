@@ -7,8 +7,8 @@
                 <img *ngIf="firstHover" style="opacity:0" src="images/home/tarjetas/{{elemento.imagen}}-ON.jpg">
             </div>
             <div class="tarjeta_oculta">
-                <p class="tit">{{elemento.titulo}}</p>
-                <p class="des">{{elemento.descripcion}}</p>
+                <p class="tit" [innerHtml]="elemento.titulo"></p>
+                <p class="des" [innerHtml]="elemento.descripcion"></p>
             </div>
         </div>
     </div>

@@ -236,6 +236,12 @@ nav{
   margin-top:50px;
   margin-bottom:2px;
   border-bottom:2px solid #fff;
+  @include media($campus-pequeña1) {
+
+  }
+  @include media($campus-pequeña2) {
+    display:none;
+  }
 }
 
 .linkPrimero {
@@ -297,6 +303,16 @@ nav input[type="search"]{
   font-size: 60px;
   display:inline-block;
   width: 93%;
+    @include media($campus-pequeña1) {
+       font-size: 20px;
+    }
+   @include media($campus-pequeña2) {
+       font-size: 20px;
+    }
+}
+
+#buscador_header{
+  color: #fff !important;
 }
 
 nav button{
@@ -308,7 +324,13 @@ nav button{
   padding:0;
   text-decoration:underline;
   font-family:inherit;
-  font-size:60px;
+  font-size: 60px;
+   @include media($campus-pequeña1) {
+       font-size: 20px;
+    }
+   @include media($campus-pequeña2) {
+       font-size: 20px;
+    }
   vertical-align: inherit;
 }
 
@@ -320,25 +342,10 @@ textarea:focus, input:focus{
   outline: none;
 }
 
-*::-webkit-input-placeholder {
-  color: white;
-  opacity: 1;
-}
-*:-moz-placeholder {
-  /* FF 4-18 */
-  color: white;
-  opacity: 1;
-}
-*::-moz-placeholder {
-  /* FF 19+ */
-  color: white;
-  opacity: 1;
-}
-*:-ms-input-placeholder {
-  /* IE 10+ */
-  color: white;
-  opacity: 1;
-}
+#buscador_header::-webkit-input-placeholder { color: white; }
+#buscador_header::-moz-placeholder { color: white; }
+#buscador_header:-ms-input-placeholder { color: white; }
+#buscador_header:-moz-placeholder { color: white; }
 
 /************ Cabecera relacionados */
 #cabeceraRelacionados {
