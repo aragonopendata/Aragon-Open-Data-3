@@ -1,4 +1,4 @@
-import 'dart:html' hide Location;
+import 'dart:html' show window,Event,MouseEvent,querySelector;
 import 'package:angular2/platform/common.dart';
 import 'package:angular2/core.dart';
 import 'package:angular2/security.dart';

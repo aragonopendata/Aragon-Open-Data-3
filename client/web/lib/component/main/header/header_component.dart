@@ -11,6 +11,7 @@ import 'package:aod3/service/search_service.dart';
     providers: const <dynamic>[])
 class HeaderComponent {
   bool opChecked = false;
+  bool hover_menu = false;
   final SearchService _SearchService;
   List<Map<String,String>> datasets;
   String valor;
@@ -42,6 +43,8 @@ class HeaderComponent {
   String get header_herramientas_sparql => 'SPARQL';
   String get header_herramientas_github => 'GITHUB';
   //String get header_envio_aplicaciones => 'Envio Aplicaciones';
+  String get boton_menu => botonMenuImage();
+  String get logo => logoImage();
 
   ///Cierra el overlay del menu
   void overlayClose() {
@@ -72,5 +75,37 @@ class HeaderComponent {
   void onKey(dynamic event) {
     getDatasets(event.target.value, limit: 4);
     valor = event.target.value;
+  }
+
+  String botonMenuImage() {
+    if(opChecked){
+      if(hover_menu){
+        return "/images/home/nav-bar/Boton-Salir-Modo-Responsive-ON.png";
+      }else{
+        return "/images/home/nav-bar/Boton-Salir-Menu-Responsive-OFF.png";
+      }
+    }else{
+      if(hover_menu){
+        return "/images/home/nav-bar/Boton-Menu-Responsive-ON.jpg";
+      }else{
+        return "/images/home/nav-bar/Boton-Menu-Responsive-OFF.png";
+      }
+    }
+  }
+
+  void boton_menu_over(){
+    hover_menu = true;
+  }
+
+  void boton_menu_out(){
+    hover_menu = false;
+  }
+
+  String logoImage() {
+    if(opChecked){
+      return "/images/home/nav-bar/AOD-Logo-Responsive.png";
+    }else{
+      return "/images/home/nav-bar/AOD-Logo.png";
+    }
   }
 }

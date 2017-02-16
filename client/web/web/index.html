@@ -2,14 +2,52 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Aragon Open Data 3.0</title>
+    <meta name="author" content="Ismael Blasco Barrera,Miquel Quetglas" />
+    <meta name="keywords" content="Open data, Aragon, Datos Abiertos">
+    <meta name="robots" content="index, follow" />
+    <meta name="google-site-verification" content="cr3MWGC2O0Hl9d6yV4lJDSwnDXtiVQ19MuC3h6OWa-k" />
+
+
+    <title>Aragon Open Data</title>
     <base href="/">
-    <!--<base href="/newHome">-->
+    <script>
+        /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+        !function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+        loadCSS( "styles.css" );
+        loadCSS( "https://fonts.googleapis.com/css?family=Nunito|Roboto:300,500,700" );
+    </script>
+    <style>
+        body{
+            background: #f1f1f1;
+        }
+        .loading-bro{
+            margin:50px auto;width:150px
+        }
+        .loading-bro>h1{
+            text-align:center;font-size:2.5em;margin-bottom:1em;font-weight:300;color:#8E8E8E
+        }
+        .load{
+            width:150px;-webkit-animation:loading 3s linear infinite;-moz-animation:loading 3s linear infinite;animation:loading 3s linear infinite
+        }
+        .load .loading-inner{
+            stroke-dashoffset:0;stroke-dasharray:300;stroke-width:10;stroke-miterlimit:10;stroke-linecap:round;-webkit-animation:loading-circle 2s linear infinite;-moz-animation:loading-circle 2s linear infinite;animation:loading-circle 2s linear infinite;stroke:#76a1b8;fill:transparent
+        }
+        .loader{
+            display:block;width:50%;margin:0 auto
+        }
+        .loader::after{
+            clear:both;content:"";display:block
+        }
+        .loader>.load{
+            width:50%;margin-left:25%;margin-right:25%
+        }
+        @-webkit-keyframes loading{from{transform:rotate(0)}to{transform:rotate(360deg)}}@-moz-keyframes loading{from{transform:rotate(0)}to{transform:rotate(360deg)}}@keyframes loading{from{transform:rotate(0)}to{transform:rotate(360deg)}}@-webkit-keyframes loading-circle{from{stroke-dashoffset:0}to{stroke-dashoffset:-600}}@-moz-keyframes loading-circle{from{stroke-dashoffset:0}to{stroke-dashoffset:-600}}@keyframes loading-circle{from{stroke-dashoffset:0}to{stroke-dashoffset:-600}}
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link defer href="https://fonts.googleapis.com/css?family=Nunito|Roboto:300,500,700" rel="stylesheet" type="text/css">
+    <!--<link href="https://fonts.googleapis.com/css?family=Nunito|Roboto:300,500,700" rel="stylesheet" type="text/css">-->
     <script defer src="main.dart" type="application/dart"></script>
     <script defer src="packages/browser/dart.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <!--<link rel="stylesheet" href="styles.css">-->
 </head>
 <body>
 <my-app>

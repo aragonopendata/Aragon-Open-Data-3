@@ -6,17 +6,16 @@
   position: fixed;
   height: 100px;
   display: inline-block;
-  z-index: 998;
+  z-index: 700;
 }
 
-#logo{
-  /*background: url("images/home/nav-bar/AOD-Logo.png") no-repeat;*/
+/*#logo img{
   height: 80px;
   width: 489px;
   margin-top:10px;
   margin-left:10px;
   display: inline-block;
-  /*position: fixed;*/
+  position: fixed;
   z-index: 999;
   @include media($campus-pequeña1) {
       height: 70px;
@@ -26,22 +25,32 @@
       height: 40px;
       width: 245px;
     }
+}*/
+header a{
+  z-index: 999;
+}
+.logo{
+  margin: 10px;
+  z-index: 999;
+  @include media($campus-pequeña1) {
+    height: 70px;
+    width: 367px;
+  }
+  @include media($campus-pequeña2) {
+    height: 40px;
+    width: 245px;
+  }
 }
 
 .menu{
-  background: url("images/home/nav-bar/Boton-Menu-Responsive-OFF.png");
   width: 60px;
   height: 60px;
   position: fixed;
   margin-top: 20px;
   right: 20px;
-  padding: 10;
+  //padding: 10px;
   display: inline-block;
   z-index: 999;
-}
-
-.menu:hover{
-  background: url("images/home/nav-bar/Boton-Menu-Responsive-ON.jpg");
 }
 
 #separacionMenu{
@@ -52,7 +61,7 @@
 }
 /************ Overlay Prueba nº2 */
 
-#op:checked~.menu{
+/*#op:checked~.menu{
   background: url("images/home/nav-bar/prueba1.png");
 }
 
@@ -66,15 +75,15 @@
 
 .menuButton:hover{
   background: url("images/home/nav-bar/prueba2.png");
-}
+}*/
 
 
-#op:checked~#logo{
+/*#op:checked~#logo{
   background: url("images/home/nav-bar/AOD-Logo-Responsive.png");
   @include media($movil) {
     margin-left:5%;
   }
-}
+}*/
 
 
 /************ Overlay Prueba nº1 */
@@ -105,13 +114,11 @@
   //height: 60%;
   //font-size: 54px;
   margin-top:150px !important;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
   overflow: hidden;
 }
 
 nav{
-  margin-top:150px;
+  //margin-top:150px;
 }
 
 /*.overlay a:hover,
@@ -266,17 +273,14 @@ nav{
   margin-top: 25px;
 }
 
-a{
+header a{
   color: grey;
 }
 
-a:hover{
+header a:hover{
   color: white;
 }
 
-a:hover{
-  color:white;
-}
 
 .menus input[type="radio"] {
   display:none;
