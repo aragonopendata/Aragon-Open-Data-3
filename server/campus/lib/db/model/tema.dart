@@ -1,6 +1,6 @@
 library tema.model;
 
-import 'package:campusAPI/db/db.dart';
+import 'package:campusAPI/db/model/models.dart';
 
 part 'tema.g.dart';
 

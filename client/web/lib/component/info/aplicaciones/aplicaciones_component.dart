@@ -8,12 +8,12 @@ import 'package:angular2_components/angular2_components.dart';
 @Component(
     selector: 'aplicaciones',
     templateUrl: 'aplicaciones.html',
-    directives: const [
+    directives: const <dynamic>[
       materialDirectives,
       defaultPopupSizeProvider,
       SafeInnerHtmlDirective
     ],
-    providers: const [
+    providers: const <dynamic>[
       materialProviders,
       InfoService,
       DomSanitizationService
@@ -51,7 +51,7 @@ PopupSizeProvider createPopupSizeProvider() {
   return const PercentagePopupSizeProvider();
 }
 
-@Directive(selector: '[defaultPopupSizeProvider]', providers: const [
+@Directive(selector: '[defaultPopupSizeProvider]', providers: const <dynamic>[
   const Provider(PopupSizeProvider, useFactory: createPopupSizeProvider)
 ])
 class defaultPopupSizeProvider {}

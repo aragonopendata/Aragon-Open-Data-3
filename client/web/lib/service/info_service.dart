@@ -4,15 +4,9 @@ import 'package:aod3/object/web_content.dart';
 
 @Injectable()
 class InfoService {
-    //String url = 'http://opendata.aragon.es';
-    //String urlWeb = 'http://preopendata.aragon.es';
-    //String urlWebFull = 'http://preopendata.aragon.es';
     String urlWeb = 'http://preopendata.aragon.es';
-    //String urlWebFull = 'http://preopendata.aragon.es';
-    //String urlWeb = 'http://localhost:8081';
     String urlWebFull = 'http://preopendata.aragon.es';
-    //String url = 'http://localhost:8081/newHome';
-  List<Aplicacion> get aplicaciones => [
+  List<Aplicacion> get aplicaciones => <Aplicacion>[
         new Aplicacion(
             'AragoPedia',
             'Los datos abiertos de Aragón Open Data trabajados para que puedas verlos por territorios. Aquí tienes los datos de tu municipio y de tu comarca para que puedas consultarlos y saber las principales informaciones de la población en la que vives o en la que has nacido.',
@@ -90,7 +84,7 @@ class InfoService {
             urlWeb + '/public/i/aplicaciones/papelea.png')
       ];
 
-  List<WebContent> get iformaciones => [
+  List<WebContent> get iformaciones => <WebContent>[
         new WebContent(
             'informacion_content_1',
             'informacion',
@@ -345,7 +339,7 @@ class InfoService {
                 '<p>En el caso de usuarios técnicamente avanzados se han mejorado las herramientas de acceso a los datos. Sigue disponible la <a href="'+urlWebFull+'/herramientas/apis#ckan" title="API nativa de CKAN">API nativa de CKAN</a> para acceder a los conjuntos de datos del catálogo de Aragón Open Data. Además se han añadido tres nuevas APIs, una que permite explotar el conjunto de datos de <a href="'+urlWebFull+'/herramientas/apis#social-data" title="API Aragón Open Social Data">Aragón Open Social Data</a>, otra que permite obtener contenidos de la <a href="'+urlWebFull+'/herramientas/apis#aragodbpedia" title="API AragoPedia">AragoPedia</a> (ofrecida por el producto <a href="http://www.mediawiki.org" title="MediaWiki">MediaWiki</a>) y otra que permite acceder a los datos semánticos que hay detrás de <a href="'+urlWebFull+'/herramientas/apis#aragodbpedia" title="API AragoDBPedia">AragoDBPedia</a>. Finalmente se ha incorporado un <a href="'+urlWeb+'/sparql" title="Punto SPARQ">punto SPARQL</a> de acceso a la información semántica con su correspondiente <a href="'+urlWeb+'/herramientas/apis#ckan" title="API nativa de CKAN">documentación de consulta</a>.</p>')
       ];
 
-  List<WebContent> get sparql => [
+  List<WebContent> get sparql => <WebContent>[
         new WebContent(
             'sparql_content_5',
             'sparql',
@@ -360,7 +354,7 @@ class InfoService {
                 '<section><h4 class="titularesPeques">Entendiendo los usos de suelo en Aragón</h4><p>Utilizando lo que hemos visto hasta ahora, vamos a ordenar de mayor a menor los municipios de Aragón según la superficie destinada a aeropuertos. Utilizaremos por tanto el cubo de datos de uso de suelo (<a rel="nofollow" href="'+urlWeb+'/recurso/DataSet/UsoSuelo">'+urlWeb+'/recurso/DataSet/UsoSuelo</a>). Utilizando una de las consultas anteriores, podremos ver <a href="'+urlWeb+'/sparql?default-graph-uri=http%3A%2F%2Fopendata.aragon.es%2Fgraph%2FAragopedia%2Flatest&amp;query=PREFIX+aragodef%3A+%3Chttp%3A%2F%2Fopendata.aragon.es%2Fdef%2FAragopedia%23%3E%0D%0APREFIX+qb%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fcube%23%3E%0D%0ASELECT+DISTINCT+%3Fp%0D%0AWHERE+{%0D%0A+%3Fx+a+qb%3AObservation+.%0D%0A+%3Fx+qb%3AdataSet+%3Chttp%3A%2F%2Fopendata.aragon.es%2Frecurso%2FDataSet%2FUsoSuelo%3E+.%0D%0A+%3Fx+%3Fp+%3Fy+}&amp;format=text%2Fhtml&amp;timeout=0&amp;debug=on">cuáles son las dimensiones aplicables a este conjunto de datos</a>.</p><br><pre>PREFIX qb: &lt;http://purl.org/linked-data/cube#&gt;SELECT DISTINCT ?pWHERE {?x a qb:Observation .?x qb:dataSet &lt;'+urlWeb+'/recurso/DataSet/UsoSuelo&gt; .?x ?p ?y }</pre><br><p>Así, determinamos que la propiedad que nos interesa es aragodef:hectareasAeropuertos, por lo que podemos realizar la <a href="'+urlWeb+'/sparql?default-graph-uri=http%3A%2F%2Fopendata.aragon.es%2Fgraph%2FAragopedia%2Flatest&amp;query=PREFIX+aragodef%3A+%3Chttp%3A%2F%2Fopendata.aragon.es%2Fdef%2FAragopedia%23%3E%0D%0APREFIX+dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0D%0APREFIX+qb%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fcube%23%3E%0D%0ASELECT+DISTINCT+%3Fmunicipio+%3Fha%0D%0AWHERE+{%0D%0A+%3Fx+a+qb%3AObservation+.%0D%0A+%3Fx+qb%3AdataSet+%3Chttp%3A%2F%2Fopendata.aragon.es%2Frecurso%2FDataSet%2FUsoSuelo%3E+.%0D%0A+%3Fx+aragodef%3AhectareasAeropuertos+%3Fha+.%0D%0A+%3Fx+aragodef%3ArefArea+%3Fmunicipio+.%0D%0A+%3Fmunicipio+a+dbpedia%3AMunicipality+.%0D%0A+FILTER%28%3Fha+!%3D+0%29%0D%0A}+ORDER+BY+DESC%28%3Fha%29&amp;format=text%2Fhtml&amp;timeout=0&amp;debug=on">siguiente consulta</a>:</p><pre>PREFIX aragodef: &lt;'+urlWeb+'/def/Aragopedia#&gt;PREFIX dbpedia: &lt;http://dbpedia.org/ontology/&gt;PREFIX qb: &lt;http://purl.org/linked-data/cube#&gt;SELECT DISTINCT ?municipio ?haWHERE {?x a qb:Observation .?x qb:dataSet &lt;'+urlWeb+'/recurso/DataSet/UsoSuelo&gt; .?x aragodef:hectareasAeropuertos ?ha .?x aragodef:refArea ?municipio .?municipio a dbpedia:Municipality .FILTER(?ha != 0)} ORDER BY DESC(?ha)</pre></section>' +
                 '<section><h4 class="titularesPeques">Determinando el total de kg de vidrio recogido en cada municipio de Aragón</h4><p>Igual que anteriorment, vamos a obtener a partir del dataset de reciclaje el total de kg de vidrio recogido en cada municipio de Aragón, desde que hay datos disponibles, ordenados de mayor a menor, mediante la <a href="'+urlWeb+'/sparql?default-graph-uri=http%3A%2F%2Fopendata.aragon.es%2Fgraph%2FAragopedia%2Flatest&amp;query=PREFIX+qb%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fcube%23%3E%0D%0APREFIX+aragodef%3A+%3Chttp%3A%2F%2Fopendata.aragon.es%2Fdef%2FAragopedia%23%3E%0D%0APREFIX+dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0D%0ASELECT+DISTINCT+%3Fmunicipio+%3FtotalKG%0D%0AWHERE{%0D%0A+{%0D%0A+SELECT+DISTINCT+%3Fmunicipio+%28SUM%28%3Fkg%29+AS+%3FtotalKG%29+%0D%0A+WHERE+{%0D%0A++%3Fx+a+qb%3AObservation+.%0D%0A++%3Fx+qb%3AdataSet+%3Chttp%3A%2F%2Fopendata.aragon.es%2Frecurso%2FDataSet%2FReciclaje%3E+.%0D%0A++%3Fx+aragodef%3ArefArea+%3Fmunicipio+.%0D%0A++%3Fmunicipio+a+dbpedia%3AMunicipality+.%0D%0A++%3Fx+aragodef%3AnumKGVidrio+%3Fkg+.%0D%0A+}%0D%0A+}%0D%0A}+ORDER+BY+DESC%28%3FtotalKG%29%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;debug=on">siguiente consulta</a>:</p><br><pre>PREFIX qb: &lt;http://purl.org/linked-data/cube#&gt;PREFIX aragodef: &lt;'+urlWeb+'/def/Aragopedia#&gt;PREFIX dbpedia: &lt;http://dbpedia.org/ontology/&gt;SELECT DISTINCT ?municipio ?totalKGWHERE{{SELECT DISTINCT ?municipio (SUM(?kg) AS ?totalKG) WHERE {?x a qb:Observation .?x qb:dataSet &lt;'+urlWeb+'/recurso/DataSet/Reciclaje&gt; .?x aragodef:refArea ?municipio .?municipio a dbpedia:Municipality .?x aragodef:numKGVidrio ?kg .}}} ORDER BY DESC(?totalKG)</pre></section><h3 class="titulosSecundariosNegritas i_i" id="enlaces-otras-iniciativas">Enlaces a otras iniciativas</h3><br><br><section><h4 class="titularesPeques">Obteniendo la lista de emparejamientos con esDBpedia</h4><p>Todos los recursos disponibles en Aragopedia están relacionados con sus correspondientes recursos en esDBpedia mediante la propiedad owl:sameAs. Mediante una consulta SPARQL, puede obtenerse <a href="'+urlWeb+'/sparql?default-graph-uri=http%3A%2F%2Fopendata.aragon.es%2Fgraph%2FAragopedia%2Flatest&amp;query=SELECT+DISTINCT+*+WHERE+{%0D%0A+%3Fx+owl%3AsameAs+%3Fy%0D%0A}&amp;format=text%2Fhtml&amp;timeout=0&amp;debug=on">la lista de emparejamientos entre esDBpedia y Aragopedia</a>:</p><br><pre>SELECT DISTINCT *WHERE {?x owl:sameAs ?y}</pre>')
       ];
-  List<WebContent> get desarrolladores => [
+  List<WebContent> get desarrolladores => <WebContent>[
         new WebContent(
             'desarrolladores_content_1',
             'desarrolladores',
@@ -398,7 +392,7 @@ class InfoService {
                 '<li><a href="'+urlWebFull+'/herramientas/apis#aragodbpedia" title="Documentación de API AragoDBpedia">Enlace a documentación del API AragoDBpedia</a></li>' +
                 '<li><a href="'+urlWebFull+'/herramientas/apis#punto-sparql" title="Documentación de punto SPARQL">Enlace a documentación de punto SPARQL</a></li></ul>')
       ];
-  List<WebContent> get apis => [
+  List<WebContent> get apis => <WebContent>[
         new WebContent(
             'apis_content_1',
             'apis',
@@ -516,7 +510,7 @@ class InfoService {
             )
       ];
 
-  List<WebContent> get eventos => [
+  List<WebContent> get eventos => <WebContent>[
         new WebContent(
             'eventos_content_1',
             'eventos',

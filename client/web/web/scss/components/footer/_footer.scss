@@ -1,4 +1,4 @@
-footer {
+/*footer {
   @include outer-container(100%);
   @include media($pantalla-grande) {
     @include outer-container(100%);
@@ -21,7 +21,6 @@ footer {
       }
   .trescol{
       @include span-columns(3);
-      /*background-color:grey !important;*/
       height: 100%;
       padding-top: 15px;
     }
@@ -83,14 +82,321 @@ footer {
     @include outer-container;
     }
     .trescol{
-      /*@include span-columns(12);*/
       width: 100%;
-      /*background-color:grey !important;*/
       height: 100%;
       padding-top: 15px;
       border: none !important;
     }
     }
+}*/
+
+footer {
+  max-width:100%;
+  margin-left:auto;
+  margin-right:auto;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:40px;
+  background-color:#222222
+}
+footer::after {
+  clear:both;
+  content:"";
+  display:block
+}
+@media screen and (max-width: 1685px) and (min-width: 1013px) {
+  footer {
+    max-width:100%;
+    margin-left:auto;
+    margin-right:auto
+  }
+  footer::after {
+    clear:both;
+    content:"";
+    display:block
+  }
+}
+footer section {
+  max-width:85%;
+  margin-left:auto;
+  margin-right:auto
+}
+footer section::after {
+  clear:both;
+  content:"";
+  display:block
+}
+footer article {
+  clear:both;
+  heigth:100%
+}
+footer .mid {
+  /*border-top:1px solid white;*/
+  border-bottom: 1px solid #718080;
+  /*height:200px*/
+  display: inline-block;
+  padding-bottom: 40px;
+}
+footer .trescol {
+  float:left;
+  display:block;
+  margin-right:.57209%;
+  width:32.95194%;
+  height:100%;
+  padding-top:15px
+}
+footer .trescol:last-child {
+  margin-right:0
+}
+footer .trescol_child {
+  padding-left:45px
+}
+footer .trescol_child h3{
+  font-size: 13px !important;
+  font-weight: 600;
+  transition: color 0.5s ease;
+  cursor: pointer;
+  margin: 0;
+  padding: 3px 0;
 }
 
+footer .trescol_child .eur-logo{
+  float: left;
+  position: relative;
+  top: 15px;
+  clear: both;
+}
 
+footer .trescol_child .eur-logo .img-eur-logo{
+  float: left;
+  position: relative;
+  top: 0;
+}
+
+footer .trescol_child .eur-logo .txt-eur-logo{
+  float: left;
+  position: relative;
+  left: 8px;
+  margin-top: 2px;
+}
+
+footer .trescol_child .eur-logo .txt-eur-logo .normal-txt-eur {
+  text-transform: uppercase;
+  font-size: 10.5px;
+  letter-spacing: 0.2px;
+  font-weight: 500;
+  color: #a0a0a0;
+  line-height: normal;
+}
+
+footer .trescol_child .eur-logo .txt-eur-logo .italic-txt-eur {
+  font-size: 10.5px; letter-spacing: 0.4px; font-weight: 500; clear: both; display: block; font-style: italic; position: relative; color: #a0a0a0;
+}
+
+footer .trescol_child .cc-logo{
+  float: left;
+  position: relative;
+  margin-top: 35px;
+  clear: both;
+  display: block;
+}
+
+footer .trescol_child .cc-logo .txt-cc-logo{
+  float: left;
+  position: relative;
+  clear: both;
+  display: block;
+}
+footer .trescol_child .cc-logo .txt-cc-logo p{
+  font-size: 9px;
+  letter-spacing: 0.2px;
+  font-weight: 500;
+  color: #a0a0a0;
+  line-height: 13px;
+  left: 0;
+  float: left;
+  position: relative;
+  display: block;
+  clear: both;
+}
+
+footer .trescol_child ul.logos li a {
+  float: left;
+}
+
+footer .doscol {
+  float:left;
+  display:block;
+  margin-right:.57209%;
+  width:49%;
+  height:100%;
+  padding-top:15px
+}
+footer .doscol:last-child {
+  margin-right:0;
+  text-align: right;
+}
+footer .doscol_child {
+  padding-left:45px
+}
+footer .doscol ul li {
+  display: inline-block;
+}
+footer .doscol ul li a{
+  cursor: pointer;
+}
+
+footer .doscol ul.social-nw li {
+  margin-right: 10px;
+}
+
+footer .doscol ul.social-nw li a i {
+  font-size: 26px;
+}
+
+footer .doscol ul.social-nw li a i span{
+  margin-left: 5px;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+footer .doscol ul.social-nw li a.mail:hover{
+  color: #639EBE !important;
+}
+
+footer .doscol ul.social-nw li a.facebook:hover{
+  color: #3B5998 !important;
+}
+
+footer .doscol ul.social-nw li a.twitter:hover{
+  color: #36B9FF !important;
+}
+
+footer .doscol ul.social-nw li a.youtube:hover{
+  color: #DE2826 !important;
+}
+
+footer .doscol ul li a:hover {
+  opacity: 0.85;
+}
+footer .r {
+  /*border-right:1px solid white*/
+}
+footer .l {
+  border-left:1px solid white
+}
+footer h2 {
+  color:#5EA2BA !important;
+  font-weight:bold !important;
+  font-size:17px !important;
+  padding-left:10px !important
+}
+footer h3, footer li {
+  font-size: 10px !important;
+  color: grey !important;
+  height: 24px;
+  font-weight: 500;
+}
+footer li a {
+  color:grey !important;
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.5s ease;
+}
+footer li a:hover {
+  color: #bfbfbf !important;
+}
+footer .con {
+  overflow:auto;
+  padding-left:9px
+}
+footer .txt {
+  font-size:0.1em;
+  text-transform:uppercase;
+  padding-left:115px;
+  padding-right:45px;
+  color:grey !important
+}
+footer .imgn {
+  float:left
+}
+footer .logos_div {
+  max-width:106.25em;
+  margin-left:auto;
+  margin-right:auto
+}
+footer .logos_div::after {
+  clear:both;
+  content:"";
+  display:block
+}
+footer .logos li {
+  float:left;
+  padding-right:15px;
+  padding-bottom:50px
+}
+footer .logos img {
+  float:left;
+  display:block;
+  margin-right:.57209%;
+  width:32.95194%;
+  width:65px
+}
+footer .logos  li a img {
+  transition: all 0.5s ease;
+}
+footer .logos  li a:hover img {
+  border: 1px solid #718080;
+  padding: 1px;
+  border-radius: 2px;
+  opacity: 0.85;
+}
+footer .logos img:last-child {
+  margin-right:0
+}
+footer .logos img:nth-child(4n) {
+  margin-right:0
+}
+footer .logos img:nth-child(4n+1) {
+  clear:left
+}
+footer .gob {
+  padding:20px;
+  text-transform:uppercase
+}
+footer .breadcumbs {
+  padding-top:20px;
+  padding-bottom:20px
+}
+@media screen and (max-width: 738px) {
+  footer .doscol {
+    float:left;
+    display:block;
+    margin-right:.57209%;
+    width:100%;
+    height:100%;
+    padding-top:15px
+  }
+  footer .doscol:last-child {
+    padding-top: 0;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 1012px) {
+  footer footer {
+    max-width:106.25em;
+    margin-left:auto;
+    margin-right:auto
+  }
+  footer footer::after {
+    clear:both;
+    content:"";
+    display:block
+  }
+  footer .trescol {
+    width:100%;
+    height:100%;
+    padding-top:15px;
+    border:none !important
+  }
+}

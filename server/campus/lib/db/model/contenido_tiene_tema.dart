@@ -1,6 +1,6 @@
 library contindio_tiene_tema.model;
 
-import 'package:campusAPI/db/db.dart';
+import 'package:campusAPI/db/model/models.dart';
 
 part 'contenido_tiene_tema.g.dart';
 

@@ -1,6 +1,6 @@
 library contindio.model;
 
-import 'package:campusAPI/db/db.dart';
+import 'package:campusAPI/db/model/models.dart';
 
 part 'contenido.g.dart';
 

@@ -1,13 +1,13 @@
 library evento.model;
 
-import 'package:campusAPI/db/db.dart';
+import 'package:campusAPI/db/model/models.dart';
 
 part 'evento.g.dart';
 
 class Evento extends Object with JsonSerializable<Evento> implements Jsonable {
   Evento();
 
-  Evento.make(this.id, this.nombre, this.lugar, this.descrpcion, this.fecha);
+  Evento.make(this.id, this.nombre, this.lugar, this.descripcion, this.fecha);
 
   // ignore: invalid_getter_override_return_type
   JsonSerializer<Evento> get jsonSerializer => new EventoJsonSerializer();
@@ -19,13 +19,13 @@ class Evento extends Object with JsonSerializable<Evento> implements Jsonable {
 
   String lugar;
 
-  String descrpcion;
+  String descripcion;
 
   String fecha;
 
   static String tableName = 'evento';
 
-  String toString() => '$id $nombre $lugar $descrpcion $fecha';
+  String toString() => '$id $nombre $lugar $descripcion $fecha';
 }
 
 @GenSerializer()

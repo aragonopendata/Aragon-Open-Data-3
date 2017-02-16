@@ -1,34 +1,10 @@
 class Aplicacion {
-  String _titulo;
-  var _descripcion;
-  String _url;
-  String _imagen;
+  String titulo;
+  dynamic descripcion;
+  String url;
+  String imagen;
 
-  Aplicacion(this._titulo, this._descripcion, this._url, this._imagen);
-
-  String get imagen => _imagen;
-
-  set imagen(String value) {
-    _imagen = value;
-  }
-
-  String get url => _url;
-
-  set url(String value) {
-    _url = value;
-  }
-
-  get descripcion => _descripcion;
-
-  set descripcion(value) {
-    _descripcion = value;
-  }
-
-  String get titulo => _titulo;
-
-  set titulo(String value) {
-    _titulo = value;
-  }
+  Aplicacion(this.titulo, this.descripcion, this.url, this.imagen);
 
   String get facebookShare =>
       "https://www.facebook.com/sharer/sharer.php?u=$url";

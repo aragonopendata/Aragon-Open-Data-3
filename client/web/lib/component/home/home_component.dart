@@ -10,17 +10,16 @@ import 'package:aod3/component/home/tarjeta_home_component.dart';
 @Component(
     selector: 'home',
     templateUrl: 'home.html',
-    directives: const [ROUTER_DIRECTIVES, TarjetaHomeComponent],
-    providers: const [HomeService])
+    directives: const <dynamic>[ROUTER_DIRECTIVES, TarjetaHomeComponent],
+    providers: const <Type>[HomeService])
 class HomeComponent implements OnInit {
   final SearchService _SearchService;
   final HomeService _HomeService;
   List<HomeElement> homeElements;
-  List datasets;
+  List<Map<String,String>> datasets;
   String valor;
-  final Router _router;
 
-  HomeComponent(this._router, this._SearchService, this._HomeService);
+  HomeComponent(this._SearchService, this._HomeService);
 
   @override
   void ngOnInit() {

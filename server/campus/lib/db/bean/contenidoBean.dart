@@ -10,8 +10,41 @@ part 'contenidoBean.g.dart';
 class ContenidoBean extends _ContenidoBean implements Bean<Contenido> {
   ContenidoBean(Adapter adapter) : super(adapter);
 
-  @Find()
-  Future<Stream<Contenido>> findById(@WhereEq() int id) => super.findById(id);
+  /*@Find()
+  Future<Stream<Contenido>> findById(@WhereEq() int id) => super.findById(id);*/
+
+  Future<Map> findById(
+      int id) async {
+    FindStatement _finder = finderQ.where(this.id.eq(id));
+    List<Map> _maps = await (await adapter.find(_finder)).toList();
+
+    Map _contenidos;
+
+    for (Map map in _maps) {
+      await Future.wait([
+        getFormatoFromId(map['formato']),
+        getEventoFromId(map['evento']),
+        getTipoFromId(map['tipo']),
+        getPlataformaFromId(map['plataforma']),
+        getTemasFromContenido(map['id'])
+      ]).then((list) {
+        _contenidos = {
+          'id': map['id'],
+          'titulo': map['titulo'],
+          'descripcion': map['descripcion'],
+          'formato': list[0],
+          'evento': list[1],
+          'tipo': list[2],
+          'aparece': map['aparece'],
+          'url': map['url'],
+          'plataforma': list[3],
+          'thumbnail': map['thumbnail'],
+          'temas': list[4],
+        };
+      });
+    }
+    return _contenidos;
+  }
 
   Future<List<Map>> findWithOptionals(
       int limit, int offset, Map parameters) async {

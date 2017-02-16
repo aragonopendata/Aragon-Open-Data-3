@@ -6,21 +6,21 @@ import 'package:fluri/fluri.dart';
 
 @Injectable()
 class CampusService {
-  //Uri urlBase = new Uri(scheme: 'http', pathSegments: ['jaguar','campus']);
-  Uri urlBase = new Uri(scheme: 'http', host:'localhost', port: 8756, pathSegments: ['campus']);
+  Uri urlBase = new Uri(scheme: 'http', pathSegments: ['jaguar','campus']);
+  //Uri urlBase = new Uri(scheme: 'http', host:'localhost', port: 8756, pathSegments: <String>['campus']);
   static const String urlContenido = "contenido";
   static const String urlTipo = "tipo";
   static const String urlEvento = "evento";
   static const String urlEtiqueta = "tema";
   static const String urlFormato = "formato";
   static const String urlPonente = "ponente";
-  List campusPaginated;
+  List<List<Map<String,dynamic>>> campusPaginated;
   static const int limit = 9;
   int totalElements;
   int posiblePages;
-  int _tipoValue;
+  int _tipoValue = -1;
   int currentPage = 1;
-  Map<String,dynamic> campusItem = new Map();
+  Map<String,dynamic> campusItem = new Map<String,dynamic>();
 
   int get tipoValue => _tipoValue;
 
@@ -30,12 +30,12 @@ class CampusService {
   }
 
   String _ponenteValue;
-  int _etiquetaValue;
-  int _eventoValue;
-  int _formatoValue;
+  int _etiquetaValue = -1;
+  int _eventoValue = -1;
+  int _formatoValue =-1;
   List<int> pagesList;
 
-  Future<List<Map>> getAllCampus({
+  Future<List<Map<String,dynamic>>> getAllCampus({
     int offset: 0,
     int limit: 9,
   }) async {
@@ -45,13 +45,13 @@ class CampusService {
     url.setQueryParam("limit", limit.toString());
     url.setQueryParam("offset", offset.toString());
 
-    if (_formatoValue != null)
+    if (_formatoValue != -1)
       url.setQueryParam("formato", _formatoValue.toString());
-    if (_tipoValue != null) url.setQueryParam("tipo", _tipoValue.toString());
-    if (_eventoValue != null)
+    if (_tipoValue != -1) url.setQueryParam("tipo", _tipoValue.toString());
+    if (_eventoValue != -1)
       url.setQueryParam("evento", _eventoValue.toString());
     if (_ponenteValue != null) url.setQueryParam("aparece", _ponenteValue);
-    if (_etiquetaValue != null)
+    if (_etiquetaValue != -1)
       url.setQueryParam("tema", _etiquetaValue.toString());
 
     getPosiblePages(url);
@@ -65,7 +65,7 @@ class CampusService {
       });
   }
 
-  Future<List<Map>> getCampusPage({
+  Future<List<Map<String,dynamic>>> getCampusPage({
     int offset: 0,
     int limit: 9,
   }) async {
@@ -75,13 +75,13 @@ class CampusService {
     url.setQueryParam("limit", limit.toString());
     url.setQueryParam("offset", offset.toString());
 
-    if (_formatoValue != null)
+    if (_formatoValue != -1)
       url.setQueryParam("formato", _formatoValue.toString());
-    if (_tipoValue != null) url.setQueryParam("tipo", _tipoValue.toString());
-    if (_eventoValue != null)
+    if (_tipoValue != -1) url.setQueryParam("tipo", _tipoValue.toString());
+    if (_eventoValue != -1)
       url.setQueryParam("evento", _eventoValue.toString());
     if (_ponenteValue != null) url.setQueryParam("aparece", _ponenteValue);
-    if (_etiquetaValue != null)
+    if (_etiquetaValue != -1)
       url.setQueryParam("tema", _etiquetaValue.toString());
 
     return HttpRequest.request(url.toString()).then((HttpRequest result) {
@@ -93,7 +93,7 @@ class CampusService {
       });
   }
 
-  getPosiblePages(Fluri url) async {
+  Future<Null> getPosiblePages(Fluri url) async {
     url.addPathSegment('count');
     await HttpRequest.request(url.toString()).then((HttpRequest result) {
       totalElements = JSON.decode(result.response)[0]["count"];
@@ -102,7 +102,7 @@ class CampusService {
   }
 
   List<int> createPagesList() {
-    List<int> lista = new List(posiblePages);
+    List<int> lista = new List<int>(posiblePages);
 
     for (int i = 0; i < lista.length; i++) {
       lista[i] = i + 1;
@@ -117,7 +117,7 @@ class CampusService {
     return HttpRequest.request(url.toString()).then((HttpRequest result) {
       return JSON.decode(result.response);
     })
-      ..catchError((error) {
+      ..catchError((dynamic error) {
         print("ERROR: couldnt get a response from the server: $error");
         return null;
       });
@@ -130,7 +130,7 @@ class CampusService {
     return HttpRequest.request(url.toString()).then((HttpRequest result) {
       return JSON.decode(result.response);
     })
-      ..catchError((error) {
+      ..catchError((dynamic error) {
         print("ERROR: couldnt get a response from the server: $error");
         return null;
       });
@@ -143,7 +143,7 @@ class CampusService {
     return HttpRequest.request(url.toString()).then((HttpRequest result) {
       return JSON.decode(result.response);
     })
-      ..catchError((error) {
+      ..catchError((dynamic error) {
         print("ERROR: couldnt get a response from the server: $error");
         return null;
       });
@@ -156,7 +156,7 @@ class CampusService {
     return HttpRequest.request(url.toString()).then((HttpRequest result) {
       return JSON.decode(result.response);
     })
-      ..catchError((error) {
+      ..catchError((dynamic error) {
         print("ERROR: couldnt get a response from the server: $error");
         return null;
       });
@@ -169,29 +169,28 @@ class CampusService {
     return HttpRequest.request(url.toString()).then((HttpRequest result) {
       return JSON.decode(result.response);
     })
-      ..catchError((error) {
+      ..catchError((dynamic error) {
         print("ERROR: couldnt get a response from the server: $error");
         return null;
       });
   }
 
-  initializeCampus({
+  Future<List<Map<String,dynamic>>> initializeCampus({
     int offset: 0,
     int limit: 9,
-  }) {
+  }) async{
     return getAllCampus(
       offset: (currentPage-1)*9,
-    ).then((result) {
+    ).then((List<Map<String,dynamic>> result) {
       if(totalElements == 0){
         campusPaginated.clear();
-        return campusPaginated;
+        return campusPaginated[0];
       }else{
-      campusPaginated = new List(posiblePages);
+      campusPaginated = new List<List<Map<String,dynamic>>>(posiblePages);
       campusPaginated[0] = result;
       pagesList = createPagesList();
       prepareNextPages(
         currentPage-1,
-        //offset: offset,
       );
       return campusPaginated[0];}
     });
@@ -203,14 +202,14 @@ class CampusService {
       if (campusPaginated[actual + 1] == null) {
         getCampusPage(
           offset: (actual + 1) * limit,
-        ).then((lista) {
+        ).then((List<Map<String,dynamic>> lista) {
           campusPaginated[actual + 1] = lista;
         });
       }
       if (campusPaginated[actual + 2] == null) {
         getCampusPage(
           offset: (actual + 2) * limit,
-        ).then((lista) {
+        ).then((List<Map<String,dynamic>> lista) {
           campusPaginated[actual + 2] = lista;
         });
       }
@@ -218,18 +217,18 @@ class CampusService {
       if (campusPaginated[actual + 1] == null) {
         getCampusPage(
           offset: (actual + 1) * limit,
-        ).then((lista) {
+        ).then((List<Map<String,dynamic>> lista) {
           campusPaginated[actual + 1] = lista;
         });
       }
     }
   }
 
-  Future changePage(int page) async {
+  Future<List<Map<String,dynamic>>> changePage(int page) async {
     if (campusPaginated[page] == null) {
       return getCampusPage(
         offset: (page) * limit,
-      ).then((lista) {
+      ).then((List<Map<String,dynamic>> lista) {
         campusPaginated[page - 1] = lista;
         prepareNextPages(page - 1);
         currentPage = page;
@@ -270,7 +269,7 @@ class CampusService {
     currentPage = 1;
   }
 
-  Future getItem(String id) async{
+  Future<Null> getItem(String id) async{
     Fluri url = new Fluri.fromUri(urlBase);
     url.addPathSegment('contenido');
     url.addPathSegment(id);
@@ -281,10 +280,10 @@ class CampusService {
   }
 
   void clearSearch() {
-    _tipoValue = null;
-    _etiquetaValue = null;
-    _eventoValue = null;
-    _formatoValue = null;
+    _tipoValue = -1;
+    _etiquetaValue = -1;
+    _eventoValue = -1;
+    _formatoValue = -1;
     _ponenteValue = null;
   }
 }

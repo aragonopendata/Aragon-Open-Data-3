@@ -2,30 +2,14 @@
     <article class="contenido">
         <h1>{{titleString}}</h1>
         <h2>{{id.toUpperCase()}}</h2>
-            <!--<ul *ngFor="let webContent of webContents">
-            	<li>
-            		<div id="{{webContent.id}}">{{webContent.title}}</div>
-            		<div id="{{webContent.id}}_exp" class="expansible">{{webContent.content}}</div>
-            	</li>
-            </ul>-->
-    <!--    
-  	<article class="accordion">
-		<section id="{{webContent.id}}" *ngFor="let webContent of webContents">
-			<h2><a href="/info/informacion#{{webContent.id}}">{{webContent.title}}</a></h2>
-              <p [safeInnerHtml]="webContent.content">{{webContent.content}}</p>
-		</section>
-	</article>
-    -->
-
-    <article class="accordion">
-        <section class="a_section" id="{{webContent.id}}" *ngFor="let webContent of webContents">
-            <h2 id="{{webContent.id}}_h2" (click)="swithCss($event,webContent.id)">{{webContent.title}}
-            <i id="{{webContent.id}}_i"class="fa fa-plus-circle"></i></h2>
-              <p id="{{webContent.id}}_p" [safeInnerHtml]="webContent.content" class="oculto">{{webContent.content}}</p>
-        </section>
-    </article>
-
-
-
+        <article class="accordion">
+            <section class="a_section" id="{{webContent.id}}" *ngFor="let webContent of webContents">
+                <h2 id="{{webContent.id}}_h2" (click)="switchCss($event,webContent.id)">
+                    {{webContent.title}}
+                    <i id="{{webContent.id}}_i" class="fa fa-plus-circle"></i>
+                </h2>
+                <p id="{{webContent.id}}_p" [safeInnerHtml]="webContent.content" class="oculto"></p>
+            </section>
+        </article>
 	</article>
 </section>

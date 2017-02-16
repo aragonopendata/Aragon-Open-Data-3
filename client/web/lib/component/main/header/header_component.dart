@@ -3,18 +3,18 @@ import 'dart:html';
 import 'package:angular2/core.dart';
 import 'package:angular2/router.dart';
 import 'package:aod3/service/search_service.dart';
-import 'package:intl/intl.dart';
 
 @Component(
     selector: 'header',
     templateUrl: 'header.html',
-    directives: const [ROUTER_DIRECTIVES],
-    providers: const [])
+    directives: const <dynamic>[ROUTER_DIRECTIVES],
+    providers: const <dynamic>[])
 class HeaderComponent {
   bool opChecked = false;
   final SearchService _SearchService;
-  List datasets;
+  List<Map<String,String>> datasets;
   String valor;
+  HeaderComponent(this._SearchService);
 
   String get Blueprin => 'blueprint';
   //Header datos
@@ -42,13 +42,11 @@ class HeaderComponent {
   String get header_herramientas_sparql => 'SPARQL';
   String get header_herramientas_github => 'GITHUB';
   //String get header_envio_aplicaciones => 'Envio Aplicaciones';
-  HeaderComponent(this._SearchService);
 
   ///Cierra el overlay del menu
   void overlayClose() {
     opChecked = false;
     datasets = null;
-    print("heigth ${window.screen.height} , width ${window.screen.width}");
   }
 
   ///Abre el overlay del menu
@@ -71,7 +69,7 @@ class HeaderComponent {
         'http://opendata.aragon.es/catalogo/catalogo.html?q=${bText.value}');
   }
 
-  onKey(dynamic event) {
+  void onKey(dynamic event) {
     getDatasets(event.target.value, limit: 4);
     valor = event.target.value;
   }

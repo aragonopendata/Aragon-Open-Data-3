@@ -57,11 +57,12 @@ class ContenidoRouteGroup{
   @Get(path: '/:id', pathRegEx: const {'id': r'^[0-9]+$'})
   @WrapPostgresDb(campusConnection) // ignore: const_with_non_constant_argument
   @WrapEncodeMapToJson()
-  Future<List> getById(@Input(PostgresDb) Connection db, int id) async {
+  Future<Map> getById(@Input(PostgresDb) Connection db, int id) async {
     Adapter _adapter = new PgAdapter.FromConnection(db);
     bean = new ContenidoBean(_adapter);
-    Stream<Contenido> stream = await bean.findById(id);
-    return stream.toList();
+    /*Map stream = await bean.findById(id);
+    return stream.toList();*/
+    return await bean.findById(id);
   }
 
   ///Devuelve el numero de contenidos existentes

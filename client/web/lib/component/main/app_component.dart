@@ -20,19 +20,19 @@ import 'package:aod3/component/info/envio_aplicaciones/envio_aplicaciones_compon
 import 'package:aod3/service/campus_service.dart';
 import 'package:aod3/service/search_service.dart';
 
-@Component(selector: 'my-app', templateUrl: 'app.html', directives: const [
+@Component(selector: 'my-app', templateUrl: 'app.html', directives: const <dynamic>[
   HeaderComponent,
   HomeComponent,
   FooterComponent,
   ROUTER_DIRECTIVES
-], providers: const [
+], providers: const <dynamic>[
   ROUTER_PROVIDERS,
   SearchService,
   CampusService,
   DomSanitizationService,
   materialProviders
 ])
-@RouteConfig(const [
+@RouteConfig(const <dynamic>[
   const Route(
       path: '/', name: 'Home', component: HomeComponent, useAsDefault: true),
   const Route(

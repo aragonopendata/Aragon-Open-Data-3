@@ -5,11 +5,11 @@ import 'package:aod3/object/home_card.dart';
 @Injectable()
 class HomeService {
   List<HomeElement> getList() {
-    return [
+    return <HomeElement>[
       new HomeElement(
           'Datos',
           'En Aragón Open Data odrecemos servicios con los datos que tenmos, asi facilitamos que todo el mubndo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla',
-          [
+          <HomeCard>[
             new HomeCard(
                 'Banner-01-BancoDatos',
                 'Banco de datos',
@@ -32,7 +32,7 @@ class HomeService {
       new HomeElement(
           'Servicios',
           'En Aragón Open Data ofrecemos servicios con los datos que tenemos, asi facilitamos que todo el mundo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla',
-          [
+          <HomeCard>[
             new HomeCard(
                 'Banner-04-OpenSocialData',
                 'Open Social Data',
@@ -61,7 +61,7 @@ class HomeService {
       new HomeElement(
           'Información',
           'En Aragón Open Data odrecemos servicios con los datos que tenmos, asi facilitamos que todo el mubndo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla',
-          [
+          <HomeCard>[
             new HomeCard(
                 'Banner-08-Colabora',
                 'Colabora',
@@ -90,7 +90,7 @@ class HomeService {
       new HomeElement(
           'Herramientas',
           'En Aragón Open Data odrecemos servicios con los datos que tenmos, asi facilitamos que todo el mubndo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla',
-          [
+          <HomeCard>[
             new HomeCard(
                 'Banner-12-Campus',
                 'AOD Campus',

@@ -23,7 +23,9 @@ class CampusComponent implements OnInit {
   String isActive(int index){
     if(index == _campusService.currentPage){
      return 'pagination_active';
-    };
+    }else{
+      return '';
+    }
   }
   void reprintCampusList() {
     _campusService.initializeCampus().then((List<Map<String,dynamic>> lista) {
@@ -34,29 +36,29 @@ class CampusComponent implements OnInit {
 
   @override
   void ngOnInit() {
-    _campusService.initializeCampus().then((lista) {
+    _campusService.initializeCampus().then((List<Map<String,dynamic>> lista) {
       campusList = lista;
       pagesList = _campusService.pagesList;
     });
-    _campusService.getTipos().then((lista) {
+    _campusService.getTipos().then((List<Map<String,dynamic>> lista) {
       tiposList = lista;
     });
-    _campusService.getEventos().then((lista) {
+    _campusService.getEventos().then((List<Map<String,dynamic>> lista) {
       eventosList = lista;
     });
-    _campusService.getEtiquetas().then((lista) {
+    _campusService.getEtiquetas().then((List<Map<String,dynamic>> lista) {
       etiquetasList = lista;
     });
-    _campusService.getFormatos().then((lista) {
+    _campusService.getFormatos().then((List<Map<String,dynamic>> lista) {
       formatosList = lista;
     });
-    _campusService.getPonentes().then((lista) {
+    _campusService.getPonentes().then((List<Map<String,dynamic>> lista) {
       ponentesList = lista;
     });
   }
 
   void moveTo(int id) {
-    _campusService.changePage(id).then((lista) {
+    _campusService.changePage(id).then((List<Map<String,dynamic>> lista) {
       campusList = lista;
     });
   }
@@ -66,10 +68,10 @@ class CampusComponent implements OnInit {
     _router.navigateByUrl('campus/${_campusService.campusItem['id']}');
   }
 
-  int get tipoValue => _campusService.tipoValue;
+  String get tipoValue => _campusService.tipoValue.toString();
 
-  set tipoValue(int value) {
-    _campusService.tipoValue = value;
+  set tipoValue(String value) {
+    _campusService.tipoValue = int.parse(value);
     reprintCampusList();
   }
 
@@ -84,24 +86,24 @@ class CampusComponent implements OnInit {
     reprintCampusList();
   }
 
-  int get formatoValue => _campusService.formatoValue;
+  String get formatoValue => _campusService.formatoValue.toString();
 
-  set formatoValue(int value) {
-    _campusService.formatoValue = value;
+  set formatoValue(String value) {
+    _campusService.formatoValue = int.parse(value);
     reprintCampusList();
   }
 
-  int get eventoValue => _campusService.eventoValue;
+  String get eventoValue => _campusService.eventoValue.toString();
 
-  set eventoValue(int value) {
-    _campusService.eventoValue = value;
+  set eventoValue(String value) {
+    _campusService.eventoValue = int.parse(value);
     reprintCampusList();
   }
 
-  int get etiquetaValue => _campusService.etiquetaValue;
+  String get etiquetaValue => _campusService.etiquetaValue.toString();
 
-  set etiquetaValue(int value) {
-    _campusService.etiquetaValue = value;
+  set etiquetaValue(String value) {
+    _campusService.etiquetaValue = int.parse(value);
     reprintCampusList();
   }
 }

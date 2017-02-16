@@ -5,7 +5,7 @@ import 'package:aod3/service/campus_service.dart';
 
 @Component(
   selector: 'campus-item',
-  directives:  const [SafeInnerHtmlDirective],
+  directives:  const <Type>[SafeInnerHtmlDirective],
   templateUrl: 'campus_item.html',
 )
 class CampusItemComponent implements OnInit,OnDestroy {
@@ -13,27 +13,23 @@ class CampusItemComponent implements OnInit,OnDestroy {
   final CampusService _campusService;
   final RouteParams _routeParams;
   final Router _router;
-  CampusItemComponent(this._campusService,this._routeParams,this._domSanitizarionService, this._router);
-  Map get item => _campusService.campusItem;
-  final DomSanitizationService _domSanitizarionService;
+  CampusItemComponent(this._campusService,this._routeParams,this._domSanitizationService, this._router);
+  Map<String,dynamic> get item => _campusService.campusItem;
+  final DomSanitizationService _domSanitizationService;
   SafeHtml hola;
   SafeHtml get url => getElement();
 
   SafeHtml getElement() {
     switch(item['formato']['id']){
       case 1:
-        return _domSanitizarionService.bypassSecurityTrustHtml("<img src='${item['url']}'/>");
-        break;
+        return _domSanitizationService.bypassSecurityTrustHtml("<img src='${item['url']}'/>");
       case 2:
-        return _domSanitizarionService.bypassSecurityTrustHtml("<audio src='${item['url']}' title='La apuesta aragonesa por el Open Data llega a un foro internacional' preload='auto' controls='controls'></audio>");
-        break;
+        return _domSanitizationService.bypassSecurityTrustHtml("<audio src='${item['url']}' title='La apuesta aragonesa por el Open Data llega a un foro internacional' preload='auto' controls='controls'></audio>");
       case 3:
       case 4:
-        return _domSanitizarionService.bypassSecurityTrustHtml("<iframe src='${item['url']}' width='978' height='550' frameborder='0' marginwidth='0' marginheight='0' scrolling='no' style='border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;' allowfullscreen >PRUEBA</iframe>");
-        break;
+        return _domSanitizationService.bypassSecurityTrustHtml("<iframe src='${item['url']}' width='978' height='550' frameborder='0' marginwidth='0' marginheight='0' scrolling='no' style='border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;' allowfullscreen >PRUEBA</iframe>");
       default:
         return null;
-        break;
     }
   }
 
@@ -55,14 +51,14 @@ class CampusItemComponent implements OnInit,OnDestroy {
 
 
   @override
-  ngOnDestroy() {
+  void ngOnDestroy() {
     _campusService.campusItem.clear();
   }
 
   @override
-  ngOnInit(){
+  void ngOnInit(){
     if(_campusService.campusItem.isEmpty) _campusService.getItem(_routeParams.get('id'));
 
-    hola = _domSanitizarionService.bypassSecurityTrustHtml("<a href='http://www.google.com'>PRUEBA</a>");
+    hola = _domSanitizationService.bypassSecurityTrustHtml("<a href='http://www.google.com'>PRUEBA</a>");
   }
 }
