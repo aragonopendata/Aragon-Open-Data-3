@@ -119,7 +119,8 @@ footer::after {
 footer section {
   max-width:85%;
   margin-left:auto;
-  margin-right:auto
+  margin-right:auto;
+  overflow: hidden;
 }
 footer section::after {
   clear:both;

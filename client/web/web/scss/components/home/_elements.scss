@@ -20,7 +20,10 @@ article{
     margin-left: 100px;
   }
   */
-
+  @include media($campus-pequeña1) {
+    margin:0px;
+    width:100%;
+  }
   @include media($campus-pequeña2) {
     margin:0px;
     width:100%;
@@ -28,11 +31,14 @@ article{
   h1{
     /*@include titulos-principales();*/
     font-size: 100px;
+    text-align: center;
     @include media($campus-pequeña1) {
       font-size: 60px !important;
+      text-align: center;
     }
    @include media($campus-pequeña2) {
-      font-size: 30px !important;
+      font-size: 40px !important;
+      text-align: center;
     }
   }
   p{

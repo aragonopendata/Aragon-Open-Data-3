@@ -236,6 +236,12 @@ nav{
   margin-top:50px;
   margin-bottom:2px;
   border-bottom:2px solid #fff;
+  @include media($campus-pequeña1) {
+
+  }
+  @include media($campus-pequeña2) {
+    display:none;
+  }
 }
 
 .linkPrimero {
@@ -297,6 +303,12 @@ nav input[type="search"]{
   font-size: 60px;
   display:inline-block;
   width: 93%;
+    @include media($campus-pequeña1) {
+       font-size: 20px;
+    }
+   @include media($campus-pequeña2) {
+       font-size: 20px;
+    }
 }
 
 nav button{
@@ -308,7 +320,13 @@ nav button{
   padding:0;
   text-decoration:underline;
   font-family:inherit;
-  font-size:60px;
+  font-size: 60px;
+   @include media($campus-pequeña1) {
+       font-size: 20px;
+    }
+   @include media($campus-pequeña2) {
+       font-size: 20px;
+    }
   vertical-align: inherit;
 }
 

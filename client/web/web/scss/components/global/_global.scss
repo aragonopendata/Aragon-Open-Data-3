@@ -37,7 +37,7 @@
    
 }
 
-article.accordion, .contenido, .ganadores{
+article.accordion, .contenido, .ganadores, .campus{
 
      p{
 	    @include media($campus-pequeña1) {
@@ -45,6 +45,14 @@ article.accordion, .contenido, .ganadores{
 	    }
 	   	@include media($campus-pequeña2) {
 	    	@include normal-pequeña2();
+	    }
+	}
+	h3{
+	    @include media($campus-pequeña1) {
+	     	@include subsubtitulos-pequeña1();
+	    }
+	   	@include media($campus-pequeña2) {
+	    	@include subsubtitulos-pequeña2();
 	    }
 	}
 	h2{
@@ -55,6 +63,14 @@ article.accordion, .contenido, .ganadores{
 	    	@include subtitulos-pequeña2();
 	    }
 	}
+	h1{
+	    @include media($campus-pequeña1) {
+	     	@include titulos-pequeña1();
+	    }
+	   	@include media($campus-pequeña2) {
+	    	@include titulos-pequeña2();
+	    }
+	}
 }
 
 article.accordion
@@ -63,9 +79,6 @@ article.accordion
 	width: 100%;
 	margin: 0 auto;
 	word-wrap: break-word;
-	p{
-		font-size: 1em;
-	}
 	/*a:hover{color: #5EA2BA;}*/
 	a:hover{
 		color: #000;
@@ -78,6 +91,13 @@ article.accordion
     	display: block;
     	white-space: pre-wrap;
     	padding: 10px;
+    	@include media($campus-pequeña1) {
+	     	font-size: 12px;
+	    }
+	   	@include media($campus-pequeña2) {
+	    	font-size: 9px;
+	    }
+
 	}
 }
 
@@ -176,6 +196,12 @@ article.accordion section p.visible{
 
 .seccionAplicacionesIconos li .cont {
 width: 800px;
+	@include media($campus-pequeña1) {
+	     	width: 95%;
+	 }
+	@include media($campus-pequeña2) {
+			width: 95%;
+	}
 }
 
 
@@ -196,6 +222,18 @@ width: 800px;
 	.tituloPropuesta a:link,.tituloPropuesta a:visited  {font-size:115%;font-weight: bold;}.equipoPropuesta{font-size: 80%;}
 	.descripcionPropuesta{font-size: 70%;}
 	.fotoFamilia{text-align:center;}
+		@include media($campus-pequeña1) {
+	    	@include titulos-pequeña1();
+	    	@include subtitulos-pequeña1();
+	    	@include normal-pequeña1();
+	     	.ganadoresInline{width: 100%;}
+	    }
+	   	@include media($campus-pequeña2) {
+	    	@include titulos-pequeña2();
+	    	@include subtitulos-pequeña2();
+	    	@include normal-pequeña2();
+	    	.ganadoresInline{width: 100%;}
+	    }
 }
 section{overflow: auto;}
 .videoWrapper {

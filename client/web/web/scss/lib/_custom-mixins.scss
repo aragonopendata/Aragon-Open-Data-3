@@ -73,6 +73,14 @@
   font-family: $roboto;
   font-size: 16px;
 }
+@mixin subsubtitulos-pequeña1() {
+  font-family: $roboto;
+  font-size: 17px;
+}
+@mixin subsubtitulos-pequeña2() {
+  font-family: $roboto;
+  font-size: 15px;
+}
 @mixin normal-pequeña1() {
   font-family: $roboto;
   font-size: 14px;
