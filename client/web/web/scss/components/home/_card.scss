@@ -2,14 +2,13 @@ tarjeta_home{
   @include span-columns(3);
   @include omega(3n);
   margin-bottom: 7px;
-    /*
     @include media($campus-pequeña1) {
+      @include omega-reset(3);
       @include row();
-      @include omega-reset(1);
-      @include omega(1n);
-      width:100%;
+      @include span-columns(2);
+      @include omega(2n);
+      margin-right: 0.5% !important;
     }
-     */
     @include media($campus-pequeña2) {
       @include row();
       @include omega-reset(1);
@@ -64,6 +63,7 @@ tarjeta_home{
   color:black;
   @include media($campus-pequeña1) {
       font-size: 18px !important;
+      margin-bottom: 2px;
     }
    @include media($campus-pequeña2) {
       font-size: 12px !important;

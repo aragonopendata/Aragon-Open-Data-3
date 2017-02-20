@@ -383,6 +383,12 @@ textarea:focus, input:focus{
   font-size: 10px;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: bold;
+    @include media($campus-pequeña1) {
+      font-size: 8px;
+    }
+   @include media($campus-pequeña2) {
+      font-size: 6px;
+    }
 }
 
 #cabeceraRelacionados li.active a {
@@ -394,10 +400,11 @@ textarea:focus, input:focus{
 #cabeceraRelacionados ul {
   float: left;
   position: relative;
-  left: 50%;
+  left: 45%;
   letter-spacing: 1px;
   line-height: 18px;
-  width: 980px;
+  width: 100%;
+
 }
 
 .clear {
