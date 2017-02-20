@@ -5,6 +5,8 @@ import 'dart:html' show window;
     selector: 'colabora',
     templateUrl: 'colabora.html')
 class ColaboraComponent{
+  ///Dimensiones del iframe
   int width = window.innerWidth;
+  ///Dimensiones del iframe
   int height = window.innerHeight;
 }

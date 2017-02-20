@@ -9,23 +9,6 @@
   z-index: 700;
 }
 
-/*#logo img{
-  height: 80px;
-  width: 489px;
-  margin-top:10px;
-  margin-left:10px;
-  display: inline-block;
-  position: fixed;
-  z-index: 999;
-  @include media($campus-pequeña1) {
-      height: 70px;
-      width: 367px;
-    }
-   @include media($campus-pequeña2) {
-      height: 40px;
-      width: 245px;
-    }
-}*/
 header a{
   z-index: 999;
 }
@@ -48,7 +31,6 @@ header a{
   position: fixed;
   margin-top: 20px;
   right: 20px;
-  //padding: 10px;
   display: inline-block;
   z-index: 999;
 }

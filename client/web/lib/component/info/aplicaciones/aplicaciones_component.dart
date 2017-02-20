@@ -25,8 +25,9 @@ class AplicacionesComponent implements OnInit {
   bool showMaxHeightDialog = false;
   String redirectUrl;
   SafeHtml utl;
-
   List<Aplicacion> aplicaciones;
+
+  ///Carga la lista de aplicaciones y las arregla para evitar el sanitizador
   @override
   void ngOnInit() {
     aplicaciones = _infoService.aplicaciones;
@@ -36,11 +37,14 @@ class AplicacionesComponent implements OnInit {
     });
   }
 
+  ///Inicializa un Popup para la redireccion a sitios de terceros
   void redirect(MouseEvent event, String url) {
     showMaxHeightDialog = true;
     redirectUrl = url;
   }
 
+
+  ///Redirige a una pagina externa usnado [redirectUrl]
   void redirectToNewPage() {
     window.window.location.href = redirectUrl;
   }

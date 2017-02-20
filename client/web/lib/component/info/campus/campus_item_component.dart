@@ -14,11 +14,12 @@ class CampusItemComponent implements OnInit,OnDestroy {
   final RouteParams _routeParams;
   final Router _router;
   CampusItemComponent(this._campusService,this._routeParams,this._domSanitizationService, this._router);
+  ///Contiene toda la informacion del item
   Map<String,dynamic> get item => _campusService.campusItem;
   final DomSanitizationService _domSanitizationService;
-  SafeHtml hola;
+  ///Url del iframe arreglada para evitar el sanitizador
   SafeHtml get url => getElement();
-
+  ///Devuelve el elemento arreglado para evitar que salte el sanitizador
   SafeHtml getElement() {
     switch(item['formato']['id']){
       case 1:
@@ -33,6 +34,7 @@ class CampusItemComponent implements OnInit,OnDestroy {
     }
   }
 
+  ///Nos devuelve a ```/campus``` con un filtro custom
   void returnToCampusWith(String element, num etiqueta){
     _campusService.clearSearch();
     switch(element){
@@ -49,16 +51,15 @@ class CampusItemComponent implements OnInit,OnDestroy {
     _router.navigateByUrl("/campus");
   }
 
-
+  ///Limpia el item al salir para evitar guardar informacion innecesaria
   @override
   void ngOnDestroy() {
     _campusService.campusItem.clear();
   }
 
+  ///Comprueba si hay un item guardado en el servicio, si no lo obtiene desde la api
   @override
   void ngOnInit(){
     if(_campusService.campusItem.isEmpty) _campusService.getItem(_routeParams.get('id'));
-
-    hola = _domSanitizationService.bypassSecurityTrustHtml("<a href='http://www.google.com'>PRUEBA</a>");
-  }
+}
 }

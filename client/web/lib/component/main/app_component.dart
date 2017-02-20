@@ -63,15 +63,19 @@ import 'package:aod3/service/search_service.dart';
       path: '/info/aplicaciones', loader: aplicaciones, name: 'Aplicaciones'),
 ])
 class AppComponent {
-  String title = 'AOD 3.0';
 }
 
+///Loader asrincrono para el componente [ColaboraComponent]
 Future<dynamic> colabora() => colabora_component
     .loadLibrary()
     .then((_) => colabora_component.ColaboraComponent);
+
+///Loader asrincrono para el componente [AplicacionesComponent]
 Future<dynamic> aplicaciones() => aplicaciones_component
     .loadLibrary()
     .then((_) => aplicaciones_component.AplicacionesComponent);
+
+///Loader asrincrono para el componente [InformacionComponent]
 Future<dynamic> informacion() => informacion_component
     .loadLibrary()
     .then((_) => informacion_component.InformacionComponent);

@@ -6,35 +6,66 @@ import 'package:fluri/fluri.dart';
 
 @Injectable()
 class CampusService {
+  ///[Uri] de la api que contine campus
   Uri urlBase = new Uri(scheme: 'http',pathSegments: <String>['jaguar','campus']);
   //Uri urlBase = new Uri(scheme: 'http', host:'localhost', port: 8756, pathSegments: <String>['campus']);
+
+  ///Segmente de la ruta que corresponde a ```/contenido```
   static const String urlContenido = "contenido";
+
+  ///Segmente de la ruta que corresponde a ```/tipo```
   static const String urlTipo = "tipo";
+
+  ///Segmente de la ruta que corresponde a ```/evento```
   static const String urlEvento = "evento";
+
+  ///Segmente de la ruta que corresponde a ```/tema```
   static const String urlEtiqueta = "tema";
+
+  ///Segmente de la ruta que corresponde a ```/formato```
   static const String urlFormato = "formato";
+
+  ///Segmente de la ruta que corresponde a ```/ponente```
   static const String urlPonente = "ponente";
+
+  ///Contiene los datos de campus paginados
   List<List<Map<String,dynamic>>> campusPaginated;
+
+  ///Limite de datos a mostrar por pantalla
   static const num limit = 9;
+
+  ///Numero de elememtos totales que contiene el filtor actual
   num totalElements;
+
+  ///Numero de posibles paginas por delante de la pagina actual
   num posiblePages;
-  num _tipoValue = -1;
+
+  ///Pagina actual que se esta visualizando
   num currentPage = 1;
+
+  ///Elemento seleccionado para mostar en ```campus/:id```
   Map<String,dynamic> campusItem = new Map<String,dynamic>();
 
-  num get tipoValue => _tipoValue;
-
-  set tipoValue(num value) {
-    _tipoValue = value;
-    currentPage = 1;
-  }
-
+  ///Filtro de ponente, su valor predefinido es ```null```
   String _ponenteValue;
+
+  ///Filtro de tipo, su valor predefinido es ```-1```
+  num _tipoValue = -1;
+
+  ///Filtro de etiqueta, su valor predefinido es ```-1```
   num _etiquetaValue = -1;
+
+  ///Filtro de evento, su valor predefinido es ```-1```
   num _eventoValue = -1;
+
+  ///Filtro de formato, su valor predefinido es ```-1```
   num _formatoValue =-1;
+
+  ///Contiene las paginas y como deben ser mostradas
   List<num> pagesList;
 
+
+  ///Devuelve la primera pagina con el filtro actual desde la api y prepara las variables necesarias para la paginacion
   Future<List<Map<String,dynamic>>> getAllCampus({
     num offset: 0,
     num limit: 9,
@@ -65,6 +96,7 @@ class CampusService {
       });
   }
 
+  ///Devuelve una pagina espedifica con el filtro actual desde la api
   Future<List<Map<String,dynamic>>> getCampusPage({
     num offset: 0,
     num limit: 9,
@@ -93,6 +125,7 @@ class CampusService {
       });
   }
 
+  ///Devuelve el numero posible de paginas con el filtro ctual
   Future<Null> getPosiblePages(Fluri url) async {
     url.addPathSegment('count');
     await HttpRequest.request(url.toString()).then((HttpRequest result) {
@@ -101,6 +134,7 @@ class CampusService {
     });
   }
 
+  ///Crea el listado de paginas disponibles arreglandolas para que sea mas amigable con el usuario
   List<num> createPagesList() {
     List<num> lista = new List<num>(posiblePages);
 
@@ -110,6 +144,7 @@ class CampusService {
     return lista;
   }
 
+  ///Obtiene todos los tipos existentes
   Future<List<Map<String,dynamic>>> getTipos() async {
     Fluri url = new Fluri.fromUri(urlBase);
     url.addPathSegment(urlTipo);
@@ -123,6 +158,7 @@ class CampusService {
       });
   }
 
+  ///Obtiene todos los eventos existentes
   Future<List<Map<String,dynamic>>> getEventos() async {
     Fluri url = new Fluri.fromUri(urlBase);
     url.addPathSegment(urlEvento);
@@ -136,6 +172,7 @@ class CampusService {
       });
   }
 
+  ///Obtiene todas las etiquetas existentes
   Future<List<Map<String,dynamic>>> getEtiquetas() async {
     Fluri url = new Fluri.fromUri(urlBase);
     url.addPathSegment(urlEtiqueta);
@@ -149,6 +186,7 @@ class CampusService {
       });
   }
 
+  ///Obtiene todos los formatos existentes
   Future<List<Map<String,dynamic>>> getFormatos() async {
     Fluri url = new Fluri.fromUri(urlBase);
     url.addPathSegment(urlFormato);
@@ -162,6 +200,7 @@ class CampusService {
       });
   }
 
+  ///Obtiene todos los ponentes existentes
   Future<List<Map<String,dynamic>>> getPonentes() async {
     Fluri url = new Fluri.fromUri(urlBase);
     url.addPathSegment(urlPonente);
@@ -175,6 +214,7 @@ class CampusService {
       });
   }
 
+  ///Carga inicial de campus
   Future<List<Map<String,dynamic>>> initializeCampus({
     num offset: 0,
     num limit: 9,
@@ -196,6 +236,7 @@ class CampusService {
     });
   }
 
+  ///Carga las siguientes paginas disponibles (hasta un maximo de 2 ) de la pagina siendo visualizada
   Future<Null> prepareNextPages(num actual, {num offset: 0}) async {
     num morePages = posiblePages - actual;
     if (morePages >= 2) {
@@ -224,6 +265,7 @@ class CampusService {
     }
   }
 
+  ///Cambia la pagina actual e inicia la carga de las proximas paginas
   Future<List<Map<String,dynamic>>> changePage(num page) async {
     if (campusPaginated[page] == null) {
       return getCampusPage(
@@ -243,6 +285,7 @@ class CampusService {
 
   String get ponenteValue => _ponenteValue;
 
+  ///Actualiza el filtro de ponente y se vuelve a la pagina inicial
   set ponenteValue(String value) {
     _ponenteValue = value;
     currentPage = 1;
@@ -250,6 +293,7 @@ class CampusService {
 
   num get etiquetaValue => _etiquetaValue;
 
+  ///Actualiza el filtro de ponente y se vuelve a la pagina inicial
   set etiquetaValue(num value) {
     _etiquetaValue = value;
     currentPage = 1;
@@ -257,6 +301,7 @@ class CampusService {
 
   num get eventoValue => _eventoValue;
 
+  ///Actualiza el filtro de ponente y se vuelve a la pagina inicial
   set eventoValue(num value) {
     _eventoValue = value;
     currentPage = 1;
@@ -264,11 +309,21 @@ class CampusService {
 
   num get formatoValue => _formatoValue;
 
+  ///Actualiza el filtro de ponente y se vuelve a la pagina inicial
   set formatoValue(num value) {
     _formatoValue = value;
     currentPage = 1;
   }
 
+  num get tipoValue => _tipoValue;
+
+  ///Actualiza el filtro de ponente y se vuelve a la pagina inicial
+  set tipoValue(num value) {
+    _tipoValue = value;
+    currentPage = 1;
+  }
+
+  ///Devuelve un elemento espedifico desde la api para poder usarse en ```/campus/:id```
   Future<Null> getItem(String id) async{
     Fluri url = new Fluri.fromUri(urlBase);
     url.addPathSegment('contenido');
@@ -279,6 +334,7 @@ class CampusService {
     });
   }
 
+  ///Devuelve todos los filtros a su estado inicial
   void clearSearch() {
     _tipoValue = -1;
     _etiquetaValue = -1;

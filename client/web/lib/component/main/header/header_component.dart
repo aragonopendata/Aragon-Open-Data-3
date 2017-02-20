@@ -10,14 +10,18 @@ import 'package:aod3/service/search_service.dart';
     directives: const <dynamic>[ROUTER_DIRECTIVES],
     providers: const <dynamic>[])
 class HeaderComponent {
+  ///Indica si el menu esta abierto(true) o cerrado(false)
   bool opChecked = false;
+  ///Indica si estas haciendo hover(true) o no(false) sobre el menu
   bool hover_menu = false;
+
   final SearchService _SearchService;
+  ///Lista de los datasets que se muestran en la busqueda
   List<Map<String,String>> datasets;
   String valor;
+
   HeaderComponent(this._SearchService);
 
-  String get Blueprin => 'blueprint';
   //Header datos
   String get header_datos => 'Datos';
   String get header_datos_bancodatos => 'Banco de datos';
@@ -42,7 +46,7 @@ class HeaderComponent {
   String get header_herramientas_apis => 'APIs';
   String get header_herramientas_sparql => 'SPARQL';
   String get header_herramientas_github => 'GITHUB';
-  //String get header_envio_aplicaciones => 'Envio Aplicaciones';
+
   String get boton_menu => botonMenuImage();
   String get logo => logoImage();
 
@@ -61,10 +65,13 @@ class HeaderComponent {
     }
   }
 
+
+  ///Servicio que se encarga de realizar todas las llamadas a la api de CKAN de ```aragon.opendata.es```
   Future<Null> getDatasets(String input, {int limit: 8}) async {
     datasets = await _SearchService.getDataset(input, limit: limit);
   }
 
+  ///Redirecciona a la pagina de CKAN para realizar la busqueda desde ella
   void goCkan(Event e) {
     e.preventDefault();
     InputElement bText = querySelector('[name="buscador_home"]');
@@ -77,6 +84,12 @@ class HeaderComponent {
     valor = event.target.value;
   }
 
+  ///Devuelve que imagen usar dependiendo de diferentes condiciones
+  ///
+  /// 1. Menu cerrado + no hover
+  /// 2. Menu cerrado + hover
+  /// 3. Menu abierto + no hover
+  /// 4. Menu abierto + hover
   String botonMenuImage() {
     if(opChecked){
       if(hover_menu){
@@ -93,14 +106,20 @@ class HeaderComponent {
     }
   }
 
+  ///Hover sobre el menu
   void boton_menu_over(){
     hover_menu = true;
   }
 
+  ///No hover sobre el menu
   void boton_menu_out(){
     hover_menu = false;
   }
 
+  ///Devuelve que imagen usar dependiendo de diferentes condiciones
+  ///
+  /// 1. Menu cerrado
+  /// 2. Menu abierto
   String logoImage() {
     if(opChecked){
       return "/images/home/nav-bar/AOD-Logo-Responsive.png";

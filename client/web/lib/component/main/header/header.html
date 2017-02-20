@@ -12,7 +12,7 @@
 </div>
 <div id="aragonNav">
     <!--<input type="checkbox" id="op" [checked]="opChecked">-->
-    <a [routerLink]="['Home']"><img [src]="logo" class="logo"></a>
+    <a [routerLink]="['Home']" (click)="overlayClose()"><img [src]="logo" class="logo"></a>
     <a class="menu" (click)="overlayOpen()" (mouseover)='boton_menu_over()' (mouseout)='boton_menu_out()'><img [src]="boton_menu"></a>
 
     <div *ngIf="opChecked" class="overlay overlay-hugeinc">

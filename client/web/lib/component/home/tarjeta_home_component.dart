@@ -17,15 +17,18 @@ class TarjetaHomeComponent {
 
   TarjetaHomeComponent(this._router);
 
+  ///Haces hover sobre el item
   void over() {
     hover = true;
     if (firstHover) firstHover = false;
   }
 
+  ///Dejas de hacer hover sobre el item
   void out() {
     hover = false;
   }
 
+  ///Haces la redireccion adonde indique el item
   void redirect() {
     if (elemento.router) {
       _router.navigateByUrl(elemento.url);

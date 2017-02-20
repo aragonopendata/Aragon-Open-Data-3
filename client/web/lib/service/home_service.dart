@@ -2,8 +2,15 @@ import 'package:angular2/core.dart';
 import 'package:aod3/object/home_element.dart';
 import 'package:aod3/object/home_card.dart';
 
+///Servicio que se encarga de abastecer a [HomeComponent] de todos los datos necesarios para poder mostrar las tarjetas
 @Injectable()
 class HomeService {
+  ///Devuelve un listado de todas las tarjetas agrupadas en sus determinados contenedores
+  ///
+  ///1.Datos
+  ///2.Servicios
+  ///3.Informacion
+  ///4.Herramientas
   List<HomeElement> getList() {
     return <HomeElement>[
       new HomeElement(
