@@ -103,7 +103,7 @@ header a{
   left: 0;
   background: $background-dark;
   @include titulos-secundarios-negrita();
-
+  overflow-x:scroll;
   a{
    color: grey;
   }
@@ -216,6 +216,13 @@ nav{
   cursor:pointer;
 }
 
+#h-top{
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+}
+.white{background: white; }
+.black{background: black; }
 /************ Nav Bar Menu */
 
 .menus {

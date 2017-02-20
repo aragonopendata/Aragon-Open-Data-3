@@ -97,12 +97,14 @@ class HeaderComponent {
       }else{
         return "/images/home/nav-bar/Boton-Salir-Menu-Responsive-OFF.png";
       }
+      querySelector('#h-top').attributes['class'] = 'white';
     }else{
       if(hover_menu){
         return "/images/home/nav-bar/Boton-Menu-Responsive-ON.jpg";
       }else{
         return "/images/home/nav-bar/Boton-Menu-Responsive-OFF.png";
       }
+      querySelector('#h-top').attributes['class'] = 'black';
     }
   }
 
