@@ -2,7 +2,7 @@ name: aod3
 description: Aragon Open Data 3.0 basado en AngularDart2
 version: 0.0.1
 environment:
-  sdk: '>=1.8.0 <=2.3.0'
+  sdk: '>=1.8.0 <2.3.0'
 dependencies:
   angular2: 3.0.0-alpha
   dart_sass_transformer: any
