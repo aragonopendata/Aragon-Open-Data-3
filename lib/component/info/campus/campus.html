@@ -70,5 +70,11 @@
     </ul>
 </div>
 <div *ngIf="!campusList.isEmpty" class="pagination">
-    <button *ngFor="let index of pagesList" (click)="moveTo(index)" [ngClass]="isActive(index)">{{index}}</button>
+    <ul>
+        <li *ngIf="currentPage != 1" (click)="moveTo(currentPage-1)">⟨⟨</li>
+        <li *ngIf="currentPage == 1" class="dis">⟨⟨</li>
+        <li *ngFor="let index of pagesList" (click)="moveTo(index)" [ngClass]="isActive(index)">{{index}}</li>
+        <li *ngIf="currentPage != pagesList.length" (click)="moveTo(currentPage+1)">⟩⟩</li>
+        <li *ngIf="currentPage == pagesList.length" class="dis">⟩⟩</li>
+    </ul>
 </div>
