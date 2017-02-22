@@ -197,16 +197,21 @@
   display: inline;
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px;
-    margin: 1px 2px;
-  padding: 5px 10px;
+  margin: 5px 2px;
+  padding: 5px 0px;
   display: inline-block;
   text-decoration: none;
   color: #717171;
   font-size: smaller;
   text-shadow: white 0 1px 0;
   background-color: #f5f5f5;
-
- 
+  width: 35px;
+  @include media($campus-pequeña1) {
+      width: 30px;   
+  }
+  @include media($campus-pequeña2) {
+      width: 25px;
+  }
 }
 
 
@@ -214,7 +219,7 @@
 .pagination li:focus,
 .pagination_active {
   cursor: pointer;
-  color: white !important;
+  color: white;
   border-color: #fff;
   background-color: #76a1b8;;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#76a1b8), to(#76a1b8));
@@ -228,6 +233,14 @@
 
 .pagination li.dis{
   background-color: #ccc;
+  cursor: default;
+  color: #717171;
+}
+
+.pagination li.dis:hover{
+  background-color: #ccc !important;
+  cursor: default !important;
+  background-image:none !important;
 }
 
 .campus h1{
