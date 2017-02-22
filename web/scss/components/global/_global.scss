@@ -37,7 +37,7 @@
    
 }
 
-article.accordion, .contenido, .ganadores, .campus{
+article.accordion, .contenido, .ganadores, .campus, #campusItem{
 
      p{
 	    @include media($campus-pequeña1) {
