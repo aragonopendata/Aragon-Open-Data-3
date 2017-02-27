@@ -45,6 +45,7 @@
   }
 
   .campus_lista_busqueda{
+    overflow: auto;
     li{
       select{
         padding-left: 10px;

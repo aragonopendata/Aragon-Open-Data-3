@@ -38,12 +38,9 @@
         </ul>
     </div>
     <div></div>
-    <div *ngIf="campusList.isEmpty">
-        <div class="loader">
-            <svg class="load" x="0px" y="0px" viewBox="0 0 150 150">
-                <circle class="loading-inner" cx="75" cy="75" r="60"></circle>
-            </svg>
-        </div>
+    <div *ngIf="campusList.isEmpty">  
+        <br />
+        <h3>No existen resutlados para esta búsqueda.</h3>
     </div>
     <ul *ngIf="!campusList.isEmpty" >
         <li *ngFor="let item of campusList" class="campus_tarjeta my-animation" (click)="openCampusItem(item)" >
