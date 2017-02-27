@@ -11,7 +11,7 @@
     height: 80px;
   }
   @include media($campus-pequeña2) {
-    height: 50px;
+    height: 60px;
   }
 }
 
@@ -63,7 +63,7 @@ header a{
     height: 90px;
   }
   @include media($campus-pequeña2) {
-    height: 60px;
+    height: 70px;
   }
 }
 /************ Overlay Prueba nº2 */
@@ -220,9 +220,15 @@ nav{
     z-index: 999;
     position: fixed;
     width: 100%;
+  @include media($campus-pequeña1) {
+    height: 80px;
+  }
+  @include media($campus-pequeña2) {
+    height: 60px;
+  }
 }
-.white{background: white; }
-.black{background: black; }
+.b-white{background: white; }
+.b-black{background: #332F21;; }
 /************ Nav Bar Menu */
 
 .menus {

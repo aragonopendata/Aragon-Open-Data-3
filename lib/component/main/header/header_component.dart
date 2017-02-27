@@ -54,12 +54,14 @@ class HeaderComponent {
   void overlayClose() {
     opChecked = false;
     datasets = null;
+    querySelector('#h-top').attributes['class'] = 'b-white';
   }
 
   ///Abre el overlay del menu
   void overlayOpen() {
     if (!opChecked) {
       opChecked = true;
+      querySelector('#h-top').attributes['class'] = 'b-black';
     } else {
       overlayClose();
     }
@@ -97,14 +99,12 @@ class HeaderComponent {
       }else{
         return "/images/home/nav-bar/Boton-Salir-Menu-Responsive-OFF.png";
       }
-      querySelector('#h-top').attributes['class'] = 'white';
     }else{
       if(hover_menu){
         return "/images/home/nav-bar/Boton-Menu-Responsive-ON.jpg";
       }else{
         return "/images/home/nav-bar/Boton-Menu-Responsive-OFF.png";
       }
-      querySelector('#h-top').attributes['class'] = 'black';
     }
   }
 

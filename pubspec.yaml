@@ -32,7 +32,7 @@ transformers:
           - --enable-checked-mode
 - dart_to_js_script_rewriter
 - dart_sass_transformer:
-   executable: /home/eder/BourbonSassTest/sassc/bin/sassc      # Sass executable to use
+   executable: /home/miquel/dart/sassc/bin/sassc      # Sass executable to use
    line-numbers: false            # Include line numbers in output
    style: compressed                # Style of generated CSS
    copy-sources: false            # Copy original .scss/.sass files to out

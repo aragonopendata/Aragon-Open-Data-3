@@ -124,4 +124,6 @@ class CampusComponent implements OnInit {
     _campusService.etiquetaValue = num.parse(value);
     reprintCampusList();
   }
+
+  num get currentPage => _campusService.currentPage;
 }

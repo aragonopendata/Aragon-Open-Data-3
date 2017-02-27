@@ -7,7 +7,7 @@ import 'package:fluri/fluri.dart';
 @Injectable()
 class CampusService {
   ///[Uri] de la api que contine campus
-  Uri urlBase = new Uri(scheme: 'http',pathSegments: <String>['jaguar','campus']);
+  Uri urlBase = new Uri(scheme: 'http',host:'preopendata.aragon.es',pathSegments: <String>['jaguar','campus']);
   //Uri urlBase = new Uri(scheme: 'http', host:'localhost', port: 8756, pathSegments: <String>['campus']);
 
   ///Segmente de la ruta que corresponde a ```/contenido```
@@ -136,9 +136,9 @@ class CampusService {
 
   ///Crea el listado de paginas disponibles arreglandolas para que sea mas amigable con el usuario
   List<num> createPagesList() {
-    List<num> lista = new List<num>(posiblePages);
+    List<num> lista = new List<num>(posiblePages-1);
 
-    for (num i = 0; i < lista.length; i++) {
+    for (num i = 0; i < (lista.length); i++) {
       lista[i] = i + 1;
     }
     return lista;
@@ -238,7 +238,7 @@ class CampusService {
 
   ///Carga las siguientes paginas disponibles (hasta un maximo de 2 ) de la pagina siendo visualizada
   Future<Null> prepareNextPages(num actual, {num offset: 0}) async {
-    num morePages = posiblePages - actual;
+    num morePages = posiblePages - (actual+1) ;
     if (morePages >= 2) {
       if (campusPaginated[actual] == null) {
         getCampusPage(
