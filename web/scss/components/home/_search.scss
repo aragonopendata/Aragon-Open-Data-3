@@ -20,7 +20,8 @@
 }
 
 #buscador_home{
-  @include span-columns(8);
+  @include span-columns(10);
+  width: 94%;
   height: 45px;
   border: none;
   font-size: 25px;
@@ -28,13 +29,13 @@
   text-transform: uppercase;
   @include media($campus-pequeña1) {
       font-size: 16px;
-      width: 85%;
+      width: 87%;
       /*@include subtitulos-pequeña1();*/
     }
    @include media($campus-pequeña2) {
       font-size: 12px;
       height: 30px;
-      width: 85%;
+      width: 89%;
      /* @include subtitulos-pequeña2();*/
     }
 }

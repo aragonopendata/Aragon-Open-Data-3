@@ -1,13 +1,12 @@
 tarjeta_home{
-  @include span-columns(3);
-  @include omega(3n);
   margin-bottom: 7px;
+  @include media($campus-media,$campus-grande){
+    @include span-columns(3);
+    @include omega(3n);
+  }
     @include media($campus-pequeña1) {
-      @include omega-reset(3);
-      @include row();
       @include span-columns(2);
       @include omega(2n);
-      margin-right: 0.5% !important;
     }
     @include media($campus-pequeña2) {
       @include row();
@@ -66,7 +65,7 @@ tarjeta_home{
       margin-bottom: 2px;
     }
    @include media($campus-pequeña2) {
-      font-size: 12px !important;
+      display:none;
     }
 }
 .tarjeta_oculta p.des{
