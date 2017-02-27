@@ -46,8 +46,12 @@ class InformacionComponent implements OnInit {
       subTitleString = 'Todo lo necesario para entender Aragón Open Data';
       if (id == 'informacion') {
         webContents = _infoService.iformaciones;
+        document.title = 'AOD - Información';
+        querySelector("[name='description']").attributes['content'] = 'Conoce más sobre el entorno open data y qué hacemos en Aragón.';
       } else if (id == 'eventos') {
         webContents = _infoService.eventos;
+        document.title = 'AOD - Eventos';
+        querySelector("[name='description']").attributes['content'] = 'Agenda y actividades de Aragón Open Data.';
       } else{
         window.location.href = "http://opendata.aragon.es/404";
       }
@@ -56,10 +60,16 @@ class InformacionComponent implements OnInit {
       subTitleString = 'herramientas';
       if (id == 'sparql') {
         webContents = _infoService.sparql;
+        document.title = "AOD - SPARQL";
+        querySelector("[name='description']").attributes['content'] = 'Obtén datos e información de la Aragopedia a través de este punto de consulta.';
       } else if (id == 'desarrolladores') {
         webContents = _infoService.desarrolladores;
+        document.title = "AOD - Desarrolladores";
+        querySelector("[name='description']").attributes['content'] = 'Estándares, interoperabilidad, estructuras y herramientas en las que se sustenta Aragón Open Data.';
       } else if (id == 'apis') {
         webContents = _infoService.apis;
+        document.title = 'AOD - Apis';
+        querySelector("[name='description']").attributes['content'] = 'Tienes APIs para la búsqueda de datos, para AragoPedia y para el servicio Open Social Data.';
       } else{
         window.location.href = "http://opendata.aragon.es/404";
       }

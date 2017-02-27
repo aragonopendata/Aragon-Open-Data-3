@@ -29,10 +29,10 @@ class HeaderComponent {
   String get header_datos_publicadores => 'Publicadores';
   //Header servicios
   String get header_servicios => 'Servicios';
-  String get header_servicios_socialdata => 'Social Data';
+  String get header_servicios_socialdata => 'Open Social Data';
   String get header_servicios_aragopedia => 'Aragopedia';
   String get header_servicios_presupuestos => 'Presupuestos';
-  String get header_servicios_cras => 'CRAs';
+  String get header_servicios_cras => 'CRAs Aragón';
   //Header informacion
   String get header_informacion => 'Informacion';
   String get header_informacion_colabora => 'Colabora';
@@ -41,7 +41,7 @@ class HeaderComponent {
   String get header_informacion_eventos => 'Eventos';
   //Header herramientas
   String get header_herramientas => 'Herramientas';
-  String get header_herramientas_campus => 'Campus';
+  String get header_herramientas_campus => 'AOD Campus';
   String get header_herramientas_desarrolladores => 'Desarrolladores';
   String get header_herramientas_apis => 'APIs';
   String get header_herramientas_sparql => 'SPARQL';
