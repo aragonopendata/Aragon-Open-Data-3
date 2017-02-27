@@ -35,9 +35,9 @@
                     <label for="serviciosCheckbox" class="linkPrimero" [innerHtml]="header_servicios"></label>
                     <ul class="submenus">
                         <br>
-                        <li><a href="/portal/social-data" (click)="overlayClose()" [innerHtml]="header_servicios_socialdata"></a></li>
                         <li><a href="/apps/aragopedia" (click)="overlayClose()" [innerHtml]="header_servicios_aragopedia"></a></li>
                         <li><a href="http://presupuesto.aragon.es/" (click)="overlayClose()" [innerHtml]="header_servicios_presupuestos"></a></li>
+                        <li><a href="/portal/social-data" (click)="overlayClose()" [innerHtml]="header_servicios_socialdata"></a></li>
                         <li><a href="http://opendata.aragon.es/apps/cras" (click)="overlayClose()" [innerHtml]="header_servicios_cras"></a></li>
                     </ul>
                 </li>
@@ -46,10 +46,10 @@
                     <label for="informacionCheckbox" class="linkPrimero" [innerHtml]="header_informacion"></label>
                     <ul class="submenus">
                         <br>
-                        <li><a [routerLink]="['Colabora']" (click)="overlayClose()" [innerHtml]="header_informacion_colabora"></a></li>
-                        <li><a [routerLink]="['Aplicaciones']" (click)="overlayClose()" [innerHtml]="header_informacion_aplicaciones"></a></li>
                         <li><a [routerLink]="['Info', {id: 'informacion'}]" (click)="overlayClose()" [innerHtml]="header_informacion_informacion"></a></li>
+                        <li><a [routerLink]="['Aplicaciones']" (click)="overlayClose()" [innerHtml]="header_informacion_aplicaciones"></a></li>
                         <li><a [routerLink]="['Info', {id: 'eventos'}]" (click)="overlayClose()" [innerHtml]="header_informacion_eventos"></a></li>
+                        <li><a [routerLink]="['Colabora']" (click)="overlayClose()" [innerHtml]="header_informacion_colabora"></a></li>
                     </ul>
                 </li>
                 <li class="menuPrimero">
@@ -66,7 +66,7 @@
                 </li>
                 <li class="menuPrimeroUltimo">
                     <form id="form_header" on-submit='goCkan($event)'>
-                        <input (keyup)="onKey($event)" autocomplete="off" id="buscador_header" name="buscador_home" placeholder="Busca Datos..." type="search">
+                        <input (keyup)="onKey($event)" autocomplete="off" id="buscador_header" name="buscador_home" placeholder="Aragón Open Data busca datos" type="search">
                         <button type="submit"><i aria-hidden="true" class="fa fa-search"></i></button>
                     </form>
                 </li>
