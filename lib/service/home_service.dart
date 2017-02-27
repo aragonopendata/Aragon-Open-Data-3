@@ -108,19 +108,19 @@ class HomeService {
                 'Banner-13-Desarrolladores',
                 'Desarrolladores',
                 'En Aragón Open Data ofrecemos servicios con los datos que tenemos, asi facilitamos que todo el mundo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla',
-                '/info/desarrolladores',
+                '/herramientas/desarrolladores',
                 true),
             new HomeCard(
                 'Banner-14-APIs',
                 'Apis',
                 'En Aragón Open Data ofrecemos servicios con los datos que tenemos, asi facilitamos que todo el mundo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla',
-                '/info/apis',
+                '/herramientas/apis',
                 true),
             new HomeCard(
                 'Banner-15-SPARQL',
                 'Sparql',
                 'En Aragón Open Data ofrecemos servicios con los datos que tenemos, asi facilitamos que todo el mundo pueda ver los datos, reutilizarlos y acceder a la informacion de forma sencilla',
-                '/info/sparql',
+                '/herramientas/sparql',
                 true),
             new HomeCard(
                 'Banner-16-GITHUB',
