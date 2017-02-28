@@ -30,6 +30,8 @@ class AplicacionesComponent implements OnInit {
   ///Carga la lista de aplicaciones y las arregla para evitar el sanitizador
   @override
   void ngOnInit() {
+    document.title = "AOD - Aplicaciones";
+    querySelector("[name='description']").attributes['content'] = 'Otras aplicaciones que aprovechan y reutilizan nuestros datos para ofrecértelos.';
     aplicaciones = _infoService.aplicaciones;
     aplicaciones.forEach((Aplicacion aplicacion) {
       aplicacion.descripcion = _domSanitizarionService

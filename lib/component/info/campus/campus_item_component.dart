@@ -1,3 +1,4 @@
+import 'dart:html';
 import 'package:angular2/core.dart';
 import 'package:angular2/router.dart';
 import 'package:angular2/security.dart';
@@ -60,6 +61,8 @@ class CampusItemComponent implements OnInit,OnDestroy {
   ///Comprueba si hay un item guardado en el servicio, si no lo obtiene desde la api
   @override
   void ngOnInit(){
+    document.title = "AOD - AOD CAMPUS";
+    querySelector("[name='description']").attributes['content'] = 'Contenido ofrecido para que aprendas y te formes a través de nuestros materiales y tutoriales.';
     if(_campusService.campusItem.isEmpty) _campusService.getItem(_routeParams.get('id'));
 }
 }

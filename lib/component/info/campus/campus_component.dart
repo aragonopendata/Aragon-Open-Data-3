@@ -1,3 +1,4 @@
+import 'dart:html';
 import 'package:angular2/core.dart';
 import 'package:angular2/router.dart';
 import 'package:aod3/service/campus_service.dart';
@@ -47,6 +48,8 @@ class CampusComponent implements OnInit {
   /// Si habia un filtro inicializado anteriormente se conservara siempre y cuando [_campusService] no se haya destruido
   @override
   void ngOnInit() {
+    document.title = "AOD - AOD CAMPUS";
+    querySelector("[name='description']").attributes['content'] = 'Contenido ofrecido para que aprendas y te formes a través de nuestros materiales y tutoriales.';
     _campusService.initializeCampus().then((List<Map<String,dynamic>> lista) {
       campusList = lista;
       pagesList = _campusService.pagesList;
