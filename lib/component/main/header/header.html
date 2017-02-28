@@ -15,6 +15,7 @@
     <!--<input type="checkbox" id="op" [checked]="opChecked">-->
     <div id="h-top" class="">
     <a [routerLink]="['Home']" (click)="overlayClose()"><img [src]="logo" class="logo"></a>
+    <a class="menuLogin" (mouseover)='boton_login_over()' (mouseout)='boton_login_out()' href="/catalogo/pizarra"><img [src]="boton_login"></a>
     <a class="menu" (click)="overlayOpen()" (mouseover)='boton_menu_over()' (mouseout)='boton_menu_out()'><img [src]="boton_menu"></a>
     </div>
     <div *ngIf="opChecked" class="overlay overlay-hugeinc">
@@ -66,7 +67,7 @@
                 </li>
                 <li class="menuPrimeroUltimo">
                     <form id="form_header" on-submit='goCkan($event)'>
-                        <input (keyup)="onKey($event)" autocomplete="off" id="buscador_header" name="buscador_home" placeholder="Aragón Open Data busca datos" type="search">
+                        <input (keyup)="onKey($event)" autocomplete="off" id="buscador_header" name="buscador_home" placeholder="BUSCA DATOS ABIERTOS" type="search">
                         <button type="submit"><i aria-hidden="true" class="fa fa-search"></i></button>
                     </form>
                 </li>

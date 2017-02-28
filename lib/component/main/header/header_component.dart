@@ -14,6 +14,8 @@ class HeaderComponent {
   bool opChecked = false;
   ///Indica si estas haciendo hover(true) o no(false) sobre el menu
   bool hover_menu = false;
+  ///Indica si estas haciendo hover(true) o no(false) sobre el login
+  bool hover_login = false;
 
   final SearchService _SearchService;
   ///Lista de los datasets que se muestran en la busqueda
@@ -48,6 +50,7 @@ class HeaderComponent {
   String get header_herramientas_github => 'GITHUB';
 
   String get boton_menu => botonMenuImage();
+  String get boton_login => botonLoginImage();
   String get logo => logoImage();
 
   ///Cierra el overlay del menu
@@ -116,6 +119,28 @@ class HeaderComponent {
   ///No hover sobre el menu
   void boton_menu_out(){
     hover_menu = false;
+  }
+
+  ///Devuelve que imagen usar dependiendo de diferentes condiciones
+  ///
+  /// 1. Menu cerrado + no hover
+  /// 2. Menu cerrado + hover
+  String botonLoginImage() {
+      if(hover_login){
+        return "/images/home/nav-bar/Boton-Acceso-Usuarios-ON.jpg";
+      }else{
+        return "/images/home/nav-bar/Boton-Acceso-Usuarios-OFF.png";
+      }
+  }
+
+  ///Hover sobre el login
+  void boton_login_over(){
+    hover_login = true;
+  }
+
+  ///No hover sobre el login
+  void boton_login_out(){
+    hover_login = false;
   }
 
   ///Devuelve que imagen usar dependiendo de diferentes condiciones
