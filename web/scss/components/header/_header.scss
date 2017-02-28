@@ -23,7 +23,7 @@ header a{
   z-index: 999;
   @include media($campus-pequeña1) {
     height: 60px;
-    width: 362px;
+    width: 329px;
     margin-top: 12px;
     margin-left: 5px;
   }
@@ -35,7 +35,7 @@ header a{
   }
 }
 
-.menu{
+.menu ,.menuLogin{
   width: 60px;
   height: 60px;
   position: fixed;
@@ -51,6 +51,17 @@ header a{
   margin-top: 16px;
     height: 25px;
     width: 25px;
+    right: 5px;
+  }
+}
+
+.menuLogin{
+  right: 20px+10px+60px;
+  @include media($campus-pequeña1) {
+    right: 20px+50px+10px;
+  }
+  @include media($campus-pequeña2) {
+    right: 5px+25px+5px;
   }
 }
 

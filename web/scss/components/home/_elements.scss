@@ -1,15 +1,15 @@
 home{
 article{
   @include outer-container(90%);
-  @include media($pantalla-grande) {
+  /*@include media($pantalla-grande) {
     @include outer-container(90%);
-  }
+  }*/
 }
 
 .descripcion, .descripcion-busqueda{
   @include span-columns(5);
   @include shift(2);
-  @include media($pantalla-grande) {
+  @include media($campus-grande-10) {
     @include shift(1);
     @include span-columns(7);
   }
