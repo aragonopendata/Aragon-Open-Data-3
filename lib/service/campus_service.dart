@@ -7,7 +7,7 @@ import 'package:fluri/fluri.dart';
 @Injectable()
 class CampusService {
   ///[Uri] de la api que contine campus
-  Uri urlBase = new Uri(scheme: 'http',host:'preopendata.aragon.es',pathSegments: <String>['jaguar','campus']);
+  Uri urlBase = new Uri(scheme: 'http',pathSegments: <String>['jaguar','campus']);
   //Uri urlBase = new Uri(scheme: 'http', host:'localhost', port: 8756, pathSegments: <String>['campus']);
 
   ///Segmente de la ruta que corresponde a ```/contenido```
@@ -129,7 +129,7 @@ class CampusService {
   Future<Null> getPosiblePages(Fluri url) async {
     url.addPathSegment('count');
     await HttpRequest.request(url.toString()).then((HttpRequest result) {
-      totalElements = JSON.decode(result.response)[0]["count"];
+      totalElements = JSON.decode(result.response)["count"];
       posiblePages = (totalElements / limit).ceil();
     });
   }
