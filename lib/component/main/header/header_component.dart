@@ -126,11 +126,19 @@ class HeaderComponent {
   /// 1. Menu cerrado + no hover
   /// 2. Menu cerrado + hover
   String botonLoginImage() {
+    if(opChecked){
       if(hover_login){
-        return "/images/home/nav-bar/Boton-Acceso-Usuarios-ON.jpg";
+        return "/images/home/nav-bar/Boton-Acceso-Usuarios-blanco.png";
+      }else{
+        return "/images/home/nav-bar/Boton-Acceso-Usuarios-gris.png";
+        }
+      }else{
+      if(hover_login){
+        return "/images/home/nav-bar/Boton-Acceso-Usuarios-ON.png";
       }else{
         return "/images/home/nav-bar/Boton-Acceso-Usuarios-OFF.png";
       }
+    }
   }
 
   ///Hover sobre el login
