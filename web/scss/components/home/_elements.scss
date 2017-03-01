@@ -9,7 +9,11 @@ article{
 .descripcion, .descripcion-busqueda{
   @include span-columns(5);
   @include shift(2);
-  @include media($campus-grande-10) {
+  @include media($campus-grande) {
+    @include shift(1);
+    @include span-columns(7);
+  }
+  @include media($campus-media){
     @include shift(1);
     @include span-columns(7);
   }

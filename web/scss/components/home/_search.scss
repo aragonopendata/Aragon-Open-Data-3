@@ -74,6 +74,7 @@
 
     input {
       height: 26px;
+      padding: 7px;
       //@include shift(1);
       @include span-columns(6);
       @include shift(1);
