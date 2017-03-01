@@ -29,13 +29,13 @@
   text-transform: uppercase;
   @include media($campus-pequeña1) {
       font-size: 16px;
-      width: 87%;
+      width: 80%;
       /*@include subtitulos-pequeña1();*/
     }
    @include media($campus-pequeña2) {
       font-size: 12px;
       height: 30px;
-      width: 89%;
+      width: 80%;
      /* @include subtitulos-pequeña2();*/
     }
 }
@@ -76,6 +76,7 @@
 }
 
 .buscador{
+  margin-top: 23%;
   @include span-columns(7);
   @include shift(1);
 }

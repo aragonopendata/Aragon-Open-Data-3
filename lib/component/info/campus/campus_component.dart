@@ -23,6 +23,8 @@ class CampusComponent implements OnInit {
   List<Map<String,dynamic>> formatosList;
   ///Lista de todas las paginas disponibles
   List<num> pagesList;
+  ///Indica si se estan cargando lso datos
+  bool loading = true;
 
 
   CampusComponent(this._campusService,this._router);
@@ -37,9 +39,11 @@ class CampusComponent implements OnInit {
   }
   ///Vuelve a cargar [campusList] y [pagesList] desde el servicio
   void reprintCampusList() {
+    loading = true;
     _campusService.initializeCampus().then((List<Map<String,dynamic>> lista) {
       campusList = lista;
       pagesList = _campusService.pagesList;
+      loading = false;
     });
   }
 
@@ -50,9 +54,11 @@ class CampusComponent implements OnInit {
   void ngOnInit() {
     document.title = "AOD - AOD CAMPUS";
     querySelector("[name='description']").attributes['content'] = 'Contenido ofrecido para que aprendas y te formes a través de nuestros materiales y tutoriales.';
+    loading = true;
     _campusService.initializeCampus().then((List<Map<String,dynamic>> lista) {
       campusList = lista;
       pagesList = _campusService.pagesList;
+      loading = false;
     });
     _campusService.getTipos().then((List<Map<String,dynamic>> lista) {
       tiposList = lista;
