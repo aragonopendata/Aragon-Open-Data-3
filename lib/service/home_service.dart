@@ -32,10 +32,10 @@ class HomeService {
             new HomeCard(
                 'Banner-03-Publicadores',
                 'Publicadores',
-                'Conoce qué organizaciones aportan sus datos a Aragón Open Data',
+                'Conoce qué organizaciones aportan sus datos a Aragón Open Data.',
                 'http://opendata.aragon.es/catalogo/organizacion',
                 false),
-          ]),
+          ])..customHtml = "dataSearch",
       new HomeElement(
           'Servicios',
           'En Aragón Open Data hemos creado servicios para ofrecer los datos, reutilizarlos y acceder de forma sencilla a la información.',
@@ -60,8 +60,8 @@ class HomeService {
                 false),
             new HomeCard(
                 'Banner-07-CRAs',
-                'CRAS Aragón',
-                '',
+                'CRAs Aragón',
+                'Descubre más sobre los Colegios Rurales Agrupados de Aragón.',
                 'http://opendata.aragon.es/apps/cras',
                 false),
           ]),
@@ -112,19 +112,19 @@ class HomeService {
                 true),
             new HomeCard(
                 'Banner-14-APIs',
-                'Apis',
+                'APIs',
                 'Tienes APIs para la búsqueda de datos, para AragoPedia y para el servicio Open Social Data.',
                 '/herramientas/apis',
                 true),
             new HomeCard(
                 'Banner-15-SPARQL',
-                'Sparql',
+                'SPARQL',
                 'Obtén datos e información de la Aragopedia a través de este punto de consulta.',
                 '/herramientas/sparql',
                 true),
             new HomeCard(
                 'Banner-16-GITHUB',
-                'Github',
+                'GITHUB',
                 'Código y fuentes usadas para desarrollar Aragón Open Data lo tienes disponible en nuestro perfil de GitHub.',
                 'https://github.com/aragonopendata',
                 false),

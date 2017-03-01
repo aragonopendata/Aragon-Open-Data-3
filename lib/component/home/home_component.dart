@@ -17,7 +17,8 @@ class HomeComponent implements OnInit {
   final HomeService _HomeService;
   ///Contiene todos los elementos de la home (contenedores y tarjetas)
   List<HomeElement> homeElements;
-  List<Map<String,String>> datasets;
+  ///Lista de datasets de la busqueda
+  List<Map<String,String>> datasets = new List();
   String valor;
 
   HomeComponent(this._SearchService, this._HomeService);
@@ -31,7 +32,11 @@ class HomeComponent implements OnInit {
 
   ///Obtine la lista de datasets desde el servico [SearchService]
   Future<Null> getDatasets(String input, {int limit: 8}) async {
-    datasets = await _SearchService.getDataset(input, limit: limit);
+    List<Map<String,String>> datasetsList = await _SearchService.getDataset(input, limit: limit);
+    if(datasetsList == null){
+      datasetsList = new List();
+    }
+    datasets = datasetsList;
   }
 
   void goCkan(Event e) {
