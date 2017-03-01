@@ -24,6 +24,11 @@ class InfoService {
             '/portal/social-data',
             '/public/i/aplicaciones/logoAppOpenSocialData.png'),
         new Aplicacion(
+            'BOA Boletín Oficial de Aragón',
+            'El Boletín Oficial de Aragón (BOA) es el diario oficial de la Comunidad Autónoma de Aragón, a través del cual se hacen públicos los documentos que, en virtud de los principios constitucionales de publicidad de las normas y de seguridad jurídica, deben ser objeto de publicidad oficial. Ahora puedes consultarlo en abierto.',
+            'http://www.boa.aragon.es/#/opendata',
+            '/public/i/aplicaciones/logoAppBOA.png'),
+        new Aplicacion(
             'Mapa de los Bienes Culturales de Aragón',
             'El mapa con los Bienes Culturales de Aragón forma parte del proyecto Aragón en la mano, que está siendo desarrollado, en el área de Ciencias Sociales, por los alumnos de tercer curso de Educación Secundaria Obligatoria del colegio Santa María del Pilar de Zaragoza.',
             'http://www.arcgis.com/apps/StorytellingTextLegend/index.html?appid=3f1d252c1db64140817ab84f0a03524c',

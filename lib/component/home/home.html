@@ -1,4 +1,4 @@
-<section id="buscadorGeneral">
+<!--<section id="buscadorGeneral">
     <article>
         <div class="buscador">
             <form id="form_home" on-submit='goCkan($event)'>
@@ -11,21 +11,45 @@
             <br>
         </div>
     </article>
-</section>
+</section>-->
 
-<section *ngFor="let element of homeElements" id="{{element.titulo.toLowerCase()}}">
+<div *ngFor="let element of homeElements" id="{{element.titulo.toLowerCase()}}">
     <div class="separacion-mini" ></div>
     <article>
         <div class="descripcion">
             <h1>{{element.titulo}}</h1>
             <p>{{element.descripcion}}</p>
+
             <br>
+        </div>
+    </article>
+    <article *ngIf="element.customHtml == 'dataSearch'" >
+        <div class="buscador">
+            <!--<form id="form_home" on-submit='goCkan($event)'>
+                <input (keyup)="onKey($event)" autocomplete="off" id="buscador_home" name="buscador_home" placeholder=" BUSCA DATOS ABIERTOS" type="text">
+                <button id="button_home" type="submit"><i aria-hidden="true" class="fa fa-search"></i></button>
+            </form>
+            <ul type="square" id="lista_home">
+                <li *ngFor="let item of datasets" value="{{valor}}"><a href="http://opendata.aragon.es/catalogo/{{item['name']}}">{{item['title']}}</a></li>
+            </ul>
+            <br>-->
+
+            <form class="search" id="form_home" on-submit='goCkan($event)'>
+
+                <input type="search" id="buscador_home" name="buscador_home" autocomplete="off" (keyup)="onKey($event)" placeholder=" BUSCA DATOS ABIERTOS">
+
+                <ul class="search-ac" *ngIf="datasets.length>0">
+                    <li *ngFor="let item of datasets" value="{{valor}}"><a href="http://opendata.aragon.es/catalogo/{{item['name']}}">{{item['title']}}</a></li>
+                </ul>
+                <button id="button_home"><i aria-hidden="true" class="fa fa-search"></i></button>
+            </form>
+
         </div>
     </article>
     <article class="tarjetas">
         <tarjeta_home *ngFor="let tarjeta of element.tarjetas" [elemento]="tarjeta"></tarjeta_home>
     </article>
     <div class="separacion" ></div>
-</section>
+</div>
 
-<section id="preFooter"></section>
+<div id="preFooter"></div>

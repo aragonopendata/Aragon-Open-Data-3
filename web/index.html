@@ -20,12 +20,13 @@
     <style>
         body{background: #f1f1f1;}
         .loading-bro{margin:50px auto;width:150px}
-        .loading-bro>h1{text-align:center;font-size:2.5em;margin-bottom:1em;font-weight:300;color:#8E8E8E  }
+        .loading-bro>h1{text-align:center;font-size:2.5em;margin-bottom:1em;font-weight:300;color:#8E8E8E}
         .load{width:150px;-webkit-animation:loading 3s linear infinite;-moz-animation:loading 3s linear infinite;animation:loading 3s linear infinite  }
         .load .loading-inner{stroke-dashoffset:0;stroke-dasharray:300;stroke-width:10;stroke-miterlimit:10;stroke-linecap:round;-webkit-animation:loading-circle 2s linear infinite;-moz-animation:loading-circle 2s linear infinite;animation:loading-circle 2s linear infinite;stroke:#76a1b8;fill:transparent  }
         .loader{display:block;width:50%;margin:0 auto}
         .loader::after{clear:both;content:"";display:block}
         .loader>.load{width:50%;margin-left:25%;margin-right:25%}
+        .warning h3{text-align: center;font-size:1.5em;margin-bottom:1em;font-weight:300;color:#8E8E8E}
         @-webkit-keyframes loading{from{transform:rotate(0)}to{transform:rotate(360deg)}}@-moz-keyframes loading{from{transform:rotate(0)}to{transform:rotate(360deg)}}@keyframes loading{from{transform:rotate(0)}to{transform:rotate(360deg)}}@-webkit-keyframes loading-circle{from{stroke-dashoffset:0}to{stroke-dashoffset:-600}}@-moz-keyframes loading-circle{from{stroke-dashoffset:0}to{stroke-dashoffset:-600}}@keyframes loading-circle{from{stroke-dashoffset:0}to{stroke-dashoffset:-600}}
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
