@@ -7,9 +7,10 @@ import 'package:angular2/core.dart';
 @Injectable()
 class SearchService {
   ///Devuelve los ultimos datasets creados que contienen unas determinadas letras
-  Future<List<Map<String,String>>> getDataset(String input, {num limit: 8}) async {
+  Future<List<Map<String, String>>> getDataset(String input,
+      {num limit: 8}) async {
     String url =
-        "http://opendata.aragon.es/catalogo/api/2/util/dataset/autocomplete?incomplete=%$input%&limit=$limit";
+        "/catalogo/api/2/util/dataset/autocomplete?incomplete=%$input%&limit=$limit";
     return HttpRequest.request(url).then((HttpRequest result) {
       //Map decoded = JSON.decode(result.response);
       if (input != "") {

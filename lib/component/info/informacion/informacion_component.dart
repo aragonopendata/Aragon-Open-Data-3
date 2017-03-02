@@ -22,11 +22,14 @@ class InformacionComponent implements OnInit {
   final DomSanitizationService _domSanitizationService;
 
   bool showMaxHeightDialog = false;
+
   ///Url a la cual redireccionar tras aceptarla en el popup
   String redirectUrl;
+
   ///Ubicacion actual
   String id;
   final RouteParams _routeParams;
+
   ///Listado de contenidos dinamicos
   List<dynamic> webContents;
   final common.Location _location;
@@ -47,13 +50,15 @@ class InformacionComponent implements OnInit {
       if (id == 'informacion') {
         webContents = _infoService.iformaciones;
         html.document.title = 'AOD - Información';
-        html.querySelector("[name='description']").attributes['content'] = 'Conoce más sobre el entorno open data y qué hacemos en Aragón.';
+        html.querySelector("[name='description']").attributes['content'] =
+            'Conoce más sobre el entorno open data y qué hacemos en Aragón.';
       } else if (id == 'eventos') {
         webContents = _infoService.eventos;
         html.document.title = 'AOD - Eventos';
-        html.querySelector("[name='description']").attributes['content'] = 'Agenda y actividades de Aragón Open Data.';
-      } else{
-        html.window.location.href = "http://opendata.aragon.es/404";
+        html.querySelector("[name='description']").attributes['content'] =
+            'Agenda y actividades de Aragón Open Data.';
+      } else {
+        html.window.location.href = "/404";
       }
     } else if (urlString.contains('herramientas')) {
       titleString = 'HERRAMIENTAS';
@@ -61,25 +66,29 @@ class InformacionComponent implements OnInit {
       if (id == 'sparql') {
         webContents = _infoService.sparql;
         html.document.title = "AOD - SPARQL";
-        html.querySelector("[name='description']").attributes['content'] = 'Obtén datos e información de la Aragopedia a través de este punto de consulta.';
+        html.querySelector("[name='description']").attributes['content'] =
+            'Obtén datos e información de la Aragopedia a través de este punto de consulta.';
       } else if (id == 'desarrolladores') {
         webContents = _infoService.desarrolladores;
         html.document.title = "AOD - Desarrolladores";
-        html.querySelector("[name='description']").attributes['content'] = 'Estándares, interoperabilidad, estructuras y herramientas en las que se sustenta Aragón Open Data.';
+        html.querySelector("[name='description']").attributes['content'] =
+            'Estándares, interoperabilidad, estructuras y herramientas en las que se sustenta Aragón Open Data.';
       } else if (id == 'apis') {
         webContents = _infoService.apis;
         html.document.title = 'AOD - Apis';
-        html.querySelector("[name='description']").attributes['content'] = 'Tienes APIs para la búsqueda de datos, para AragoPedia y para el servicio Open Social Data.';
-      } else{
-        html.window.location.href = "http://opendata.aragon.es/404";
+        html.querySelector("[name='description']").attributes['content'] =
+            'Tienes APIs para la búsqueda de datos, para AragoPedia y para el servicio Open Social Data.';
+      } else {
+        html.window.location.href = "/404";
       }
-    }else{
-      html.window.location.href = "http://opendata.aragon.es/404";
+    } else {
+      html.window.location.href = "/404";
     }
     //Transforma los contenidos para que la seguridad de angular no los elimine
     webContents.forEach((dynamic wc) {
       wc.content = _domSanitizationService.bypassSecurityTrustHtml(wc.content);
     });
+    html.window.scrollTo(0, 0);
   }
 
   ///Inicializa un Popup para la redireccion a sitios de terceros

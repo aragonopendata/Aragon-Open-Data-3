@@ -1,0 +1,44 @@
+@import "components/header/header";
+@import "components/footer/footer";
+
+body{
+  text-align: left !important;
+}
+/***** Pagina No encontrada *****/
+#errores h1 {
+  font-family: 'aodRoboto', Helvetica, Arial, sans-serif;
+  float: left;
+  color: rgb(153, 151, 144);
+  font-size: 46px;
+  font-weight: 100;
+  text-align: justify;
+  line-height: normal;
+  vertical-align: middle;
+}
+
+#errores h2 {
+  font-family: 'aodRoboto', Helvetica, Arial, sans-serif;
+  float: left;
+  color: rgb(153, 151, 144);
+  font-size: 24px;
+  font-weight: 100;
+  text-align: justify;
+  line-height: normal;
+}
+
+#errores iframe{
+  margin-top:20px;
+}
+
+#elerror{
+  font-size: 22px;
+  float: right;
+  vertical-align: middle;
+  margin-top: 10%;
+}
+
+.bannerBuscadorError #cajaDeBusqInput {
+  max-width: 90% !important;
+}
+
+/***** -------- *****/

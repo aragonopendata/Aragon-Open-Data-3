@@ -1,4 +1,4 @@
-<div class="tarjeta" (mouseover)='over()' (mouseout)='out()' (click)="redirect()">
+<div class="tarjeta" (mouseenter)='over()' (mouseleave)='out()' (click)="redirect()">
     <div class="image-wrapper2" >
         <div class="content">
             <div class="tarjeta_no_oculta">
@@ -6,7 +6,7 @@
                 <img *ngIf="!firstHover" [ngClass]="{tarjeta_hover: hover, tarjeta_no_hover: !hover}" src="images/home/tarjetas/{{elemento.imagen}}-ON.jpg">
                 <img *ngIf="firstHover" style="opacity:0" src="images/home/tarjetas/{{elemento.imagen}}-ON.jpg">
             </div>
-            <div class="tarjeta_oculta">
+            <div class="tarjeta_oculta" *ngIf="hover" >
                 <p class="tit" [innerHtml]="elemento.titulo"></p>
                 <p class="des" [innerHtml]="elemento.descripcion"></p>
             </div>

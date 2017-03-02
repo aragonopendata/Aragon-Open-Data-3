@@ -4,7 +4,7 @@
             <li class="clear visible-xs tamCero"></li>
             <li><a href="http://transparencia.aragon.es/" title="Transparencia" target="_blank">TRANSPARENCIA</a></li>
             <li><a href="http://aragonparticipa.aragon.es" title="Participaci&oacute;n ciudadana" target="_blank">PARTICIPACI&Oacute;N CIUDADANA</a></li>
-            <li class="active"><a href="http://opendata.aragon.es" title="Open data">OPEN DATA</a>
+            <li class="active"><a href="/" title="Open data">OPEN DATA</a>
                 <p class="clear visible-xs"></p>
             </li>
         </ul>
@@ -39,7 +39,7 @@
                         <li><a href="/apps/aragopedia" (click)="overlayClose()" [innerHtml]="header_servicios_aragopedia"></a></li>
                         <li><a href="http://presupuesto.aragon.es/" (click)="overlayClose()" [innerHtml]="header_servicios_presupuestos"></a></li>
                         <li><a href="/portal/social-data" (click)="overlayClose()" [innerHtml]="header_servicios_socialdata"></a></li>
-                        <li><a href="http://opendata.aragon.es/apps/cras" (click)="overlayClose()" [innerHtml]="header_servicios_cras"></a></li>
+                        <li><a href="/apps/cras" (click)="overlayClose()" [innerHtml]="header_servicios_cras"></a></li>
                     </ul>
                 </li>
                 <li class="menuPrimero">
@@ -73,7 +73,7 @@
                 </li>
                 <li *ngIf="datasets!=null" class="menuPrimero" type="square" id="lista_header">
                     <ul>
-                    <li *ngFor="let item of datasets" value="{{valor}}"><a href="http://opendata.aragon.es/catalogo/{{item['name']}}" [innerHtml]="">{{item['title']}}</a></li>
+                    <li *ngFor="let item of datasets" value="{{valor}}"><a href="/catalogo/{{item['name']}}" [innerHtml]="">{{item['title']}}</a></li>
                     </ul>
                 </li>
             </ul>

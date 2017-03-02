@@ -4,43 +4,50 @@ import 'package:angular2/router.dart';
 import 'package:aod3/service/campus_service.dart';
 
 @Component(
-    selector: 'campus',
-    templateUrl: 'campus.html',
+  selector: 'campus',
+  templateUrl: 'campus.html',
 )
 class CampusComponent implements OnInit {
   final CampusService _campusService;
   final Router _router;
-  List<Map<String,dynamic>> campusList = new List<Map<String,dynamic>>();
+  List<Map<String, dynamic>> campusList = new List<Map<String, dynamic>>();
+
   ///Lista de todos los tipos existentes
-  List<Map<String,dynamic>> tiposList;
+  List<Map<String, dynamic>> tiposList;
+
   ///Lista de todos los ponentes existentes
-  List<Map<String,dynamic>> ponentesList;
+  List<Map<String, dynamic>> ponentesList;
+
   ///Lista de todas las etiquetas existentes
-  List<Map<String,dynamic>> etiquetasList;
+  List<Map<String, dynamic>> etiquetasList;
+
   ///Lista de todos los eventos existentes
-  List<Map<String,dynamic>> eventosList;
+  List<Map<String, dynamic>> eventosList;
+
   ///Lista de todos los formatos existentes
-  List<Map<String,dynamic>> formatosList;
+  List<Map<String, dynamic>> formatosList;
+
   ///Lista de todas las paginas disponibles
   List<num> pagesList;
+
   ///Indica si se estan cargando lso datos
   bool loading = true;
 
-
-  CampusComponent(this._campusService,this._router);
+  CampusComponent(this._campusService, this._router);
 
   ///Devuelve la clase ```pagination_active``` si pa pagina coincide con la pagina actual
-  String isActive(num index){
-    if(index == _campusService.currentPage){
-     return 'pagination_active';
-    }else{
+  String isActive(num index) {
+    if (index == _campusService.currentPage) {
+      return 'pagination_active';
+    } else {
       return '';
     }
   }
+
   ///Vuelve a cargar [campusList] y [pagesList] desde el servicio
   void reprintCampusList() {
     loading = true;
-    _campusService.initializeCampus().then((List<Map<String,dynamic>> lista) {
+    _campusService.initializeCampus().then((List<Map<String, dynamic>> lista) {
       campusList = lista;
       pagesList = _campusService.pagesList;
       loading = false;
@@ -53,39 +60,41 @@ class CampusComponent implements OnInit {
   @override
   void ngOnInit() {
     document.title = "AOD - AOD CAMPUS";
-    querySelector("[name='description']").attributes['content'] = 'Contenido ofrecido para que aprendas y te formes a través de nuestros materiales y tutoriales.';
+    window.scrollTo(0, 0);
+    querySelector("[name='description']").attributes['content'] =
+        'Contenido ofrecido para que aprendas y te formes a través de nuestros materiales y tutoriales.';
     loading = true;
-    _campusService.initializeCampus().then((List<Map<String,dynamic>> lista) {
+    _campusService.initializeCampus().then((List<Map<String, dynamic>> lista) {
       campusList = lista;
       pagesList = _campusService.pagesList;
       loading = false;
     });
-    _campusService.getTipos().then((List<Map<String,dynamic>> lista) {
+    _campusService.getTipos().then((List<Map<String, dynamic>> lista) {
       tiposList = lista;
     });
-    _campusService.getEventos().then((List<Map<String,dynamic>> lista) {
+    _campusService.getEventos().then((List<Map<String, dynamic>> lista) {
       eventosList = lista;
     });
-    _campusService.getEtiquetas().then((List<Map<String,dynamic>> lista) {
+    _campusService.getEtiquetas().then((List<Map<String, dynamic>> lista) {
       etiquetasList = lista;
     });
-    _campusService.getFormatos().then((List<Map<String,dynamic>> lista) {
+    _campusService.getFormatos().then((List<Map<String, dynamic>> lista) {
       formatosList = lista;
     });
-    _campusService.getPonentes().then((List<Map<String,dynamic>> lista) {
+    _campusService.getPonentes().then((List<Map<String, dynamic>> lista) {
       ponentesList = lista;
     });
   }
 
   ///Nos mueve a la pagina indicada
   void moveTo(num id) {
-    _campusService.changePage(id).then((List<Map<String,dynamic>> lista) {
+    _campusService.changePage(id).then((List<Map<String, dynamic>> lista) {
       campusList = lista;
     });
   }
 
   ///Abre un item
-  void openCampusItem(Map<String,dynamic> item){
+  void openCampusItem(Map<String, dynamic> item) {
     _campusService.campusItem = item;
     _router.navigateByUrl('campus/${_campusService.campusItem['id']}');
   }

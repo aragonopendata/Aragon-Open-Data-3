@@ -30,6 +30,7 @@ class TarjetaHomeComponent {
 
   ///Haces la redireccion adonde indique el item
   void redirect() {
+    hover = false;
     if (elemento.router) {
       _router.navigateByUrl(elemento.url);
     } else {

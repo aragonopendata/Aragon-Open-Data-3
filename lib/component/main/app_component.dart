@@ -20,18 +20,22 @@ import 'package:aod3/component/info/envio_aplicaciones/envio_aplicaciones_compon
 import 'package:aod3/service/campus_service.dart';
 import 'package:aod3/service/search_service.dart';
 
-@Component(selector: 'my-app', templateUrl: 'app.html', directives: const <dynamic>[
-  HeaderComponent,
-  HomeComponent,
-  FooterComponent,
-  ROUTER_DIRECTIVES
-], providers: const <dynamic>[
-  ROUTER_PROVIDERS,
-  SearchService,
-  CampusService,
-  DomSanitizationService,
-  materialProviders
-])
+@Component(
+    selector: 'my-app',
+    templateUrl: 'app.html',
+    directives: const <dynamic>[
+      HeaderComponent,
+      HomeComponent,
+      FooterComponent,
+      ROUTER_DIRECTIVES
+    ],
+    providers: const <dynamic>[
+      ROUTER_PROVIDERS,
+      SearchService,
+      CampusService,
+      DomSanitizationService,
+      materialProviders
+    ])
 @RouteConfig(const <dynamic>[
   const Route(
       path: '/', name: 'Home', component: HomeComponent, useAsDefault: true),
@@ -51,9 +55,9 @@ import 'package:aod3/service/search_service.dart';
     component: CampusItemComponent,
   ),
   const Route(
-  path: 'info/envio-aplicaciones',
-  name: 'EnvioAplicaciones',
-  component: EnvioAplicacionesComponent,
+    path: 'info/envio-aplicaciones',
+    name: 'EnvioAplicaciones',
+    component: EnvioAplicacionesComponent,
   ),
   const AsyncRoute(path: '/info/colabora', loader: colabora, name: 'Colabora'),
   const AsyncRoute(path: '/info/:id', loader: informacion, name: 'Info'),
@@ -62,8 +66,7 @@ import 'package:aod3/service/search_service.dart';
   const AsyncRoute(
       path: '/info/aplicaciones', loader: aplicaciones, name: 'Aplicaciones'),
 ])
-class AppComponent {
-}
+class AppComponent {}
 
 ///Loader asrincrono para el componente [ColaboraComponent]
 Future<dynamic> colabora() => colabora_component

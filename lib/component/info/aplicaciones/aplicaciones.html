@@ -15,9 +15,9 @@
                             <a href="{{aplicacion.url}}"><b>{{aplicacion.titulo}}</b></a>
                         </p>
                             <p [safeInnerHtml]="aplicacion.descripcion"></p>
-                        <img materialTooltip="Compartir en Facebook" (click)="redirect($event,aplicacion.facebookShare)" class="link" src="http://opendata.aragon.es/public/i/aplicaciones/iconoFacebook.png"/>
-                        <img materialTooltip="Compartir en Twitter" (click)="redirect($event,aplicacion.twitterShare)" class="link" src="http://opendata.aragon.es/public/i/aplicaciones/iconoTwitter.png"/>
-                        <img materialTooltip="Compartir en Google+" (click)="redirect($event,aplicacion.googleShare)" class="link" src="http://opendata.aragon.es/public/i/aplicaciones/iconoGooglePlus.png"/>
+                        <img (click)="redirect($event,aplicacion.facebookShare)" class="link" src="/public/i/aplicaciones/iconoFacebook.png"/>
+                        <img (click)="redirect($event,aplicacion.twitterShare)" class="link" src="/public/i/aplicaciones/iconoTwitter.png"/>
+                        <img (click)="redirect($event,aplicacion.googleShare)" class="link" src="/public/i/aplicaciones/iconoGooglePlus.png"/>
                     </div>
                 </div>
             </li>
