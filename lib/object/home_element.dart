@@ -7,5 +7,4 @@ class HomeElement {
   List<HomeCard> tarjetas;
 
   HomeElement(this.titulo, this.descripcion, this.tarjetas);
-
 }

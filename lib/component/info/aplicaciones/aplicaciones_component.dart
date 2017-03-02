@@ -37,6 +37,7 @@ class AplicacionesComponent implements OnInit {
       aplicacion.descripcion = _domSanitizarionService
           .bypassSecurityTrustHtml(aplicacion.descripcion);
     });
+    window.scrollTo(0, 0);
   }
 
   ///Inicializa un Popup para la redireccion a sitios de terceros

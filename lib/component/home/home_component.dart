@@ -15,10 +15,12 @@ import 'package:aod3/component/home/tarjeta_home_component.dart';
 class HomeComponent implements OnInit {
   final SearchService _SearchService;
   final HomeService _HomeService;
+
   ///Contiene todos los elementos de la home (contenedores y tarjetas)
   List<HomeElement> homeElements;
+
   ///Lista de datasets de la busqueda
-  List<Map<String,String>> datasets = new List();
+  List<Map<String, String>> datasets = new List();
   String valor;
 
   HomeComponent(this._SearchService, this._HomeService);
@@ -27,13 +29,14 @@ class HomeComponent implements OnInit {
   @override
   void ngOnInit() {
     homeElements = _HomeService.getList();
+    window.scrollTo(0, 0);
   }
-
 
   ///Obtine la lista de datasets desde el servico [SearchService]
   Future<Null> getDatasets(String input, {int limit: 8}) async {
-    List<Map<String,String>> datasetsList = await _SearchService.getDataset(input, limit: limit);
-    if(datasetsList == null){
+    List<Map<String, String>> datasetsList =
+        await _SearchService.getDataset(input, limit: limit);
+    if (datasetsList == null) {
       datasetsList = new List();
     }
     datasets = datasetsList;
@@ -43,7 +46,7 @@ class HomeComponent implements OnInit {
     e.preventDefault();
     InputElement bText = querySelector('[name="buscador_home"]');
     window.location.assign(
-        'http://opendata.aragon.es/catalogo/catalogo.html?q=${bText.value}');
+        '/catalogo/catalogo.html?q=${bText.value}');
   }
 
   void onKey(dynamic event) {

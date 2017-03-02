@@ -21,19 +21,19 @@ class HomeService {
                 'Banner-01-BancoDatos',
                 'Banco de datos',
                 'Además de buscar, puedes acceder a los datos mediante categorías y filtros.',
-                'http://opendata.aragon.es/catalogo/catalogo.html',
+                '/catalogo/catalogo.html',
                 false),
             new HomeCard(
                 'Banner-02-Temas',
                 'Temas',
                 'Puedes llegar a los datos mediante la navegación temática.',
-                'http://opendata.aragon.es/catalogo/tema',
+                '/catalogo/tema',
                 false),
             new HomeCard(
                 'Banner-03-Publicadores',
                 'Publicadores',
                 'Conoce qué organizaciones aportan sus datos a Aragón Open Data.',
-                'http://opendata.aragon.es/catalogo/organizacion',
+                '/catalogo/organizacion',
                 false),
           ])..customHtml = "dataSearch",
       new HomeElement(
@@ -44,7 +44,7 @@ class HomeService {
                 'Banner-05-Aragopedia',
                 'Aragopedia',
                 'Entiende y usa los datos abiertos de Aragón Open Data a través de los municipios y comarcas de Aragón.',
-                'http://opendata.aragon.es/apps/aragopedia',
+                '/apps/aragopedia',
                 false),
             new HomeCard(
                 'Banner-06-Presupuestos',
@@ -56,13 +56,13 @@ class HomeService {
                 'Banner-04-OpenSocialData',
                 'Open Social Data',
                 'Escucha, visualiza y analiza las conversaciones sobre Aragón en las redes sociales y conoce qué está pasando.',
-                'http://opendata.aragon.es/portal/social-data',
+                '/portal/social-data',
                 false),
             new HomeCard(
                 'Banner-07-CRAs',
                 'CRAs Aragón',
                 'Descubre más sobre los Colegios Rurales Agrupados de Aragón.',
-                'http://opendata.aragon.es/apps/cras',
+                '/apps/cras',
                 false),
           ]),
       new HomeElement(
