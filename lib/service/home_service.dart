@@ -66,14 +66,14 @@ class HomeService {
                 false),
           ]),
       new HomeElement(
-          'Información',
+          'Informacion',
           'Te explicamos qué es Aragón Open Data, qué hacemos y cómo puedes sumarte y colaborar.',
           <HomeCard>[
             new HomeCard(
                 'Banner-10-Informacion',
                 'Información',
                 'Conoce más sobre el entorno open data y qué hacemos en Aragón.',
-                '/info/informacion',
+                '/info/open-data',
                 true),
             new HomeCard(
                 'Banner-09-Aplicaciones',

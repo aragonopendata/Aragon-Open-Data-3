@@ -1,7 +1,7 @@
 <section>
     <article class="contenido">
         <h1>{{titleString}}</h1>
-        <h2>{{id.toUpperCase()}}</h2>
+        <h2 *ngIf="id!='open-data'">{{id.toUpperCase()}}</h2>
         <article class="accordion">
             <section class="a_section" id="{{webContent.id}}" *ngFor="let webContent of webContents">
                 <h2 id="{{webContent.id}}_h2" (click)="switchCss($event,webContent.id)">

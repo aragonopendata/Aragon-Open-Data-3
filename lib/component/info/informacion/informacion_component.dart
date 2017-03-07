@@ -47,7 +47,7 @@ class InformacionComponent implements OnInit {
     if (urlString.contains('info')) {
       titleString = 'INFO OPEN DATA';
       subTitleString = 'Todo lo necesario para entender Aragón Open Data';
-      if (id == 'informacion') {
+      if (id == 'open-data') {
         webContents = _infoService.iformaciones;
         html.document.title = 'AOD - Información';
         html.querySelector("[name='description']").attributes['content'] =
