@@ -21,19 +21,19 @@ class HomeService {
                 'Banner-01-BancoDatos',
                 'Banco de datos',
                 'Además de buscar, puedes acceder a los datos mediante categorías y filtros.',
-                '/catalogo/catalogo.html',
+                '/datos/catalogo.html',
                 false),
             new HomeCard(
                 'Banner-02-Temas',
                 'Temas',
                 'Puedes llegar a los datos mediante la navegación temática.',
-                '/catalogo/tema',
+                '/datos/tema',
                 false),
             new HomeCard(
                 'Banner-03-Publicadores',
                 'Publicadores',
                 'Conoce qué organizaciones aportan sus datos a Aragón Open Data.',
-                '/catalogo/organizacion',
+                '/datos/organizacion',
                 false),
           ])..customHtml = "dataSearch",
       new HomeElement(
@@ -44,7 +44,7 @@ class HomeService {
                 'Banner-05-Aragopedia',
                 'Aragopedia',
                 'Entiende y usa los datos abiertos de Aragón Open Data a través de los municipios y comarcas de Aragón.',
-                '/apps/aragopedia',
+                '/servicios/aragopedia',
                 false),
             new HomeCard(
                 'Banner-06-Presupuestos',
@@ -56,13 +56,13 @@ class HomeService {
                 'Banner-04-OpenSocialData',
                 'Open Social Data',
                 'Escucha, visualiza y analiza las conversaciones sobre Aragón en las redes sociales y conoce qué está pasando.',
-                '/portal/social-data',
+                '/servicios/open-social-data',
                 false),
             new HomeCard(
                 'Banner-07-CRAs',
                 'CRAs Aragón',
                 'Descubre más sobre los Colegios Rurales Agrupados de Aragón.',
-                '/apps/cras',
+                '/servicios/cras',
                 false),
           ]),
       new HomeElement(
