@@ -82,8 +82,8 @@ class HeaderComponent {
   void goCkan(Event e) {
     e.preventDefault();
     InputElement bText = querySelector('[name="buscador_home"]');
-    window.location.assign(
-        '/catalogo/catalogo.html?q=${bText.value}');
+    Uri uri = new Uri(scheme:'http',path:'/datos/catalogo.html',queryParameters:{'q':bText.value});
+    window.location.assign(Uri.encodeFull(uri.toString()));
   }
 
   void onKey(dynamic event) {

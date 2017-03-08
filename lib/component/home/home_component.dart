@@ -6,6 +6,7 @@ import 'package:aod3/object/home_element.dart';
 import 'package:aod3/service/search_service.dart';
 import 'package:aod3/service/home_service.dart';
 import 'package:aod3/component/home/tarjeta_home_component.dart';
+import 'package:fluri/fluri.dart';
 
 @Component(
     selector: 'home',
@@ -15,6 +16,7 @@ import 'package:aod3/component/home/tarjeta_home_component.dart';
 class HomeComponent implements OnInit {
   final SearchService _SearchService;
   final HomeService _HomeService;
+  final Router _Router;
 
   ///Contiene todos los elementos de la home (contenedores y tarjetas)
   List<HomeElement> homeElements;
@@ -23,7 +25,7 @@ class HomeComponent implements OnInit {
   List<Map<String, String>> datasets = new List();
   String valor;
 
-  HomeComponent(this._SearchService, this._HomeService);
+  HomeComponent(this._SearchService, this._HomeService, this._Router);
 
   ///Carga la lista de tarejtas al iniciar
   @override
@@ -45,8 +47,8 @@ class HomeComponent implements OnInit {
   void goCkan(Event e) {
     e.preventDefault();
     InputElement bText = querySelector('[name="buscador_home"]');
-    window.location.assign(
-        '/catalogo/catalogo.html?q=${bText.value}');
+    Uri uri = new Uri(scheme:'http',path:'/datos/catalogo.html',queryParameters:{'q':bText.value});
+    window.location.assign(Uri.encodeFull(uri.toString()));
   }
 
   void onKey(dynamic event) {
