@@ -10,7 +10,7 @@ class SearchService {
   Future<List<Map<String, String>>> getDataset(String input,
       {num limit: 8}) async {
     String url =
-        "/catalogo/api/2/util/dataset/autocomplete?incomplete=%$input%&limit=$limit";
+        "/datos/api/2/util/dataset/autocomplete?incomplete=%$input%&limit=$limit";
     return HttpRequest.request(url).then((HttpRequest result) {
       //Map decoded = JSON.decode(result.response);
       if (input != "") {
