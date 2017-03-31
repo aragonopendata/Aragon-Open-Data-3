@@ -6,14 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- Search box section at the top of page.
 
 ### Changed
 
 ### Fixed
 
-## [3.1.0] - 2017-03-31
+## [3.0.0] - 2017-03-30
 ### Added
-- Search box section at the top of page.
+- Home based on Angular2 + Dart.
 
-[Unreleased]: https://github.com/aragonopendata/Aragon-Open-Data-3/compare/v3.0.0...HEAD
-[3.1.0]: https://github.com/aragonopendata/Aragon-Open-Data-3/commit/47fcd0348ad8e832b5c13b6836e34ce4e27f6b17
+[Unreleased]: https://github.com/aragonopendata/Aragon-Open-Data-3/compare/v3.0.0...Sprint_032017
+[3.0.0]: https://github.com/aragonopendata/Aragon-Open-Data-3/releases/tag/v3.0.0
