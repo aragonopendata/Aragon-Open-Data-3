@@ -8,10 +8,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Search box section at the top of page.
 
-### Changed
-
-### Fixed
-
 ## [3.0.0] - 2017-03-30
 ### Added
 - Home based on Angular2 + Dart.
