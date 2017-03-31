@@ -1,6 +1,6 @@
 <div *ngFor="let element of homeElements" id="{{element.titulo.toLowerCase()}}">
     <div class="separacion-mini" ></div>
-    <article>
+    <article *ngIf="element.titulo != 'Search'">
         <div class="descripcion">
             <h1>{{element.titulo}}</h1>
             <p>{{element.descripcion}}</p>
@@ -15,7 +15,7 @@
                 <ul class="search-ac" *ngIf="datasets.length>0">
                     <li *ngFor="let item of datasets" value="{{valor}}"><a href="/catalogo/{{item['name']}}">{{item['title']}}</a></li>
                 </ul>
-                <button id="button_home"><i aria-hidden="true" class="fa fa-search"></i></button>
+                <button id="button_home"><i aria-hidden="true" class="fa fa-search fa-customSize"></i></button>
             </form>
         </div>
     </article>

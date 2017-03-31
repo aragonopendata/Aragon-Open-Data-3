@@ -58,6 +58,14 @@ article{
   @include titulos-principales();
 }
 
+#search{
+    background-image: url("images/home/background/Fondo-Home-AOD.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+}
+
 #datos{
   @include gradient-home-datos();
 }

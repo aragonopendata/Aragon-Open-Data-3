@@ -57,7 +57,26 @@
   }
 }
 
+.fa-customSize{
+    @media (min-width:1000px) {
+        font-size: 50px;
+    }
+}
+
 .buscador{
+
+    @media (min-width:500px) {
+        padding-top: 25vh;
+    }
+
+    @media (max-width:500px) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40vh;
+    }
+
   @include row();
   margin-bottom: 30px;
   input {
@@ -99,29 +118,48 @@
 
 
   #buscador_home{
-    //width: 94%;
-    height: 45px;
     border: none;
-    font-size: 25px;
     color: #76a1b8;
     text-transform: uppercase;
     @include media($campus-pequeña1) {
       font-size: 16px;
-      //width: 80%;
-      /*@include subtitulos-pequeña1();*/
     }
+
+    @media (min-width: 500px) {
+        height: 60px;
+    }
+
+    @media (min-width:700px) {
+        height: 80px;
+        width: 450px;
+        font-size: 30px;
+    }
+
+    @media (min-width:1000px) {
+        height: 90px;
+        width: 700px;
+        font-size: 50px;
+    }
+
+    @media (min-width:1200px) {
+        height: 100px;
+        width: 800px;
+        font-size: 60px;
+    }
+
+    @media (max-width:500px) {
+        height: 60px;
+        font-size: 30px;
+    }
+
     @include media($campus-pequeña2) {
-      font-size: 12px;
-      height: 30px;
-      //width: 80%;
-      /* @include subtitulos-pequeña2();*/
+        font-size: 12px;
+        height: 30px;
     }
   }
 
   #button_home{
     @include span-columns(1);
-    //width: 45px;
-    height: 45px;
     color: #76a1b8;
     background: white;
     border: none;
@@ -129,6 +167,23 @@
     @include media($campus-pequeña2) {
       width: 24%;
       height: 30px;
+    }
+
+    @media (min-width:500px) {
+        height: 60px;
+        width: 100px;
+    }
+
+    @media (min-width:700px) {
+        height: 80px;
+    }
+
+    @media (min-width:1000px) {
+        height: 90px;
+    }
+
+    @media (min-width:1200px) {
+        height: 100px;
     }
   }
 

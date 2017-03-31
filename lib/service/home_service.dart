@@ -14,6 +14,10 @@ class HomeService {
   List<HomeElement> getList() {
     return <HomeElement>[
       new HomeElement(
+          'Search',
+          '',
+          <HomeCard>[])..customHtml = "dataSearch",
+      new HomeElement(
           'Datos',
           'Lo más importante de Aragón Open Data son sus datos y los hemos ordenado para que puedas encontrarlos fácilmente.',
           <HomeCard>[
@@ -35,7 +39,7 @@ class HomeService {
                 'Conoce qué organizaciones aportan sus datos a Aragón Open Data.',
                 '/datos/organizacion',
                 false),
-          ])..customHtml = "dataSearch",
+          ]),
       new HomeElement(
           'Servicios',
           'En Aragón Open Data hemos creado servicios para ofrecer los datos, reutilizarlos y acceder de forma sencilla a la información.',
