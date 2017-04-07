@@ -194,6 +194,23 @@
       @include span-columns(4);
       @include shift(0);
     }
+
+    @media (max-width:700px) {
+        margin-top: 10px;
+    }
+
+    @media (min-width:700px) {
+        margin-top: 20px;
+    }
+
+    @media (min-width:1200px) {
+        margin-top: 30px;
+    }
+
+    @media (max-width:420px) {
+        margin-top: 0px;
+    }
+
     display: none;
     position: absolute;
     top: 48px;
