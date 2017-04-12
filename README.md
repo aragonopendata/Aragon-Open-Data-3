@@ -36,6 +36,11 @@ git clone https://github.com/aragonopendata/Aragon-Open-Data-3.git
 ```
 pub get
 ```
+3.1 Instalamos Saas como se describe en esta URL
+http://crocodillon.com/blog/how-to-install-sassc-and-libsass-on-ubuntu
+OJO: Mirar en el repositorio de cada librería la versión que corresponde en el branch
+
+
 4. Ejecutamos la aplicaciones
 ```
 pub serve --port=8080 --mode=debug

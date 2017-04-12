@@ -95,3 +95,6 @@ rewrites\.yaml
 client/
 
 \.idea/
+
+*.iml
+.gitignore
