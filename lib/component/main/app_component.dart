@@ -12,6 +12,8 @@ import 'package:aod3/component/info/campus/campus_component.dart';
 import 'package:aod3/component/info/campus/campus_item_component.dart';
 import 'package:aod3/component/info/colabora_component.dart'
     deferred as colabora_component;
+    import 'package:aod3/component/info/terminos_component.dart'
+    deferred as terminos_component;
 import 'package:aod3/component/info/aplicaciones/aplicaciones_component.dart'
     deferred as aplicaciones_component;
 import 'package:aod3/component/info/informacion/informacion_component.dart'
@@ -60,6 +62,7 @@ import 'package:aod3/service/search_service.dart';
     component: EnvioAplicacionesComponent,
   ),
   const AsyncRoute(path: '/info/colabora', loader: colabora, name: 'Colabora'),
+  const AsyncRoute(path: '/terminos-de-uso', loader: terminos, name: 'Terminos'),
   const AsyncRoute(path: '/info/:id', loader: informacion, name: 'Info'),
   const AsyncRoute(
       path: '/herramientas/:id', loader: informacion, name: 'Herramientas'),
@@ -82,3 +85,8 @@ Future<dynamic> aplicaciones() => aplicaciones_component
 Future<dynamic> informacion() => informacion_component
     .loadLibrary()
     .then((_) => informacion_component.InformacionComponent);
+
+///Loader asrincrono para el componente [TerminosComponent]
+Future<dynamic> terminos() => terminos_component
+    .loadLibrary()
+    .then((_) => terminos_component.TerminosComponent);
