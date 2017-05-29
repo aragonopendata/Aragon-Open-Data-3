@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.0.3] - 2017-05-29
+### Added
+- New 'Términos y condiciones' page added.
+
+### Changed
+- Fixed links to 'Social Data' page.
+- Fixed link to 'Términos y condiciones' page.
+- Several text corrections.
 
 ## [3.0.2] - 2017-04-12
 ### Added
@@ -22,6 +30,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Home based on Angular2 + Dart.
 
 [Unreleased]: https://github.com/aragonopendata/Aragon-Open-Data-3/compare/master...develop
+[3.0.3]: https://github.com/aragonopendata/Aragon-Open-Data-3/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/aragonopendata/Aragon-Open-Data-3/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/aragonopendata/Aragon-Open-Data-3/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/aragonopendata/Aragon-Open-Data-3/releases/tag/v3.0.0
