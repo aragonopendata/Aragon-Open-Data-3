@@ -8,6 +8,11 @@ class InfoService {
   ///Informacion accesible desde ```/info/aplicaciones```
   List<Aplicacion> get aplicaciones => <Aplicacion>[
         new Aplicacion(
+            'Inmuebles de alquiler, Aragón',
+            'Aplicación para conocer los precios de alquileres de viviendas y locales en toda la COmunidad Autónoma de Aragón. Descarga desde <a href="https://play.google.com/store/apps/details?id=es.plaa.android">Google Play</a> y <a href="https://itunes.apple.com/in/app/inmuebles-de-alquiler-aragon/id1240123406?mt=8&ign-mpt=uo%3D2">App Store</a>.',
+            'https://play.google.com/store/apps/details?id=es.plaa.android',
+            '/public/i/aplicaciones/logo_hogares.png'),
+        new Aplicacion(
             'AragoPedia',
             'Los datos abiertos de Aragón Open Data trabajados para que puedas verlos por territorios. Aquí tienes los datos de tu municipio y de tu comarca para que puedas consultarlos y saber las principales informaciones de la población en la que vives o en la que has nacido.',
             '/aragopedia',
