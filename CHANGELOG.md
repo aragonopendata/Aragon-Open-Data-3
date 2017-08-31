@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.0.6] - 2017-08-31
+### Changed
+- Aragopedia 2.0 API iframe fixed.
+
 ## [3.0.5] - 2017-07-25
 ### Changed
 - Flat rent application added.

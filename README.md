@@ -45,6 +45,9 @@ OJO: Mirar en el repositorio de cada librería la versión que corresponde en el
 ```
 pub serve --port=8080 --mode=debug
 ```
+*Si aparece algún tipo de error al acceder a localhost:8001, probar a realizar los siguientes pasos:
+i) apt-get remove dart
+ii) apt-get install dart=1.21.*
 
 Si tenemos cualquier tipo de test también podemos ejecutar
 ```
