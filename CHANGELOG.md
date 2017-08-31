@@ -42,6 +42,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Home based on Angular2 + Dart.
 
 [Unreleased]: https://github.com/aragonopendata/Aragon-Open-Data-3/compare/master...develop
+[3.0.6]: https://github.com/aragonopendata/Aragon-Open-Data-3/compare/v3.0.5...v3.0.6
 [3.0.5]: https://github.com/aragonopendata/Aragon-Open-Data-3/compare/v3.0.4...v3.0.5
 [3.0.4]: https://github.com/aragonopendata/Aragon-Open-Data-3/compare/v3.0.3...v3.0.4
 [3.0.3]: https://github.com/aragonopendata/Aragon-Open-Data-3/compare/v3.0.2...v3.0.3
