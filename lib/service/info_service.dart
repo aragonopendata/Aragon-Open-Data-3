@@ -547,7 +547,7 @@ class InfoService {
                 '<div id="credenciales"><section><h4 class="titularesPeques">Necesidad de credenciales</h4><div class="textosNormales"><p>' +
                 'Para obtener resultados de esta API, es necesario proporcionar a las llamadas un parámetro con una credencial (<i>api_key</i>). Esta <i>api_key</i> se puede obtener de forma gratuita mediante el registro como usuario de la página <a href="https://opendataaragon.3scale.net/" title="3scale.net">3scale.net</a> </p> <br> <p> Por el momento, se ofrece la posibilidad de utilizar una <i>api_key</i> genérica y compartida, si bien en el futuro podría ser necesario el registro individualizado de todos los usuarios.</p><br><p>' +
                 'En el caso de que seas un desarrollador que vaya a hacer un uso intensivo de este servicio, rogamos contactes con nosotros a través de <a href="mailto:opendata@aragon.es" title="opendata@aragon.es">opendata@aragon.es</a> para proporcionarte una <i>api_key</i> individualizada para tus desarrollos.</p><br><p>Donde <i>api_key</i> puede tomar o bien el valor de tu clavecifrada de usuario, o bien la clave genérica que es:</p><pre class="centrado">e103dc13eb276ad734e680f5855f20c6</pre><br>' +
-                '<iframe style="border:1px solid rgba(118, 161, 184, 0.47);" width="100%" height="800px" frameborder="0" src="http://preopendata.aragon.es/bancodatos/doc/#"></iframe>')
+                '<iframe style="border:1px solid rgba(118, 161, 184, 0.47);" width="100%" height="800px" frameborder="0" src="http://opendata.aragon.es/bancodatos/doc/#"></iframe>')
       ];
 
   ///informacion accesible desde ```/info/eventos```
